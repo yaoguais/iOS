@@ -40,9 +40,10 @@
     NSLog(@"被点击了");
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"按钮被点击了" message:@"警告哦" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alertView show];
-    //[self HttpGet];
-    //[self HttpPost];
+    [self HttpGet];
+    [self HttpPost];
     [self UploadFile];
+    [self DownloadFile];
 }
 
 - (void) HttpGet {
@@ -90,6 +91,24 @@
         }
     }];
     [uploadTask resume];
+}
+
+- (void) DownloadFile {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+
+    NSURL *URL = [NSURL URLWithString:@"http://127.0.0.1:9068/test.jpg"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        NSURL * url = [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        NSLog(@"%@", [url absoluteString]);
+        return url;
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"File downloaded to: %@", filePath);
+    }];
+    [downloadTask resume];
 }
 
 @end
