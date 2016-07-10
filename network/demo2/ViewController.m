@@ -100,7 +100,8 @@
     }
     NSString *body = [NSString stringWithFormat:@"%@Content-Disposition: form-data; name=\"picture\"; filename=\"%@\";%@Content-Type:image/jpg%@", StartBoundary, @"test.jpg", Wrap1, Wrap2];
     [totlData appendData:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"test.jpg"]);
+    //NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"test.jpg"]);
+    NSData *data = UIImagePNGRepresentation([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"jpg"]]);
     [totlData appendData:data];
     [totlData appendData:[Wrap1 dataUsingEncoding:NSUTF8StringEncoding]];
     [totlData appendData:[EndBody dataUsingEncoding:NSUTF8StringEncoding]];

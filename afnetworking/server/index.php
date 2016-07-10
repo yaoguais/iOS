@@ -1,7 +1,6 @@
 <?php
 
-$content = date('Y-m-d H:i:s') . "\n" .
-    var_export($_SERVER, true) .
+$content = var_export($_SERVER, true) .
     var_export($_GET, true) .
     var_export($_POST, true) .
     var_export($_FILES, true) .
