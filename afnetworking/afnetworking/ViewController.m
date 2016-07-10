@@ -74,14 +74,15 @@
 - (void) UploadFile {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
+        URLString:@"http://127.0.0.1:9068/?a=b" parameters:nil
+        constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            NSString * imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"jpg"];
+            NSData * data = [[NSFileManager defaultManager] contentsAtPath:imagePath];
+            [formData appendPartWithFileData:data name:@"uploadFile" fileName:@"test.jpg" mimeType:@"image/jpg"];
+    } error:nil];
 
-    NSURL *URL = [NSURL URLWithString:@"http://127.0.0.1:9068/?a=b"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-    request.HTTPMethod = @"POST";
-
-    NSString * imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"jpg"];
-    NSURL *filePath = [NSURL fileURLWithPath:imagePath];
-    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
         } else {

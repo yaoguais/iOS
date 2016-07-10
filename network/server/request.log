@@ -130,3 +130,51 @@ array (
 )array (
 )
 
+2016-07-11 01:49:21
+array (
+  'USER' => 'root',
+  'HOME' => '/root',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/workspace/ios-repos/ios-on-the-way/network/server/index.php',
+  'QUERY_STRING' => 'a=b',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'multipart/form-data; boundary=Boundary+9265947237B4224E',
+  'CONTENT_LENGTH' => '112665',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/?a=b',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/workspace/ios-repos/ios-on-the-way/network/server',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx/1.8.1',
+  'REMOTE_ADDR' => '10.0.2.2',
+  'REMOTE_PORT' => '50503',
+  'SERVER_ADDR' => '10.0.2.15',
+  'SERVER_PORT' => '9068',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => '127.0.0.1:9068',
+  'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=Boundary+9265947237B4224E',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_ACCEPT' => '*/*',
+  'HTTP_USER_AGENT' => 'afnetworking/1.0 (iPhone; iOS 9.2; Scale/3.00)',
+  'HTTP_ACCEPT_LANGUAGE' => 'en-US;q=1',
+  'HTTP_CONTENT_LENGTH' => '112665',
+  'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1468172961.7873819,
+  'REQUEST_TIME' => 1468172961,
+)array (
+  'a' => 'b',
+)array (
+)array (
+  'uploadFile' => 
+  array (
+    'name' => 'test.jpg',
+    'type' => 'image/jpg',
+    'tmp_name' => '/tmp/phpqEBgQB',
+    'error' => 0,
+    'size' => 112504,
+  ),
+)
+
