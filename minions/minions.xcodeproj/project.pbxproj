@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EA370F3B4E034661957C29A /* libPods-minions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F8353FE342290A968F1D27 /* libPods-minions.a */; };
+		AF74501F2FE50ED89D9BA768 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745B9B48DF2698B1FE6E4C /* main.m */; };
+		AF745145F1CFAB7B42D22ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7454973BB88C7766C4352F /* Assets.xcassets */; };
+		AF74518D3D89F3B5182F8CAB /* minionsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74519314CB2DFA3CBEE87B /* minionsUITests.m */; };
+		AF7451E67F77DAEA4528AC9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF74557BAC99AD9DEB6B71AA /* Main.storyboard */; };
+		AF74522364C4DEBF9529289E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745B5C0EE45639B243FFBF /* Info.plist */; };
+		AF745339DF14FCB120B7C57C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745C3DA8022B6289149CBC /* LoginViewController.m */; };
+		AF74559489E4D4E86EE18787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7458EB9FFC16A8F31843EE /* LaunchScreen.storyboard */; };
+		AF7458E72ED1C31091E318B1 /* minionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745C714899B41A78F74EBE /* minionsTests.m */; };
+		AF7459826A381186FFC840A5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF74564E8C2E55C470CC6917 /* Info.plist */; };
+		AF745B176D62FABA76D61A68 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AF745BACB74830B09F0D9772 /* Podfile */; };
+		AF745B68F88D126DC4CC36F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7457492D1A84CFA5A09F30 /* AppDelegate.m */; };
+		AF745B90023CB38454BD4DF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74591F798D063099C5F844 /* ViewController.m */; };
+		AF745DF568937FE21A7F5F3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF74568E3C9867E27971935A /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF74511F6562A0A9CD739E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745373701566F3F074D7E1 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7A089CC7B3ED5485934DE5B3D074C30;
+			remoteInfo = "Pods-minions";
+		};
+		AF74557BAB01DCC855287C41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745373701566F3F074D7E1 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E2209E792FED82F27A935923AB51D92;
+			remoteInfo = Masonry;
+		};
+		AF745BB4132DEE2511CB6B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745415C29CB90D361B34EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF745199F22070B8889E4C8A;
+			remoteInfo = minions;
+		};
+		AF745D26DCFE047AB04CC587 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745415C29CB90D361B34EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF745199F22070B8889E4C8A;
+			remoteInfo = minions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		86F8353FE342290A968F1D27 /* libPods-minions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-minions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B3CBDEE1705FD20CB844B1C /* Pods-minions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-minions/Pods-minions.debug.xcconfig"; sourceTree = "<group>"; };
+		9F2828C5FBB5C9416DC9024A /* Pods-minions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minions.release.xcconfig"; path = "Pods/Target Support Files/Pods-minions/Pods-minions.release.xcconfig"; sourceTree = "<group>"; };
+		AF74519314CB2DFA3CBEE87B /* minionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsUITests.m; sourceTree = "<group>"; };
+		AF74536025F9B9E02EE12F38 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/Login/LoginViewController.h; sourceTree = "<group>"; };
+		AF745373701566F3F074D7E1 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		AF7454973BB88C7766C4352F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF7454C892505F6834631810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF7455F05087F2DB04371620 /* minions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF74564E8C2E55C470CC6917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF74568E3C9867E27971935A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF74574385D360FBD01BDDD4 /* minionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = minionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7457492D1A84CFA5A09F30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF745811A79A920CD20C13E4 /* minionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = minionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF74591F798D063099C5F844 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
+		AF745A01979B463DC2AB026F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
+		AF745B5C0EE45639B243FFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745B9B48DF2698B1FE6E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF745BACB74830B09F0D9772 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		AF745C3DA8022B6289149CBC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/Login/LoginViewController.m; sourceTree = "<group>"; };
+		AF745C714899B41A78F74EBE /* minionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsTests.m; sourceTree = "<group>"; };
+		AF745D5FF3346B6400DA7D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF745EC397CEC8DAE358C214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF7450FD6B37501959C38F04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745288FDA047AA726780AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745F7666F2C6F6927EE43C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA370F3B4E034661957C29A /* libPods-minions.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65C17F01FF818BCF5FA10A87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86F8353FE342290A968F1D27 /* libPods-minions.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67F2A0084C4688757FD1FCAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B3CBDEE1705FD20CB844B1C /* Pods-minions.debug.xcconfig */,
+				9F2828C5FBB5C9416DC9024A /* Pods-minions.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF74503A322E8F31D756CD02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF745F5D19E1E4BE0A9583E7 /* libMasonry.a */,
+				AF7454FCACB68D867CC7F969 /* libPods-minions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF7452388127DCA253633E8A = {
+			isa = PBXGroup;
+			children = (
+				AF74577F28A59CECAEBC83F1 /* Products */,
+				AF7457BA6940F1CA08F26266 /* minions */,
+				AF745F5256EF32EDCF44DB7E /* minionsTests */,
+				AF745A59A54757D5911C4D5F /* minionsUITests */,
+				AF745BACB74830B09F0D9772 /* Podfile */,
+				67F2A0084C4688757FD1FCAF /* Pods */,
+				65C17F01FF818BCF5FA10A87 /* Frameworks */,
+				AF745373701566F3F074D7E1 /* Pods.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		AF74577F28A59CECAEBC83F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF7455F05087F2DB04371620 /* minions.app */,
+				AF74574385D360FBD01BDDD4 /* minionsTests.xctest */,
+				AF745811A79A920CD20C13E4 /* minionsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF7457BA6940F1CA08F26266 /* minions */ = {
+			isa = PBXGroup;
+			children = (
+				AF74568E3C9867E27971935A /* Info.plist */,
+				AF7454973BB88C7766C4352F /* Assets.xcassets */,
+				AF7458EB9FFC16A8F31843EE /* LaunchScreen.storyboard */,
+				AF745D583E94CDEE0491BB06 /* Supporting Files */,
+				AF745D5FF3346B6400DA7D1D /* AppDelegate.h */,
+				AF7457492D1A84CFA5A09F30 /* AppDelegate.m */,
+				AF74557BAC99AD9DEB6B71AA /* Main.storyboard */,
+				AF74591F798D063099C5F844 /* ViewController.m */,
+				AF745A01979B463DC2AB026F /* ViewController.h */,
+				AF745C3DA8022B6289149CBC /* LoginViewController.m */,
+				AF74536025F9B9E02EE12F38 /* LoginViewController.h */,
+			);
+			path = minions;
+			sourceTree = "<group>";
+		};
+		AF745A59A54757D5911C4D5F /* minionsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF74564E8C2E55C470CC6917 /* Info.plist */,
+				AF74519314CB2DFA3CBEE87B /* minionsUITests.m */,
+			);
+			path = minionsUITests;
+			sourceTree = "<group>";
+		};
+		AF745D583E94CDEE0491BB06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF745B9B48DF2698B1FE6E4C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF745F5256EF32EDCF44DB7E /* minionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF745B5C0EE45639B243FFBF /* Info.plist */,
+				AF745C714899B41A78F74EBE /* minionsTests.m */,
+			);
+			path = minionsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF745199F22070B8889E4C8A /* minions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF745EDA861E4F5F2D9C63FE /* Build configuration list for PBXNativeTarget "minions" */;
+			buildPhases = (
+				50A4190468238479C1E4D4B9 /* Check Pods Manifest.lock */,
+				AF745EB28B2CB5E7FDD40F79 /* Sources */,
+				AF745F7666F2C6F6927EE43C /* Frameworks */,
+				AF74575D283B07A356234D05 /* Resources */,
+				940E8FFA44BD5BD2662258B8 /* Embed Pods Frameworks */,
+				0389A9A32A6D39BB4CD707A6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = minions;
+			productName = minions;
+			productReference = AF7455F05087F2DB04371620 /* minions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF745A100B589161FCDB2CCA /* minionsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF745CB3B3A2F38D48799A87 /* Build configuration list for PBXNativeTarget "minionsUITests" */;
+			buildPhases = (
+				AF745A390E715F2538842DEF /* Sources */,
+				AF7450FD6B37501959C38F04 /* Frameworks */,
+				AF74517ACC091B56E58B4A34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF745198EF2F598E12B5CF63 /* PBXTargetDependency */,
+			);
+			name = minionsUITests;
+			productName = minionsUITests;
+			productReference = AF745811A79A920CD20C13E4 /* minionsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		AF745AD7636EF7647825F3D6 /* minionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF7455DA993891D171384169 /* Build configuration list for PBXNativeTarget "minionsTests" */;
+			buildPhases = (
+				AF74554B0CDFE827C2A9B034 /* Sources */,
+				AF745288FDA047AA726780AE /* Frameworks */,
+				AF74566505C6C116E6127656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF745B5DE45BB175CE0C2BD3 /* PBXTargetDependency */,
+			);
+			name = minionsTests;
+			productName = minionsTests;
+			productReference = AF74574385D360FBD01BDDD4 /* minionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF745415C29CB90D361B34EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+			};
+			buildConfigurationList = AF745732BF54B66AE36E5176 /* Build configuration list for PBXProject "minions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF7452388127DCA253633E8A;
+			productRefGroup = AF74577F28A59CECAEBC83F1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AF74503A322E8F31D756CD02 /* Products */;
+					ProjectRef = AF745373701566F3F074D7E1 /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AF745199F22070B8889E4C8A /* minions */,
+				AF745AD7636EF7647825F3D6 /* minionsTests */,
+				AF745A100B589161FCDB2CCA /* minionsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AF7454FCACB68D867CC7F969 /* libPods-minions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-minions.a";
+			remoteRef = AF74511F6562A0A9CD739E39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AF745F5D19E1E4BE0A9583E7 /* libMasonry.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMasonry.a;
+			remoteRef = AF74557BAB01DCC855287C41 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF74517ACC091B56E58B4A34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF7459826A381186FFC840A5 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF74566505C6C116E6127656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74522364C4DEBF9529289E /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF74575D283B07A356234D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745DF568937FE21A7F5F3D /* Info.plist in Resources */,
+				AF745145F1CFAB7B42D22ADB /* Assets.xcassets in Resources */,
+				AF74559489E4D4E86EE18787 /* LaunchScreen.storyboard in Resources */,
+				AF7451E67F77DAEA4528AC9C /* Main.storyboard in Resources */,
+				AF745B176D62FABA76D61A68 /* Podfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0389A9A32A6D39BB4CD707A6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minions/Pods-minions-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50A4190468238479C1E4D4B9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		940E8FFA44BD5BD2662258B8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-minions/Pods-minions-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF74554B0CDFE827C2A9B034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF7458E72ED1C31091E318B1 /* minionsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745A390E715F2538842DEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74518D3D89F3B5182F8CAB /* minionsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745EB28B2CB5E7FDD40F79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74501F2FE50ED89D9BA768 /* main.m in Sources */,
+				AF745B68F88D126DC4CC36F3 /* AppDelegate.m in Sources */,
+				AF745B90023CB38454BD4DF2 /* ViewController.m in Sources */,
+				AF745339DF14FCB120B7C57C /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF745198EF2F598E12B5CF63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF745199F22070B8889E4C8A /* minions */;
+			targetProxy = AF745BB4132DEE2511CB6B21 /* PBXContainerItemProxy */;
+		};
+		AF745B5DE45BB175CE0C2BD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF745199F22070B8889E4C8A /* minions */;
+			targetProxy = AF745D26DCFE047AB04CC587 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF74557BAC99AD9DEB6B71AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF7454C892505F6834631810 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF7458EB9FFC16A8F31843EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF745EC397CEC8DAE358C214 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF745030E65B929FB0EB503A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minions.app/minions";
+				INFOPLIST_FILE = minionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF7450E33C990FE32AB47A56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF74555FC2204BA9669012C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minions.app/minions";
+				INFOPLIST_FILE = minionsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minionsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF74556E6EE9715504CDF7CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minions.app/minions";
+				INFOPLIST_FILE = minionsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minionsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		AF74594C26149DE294B3DEEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B3CBDEE1705FD20CB844B1C /* Pods-minions.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = minions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Debug;
+		};
+		AF745CA042E5909F0CFBAD9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minions.app/minions";
+				INFOPLIST_FILE = minionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		AF745D27EE50909E5B153DE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF745D7F24D753C2E7952359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2828C5FBB5C9416DC9024A /* Pods-minions.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = minions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF7455DA993891D171384169 /* Build configuration list for PBXNativeTarget "minionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF745030E65B929FB0EB503A /* Debug */,
+				AF745CA042E5909F0CFBAD9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF745732BF54B66AE36E5176 /* Build configuration list for PBXProject "minions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF7450E33C990FE32AB47A56 /* Debug */,
+				AF745D27EE50909E5B153DE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF745CB3B3A2F38D48799A87 /* Build configuration list for PBXNativeTarget "minionsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF74555FC2204BA9669012C6 /* Debug */,
+				AF74556E6EE9715504CDF7CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF745EDA861E4F5F2D9C63FE /* Build configuration list for PBXNativeTarget "minions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF74594C26149DE294B3DEEE /* Debug */,
+				AF745D7F24D753C2E7952359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF745415C29CB90D361B34EF /* Project object */;
+}
