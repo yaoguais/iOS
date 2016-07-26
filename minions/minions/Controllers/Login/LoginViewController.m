@@ -5,6 +5,8 @@
 
 #import "LoginViewController.h"
 #import "View+MASAdditions.h"
+#import "WidgetUtil.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -91,25 +93,21 @@
 
     NSString *username = [self.usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (!username || username.length == 0) {
-        [self alertWithTitle:@"alert" andMssage:@"username required"];
+        [WidgetUtil AlertWithControll:self title:@"alert" mssage:@"username required"];
         return;
     }
 
     NSString * password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (!password || password.length == 0) {
-        [self alertWithTitle:@"alert" andMssage:@"password required"];
+        [WidgetUtil AlertWithControll:self title:@"alert" mssage:@"password required"];
         return;
     }
 
-    [self alertWithTitle:@"alert" andMssage:@"login button clicked"];
+    //[WidgetUtil AlertWithControll:self title:@"alert" mssage:@"login button click"];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.window.rootViewController = delegate.tabBarController;
 }
 
-- (void)alertWithTitle:(NSString *)title andMssage:(NSString *)message {
-    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:title message:message
-                                                              preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:nil];
-    [alertVc addAction:action];
-    [self presentViewController:alertVc animated:YES completion:nil];
-}
+
 
 @end

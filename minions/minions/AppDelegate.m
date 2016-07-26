@@ -9,6 +9,11 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "ContactViewController.h"
+#import "MessageViewController.h"
+#import "GroupChatViewController.h"
+#import "ChatRoomViewController.h"
+#import "MainTabBarViewController.h"
 
 
 @interface AppDelegate ()
@@ -17,11 +22,9 @@
 
 @implementation AppDelegate
 
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.tabBarController = [[MainTabBarViewController alloc] init];
     self.window.rootViewController = [[LoginViewController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     return YES;
