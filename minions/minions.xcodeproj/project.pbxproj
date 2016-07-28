@@ -56,6 +56,7 @@
 		AF745CC73C7577C22A763258 /* avatar_g6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7451CE92B5A08C7A54E467 /* avatar_g6.jpg */; };
 		AF745D52CF82D459D1B50C1A /* tab_chatroom.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745B47B8AF2630B0E283C8 /* tab_chatroom.png */; };
 		AF745D807F93B5C21712F9F7 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7453DACF21705226D8E3DF /* ChatRoomViewController.m */; };
+		AF745D83B2873AA505B70541 /* StyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF74520DE64675026397F623 /* StyleView.xib */; };
 		AF745DCCAF0B4A04BCC66454 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745590A0B155DCACAA52B3 /* ChatViewController.m */; };
 		AF745DE6EF1BA0EBD3B7C2A5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745ABEEFFF4252650BC6EE /* MessageViewController.m */; };
 		AF745DF568937FE21A7F5F3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF74568E3C9867E27971935A /* Info.plist */; };
@@ -107,6 +108,7 @@
 		AF7451CE92B5A08C7A54E467 /* avatar_g6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g6.jpg; sourceTree = "<group>"; };
 		AF7451FF2F87DC9176A5F61F /* avatar_b2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b2.jpg; sourceTree = "<group>"; };
 		AF7452063274AA5623FBFA0E /* avatar_g4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g4.jpg; sourceTree = "<group>"; };
+		AF74520DE64675026397F623 /* StyleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StyleView.xib; path = Views/StyleView.xib; sourceTree = "<group>"; };
 		AF7452539618A59874476F62 /* tab_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_contact.png; sourceTree = "<group>"; };
 		AF7452B915915609AA8C55EC /* GroupChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupChatViewController.h; path = Controllers/GroupChat/GroupChatViewController.h; sourceTree = "<group>"; };
 		AF7452DF1AB419E2674A3AC9 /* avatar_b7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b7.jpg; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				AF74571AE66A6461273DFC06 /* MainTabBarViewController.h */,
 				AF745590A0B155DCACAA52B3 /* ChatViewController.m */,
 				AF7456445C851F9FD4FBCE9F /* ChatViewController.h */,
+				AF74520DE64675026397F623 /* StyleView.xib */,
 			);
 			path = minions;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				AF74525E85B074501BF57629 /* tab_groupchat.png in Resources */,
 				AF74548FB6C31F36092767B4 /* tab_groupchat_selected.png in Resources */,
 				AF7450155FA9C65525E1D4AF /* avatar.jpg in Resources */,
+				AF745D83B2873AA505B70541 /* StyleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
