@@ -12,11 +12,9 @@
 		AF7450A9FD038A6B6E282344 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452B972002D2CB09C54BF /* SecondViewController.m */; };
 		AF7452AA4A72E54A0B9A7083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452D0C0428FC739BB82F5 /* main.m */; };
 		AF7452F6DE5B2D37E0B4C6FD /* navigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74557871CC872539C3C6F7 /* navigationTests.m */; };
-		AF745522F29A13519450E8BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745295565D83E33EEBAA9B /* Info.plist */; };
 		AF7455AED6B9DEB051B2573E /* navigationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745B66C4CD1A062AEA784D /* navigationUITests.m */; };
+		AF74585BB697F86B7CC620BE /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF745F72B89708CFF9279CF4 /* TestViewController.xib */; };
 		AF7458C37C7FCC8BA2CA46F6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745A3D7695A2B0B8355777 /* FirstViewController.m */; };
-		AF7459202301317AE959E250 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7453F39E27B120F0211A0F /* Info.plist */; };
-		AF745AB46F74A2FF6F983805 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7450ACC2070F8482208076 /* Info.plist */; };
 		AF745B945A281A83F71FCA46 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745E9C4D16DC0B9F0BC423 /* ThirdViewController.m */; };
 		AF745CB12CD3D7B5720764BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7453EEADAE3DC081EB33A0 /* Main.storyboard */; };
 		AF745DD71A0BA2D7FECCB9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF745615DE2F43719745DACE /* Assets.xcassets */; };
@@ -59,6 +57,7 @@
 		AF745C1FF40A7B66147020F3 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = Controllers/FirstViewController.h; sourceTree = "<group>"; };
 		AF745D34B9BC99409739FBDA /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = Controllers/SecondViewController.h; sourceTree = "<group>"; };
 		AF745E9C4D16DC0B9F0BC423 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = Controllers/ThirdViewController.m; sourceTree = "<group>"; };
+		AF745F72B89708CFF9279CF4 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TestViewController.xib; path = Views/TestViewController.xib; sourceTree = "<group>"; };
 		AF745F9E8742BE9F95237D6D /* navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +112,7 @@
 				AF745D34B9BC99409739FBDA /* SecondViewController.h */,
 				AF745E9C4D16DC0B9F0BC423 /* ThirdViewController.m */,
 				AF7453284BCC1CB8FF980E5B /* ThirdViewController.h */,
+				AF745F72B89708CFF9279CF4 /* TestViewController.xib */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -215,6 +215,7 @@
 		AF745FFA4846D24D80B385FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 			};
 			buildConfigurationList = AF74548FF65BD56169B96FEA /* Build configuration list for PBXProject "navigation" */;
@@ -241,10 +242,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF745AB46F74A2FF6F983805 /* Info.plist in Resources */,
 				AF745DD71A0BA2D7FECCB9C3 /* Assets.xcassets in Resources */,
 				AF745010C4504FAEFAFE346A /* LaunchScreen.storyboard in Resources */,
 				AF745CB12CD3D7B5720764BC /* Main.storyboard in Resources */,
+				AF74585BB697F86B7CC620BE /* TestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +253,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF7459202301317AE959E250 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF745522F29A13519450E8BC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +489,7 @@
 				AF7454D78892C35A2CE131BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF74548FF65BD56169B96FEA /* Build configuration list for PBXProject "navigation" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +507,7 @@
 				AF7458BE5A40AE9340C20C25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF745EDE36FE2FBD91B8AB8A /* Build configuration list for PBXNativeTarget "navigationTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				AF7458E6E6FA196FB4A8B91D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

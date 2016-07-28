@@ -31,7 +31,7 @@
 
 - (void) buttonClick {
     NSLog(@"SecondViewController is clicked");
-    UIViewController * viewController = [[ThirdViewController alloc] init];
+    UIViewController * viewController = [[ThirdViewController alloc] initWithNibName:@"TestViewController" bundle:nil];
     viewController.title = @"第三页";
     [self.navigationController pushViewController:viewController animated:YES];
 }
