@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B257F9B3F54E497258051E9 /* libPods-https-api.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5A7CB88F405E119A2305B6 /* libPods-https-api.a */; };
+		AF745150E3E14D80E107F72A /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = AF7458289935C5F04B477E8A /* client.p12 */; };
+		AF7451FA0B2EC6C6405D13F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74574973113CA0DF2F4E62 /* ViewController.m */; };
+		AF74551D7888BC827888D127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF745DC2B41978F075A4DC06 /* Main.storyboard */; };
+		AF74557E523A2076F13C5B24 /* https_apiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7451200B299CA872D7F184 /* https_apiTests.m */; };
+		AF7455AB83ED88A433BB32F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF74520123AAB99683D1B8FE /* Assets.xcassets */; };
+		AF7455C0758817003BEFF9C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745980F574E43566460533 /* Info.plist */; };
+		AF74561443F5A460F68CE9C7 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = AF7450968A30A68CB3F40E23 /* PodFile */; };
+		AF7456EF452A18F1463595DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745F189D6830AF54D19A27 /* Info.plist */; };
+		AF745772DF1E5F2CC2A9FA23 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF745770A1002FAFD71C1632 /* server.cer */; };
+		AF74586F1AD3A9759F0274CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7453C6F11979E7BD97A98E /* LaunchScreen.storyboard */; };
+		AF745AC413E4CC116476AE97 /* https_apiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452373EF8BC2D547FDE0B /* https_apiUITests.m */; };
+		AF745B71E96C2640CC6755BA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745AC3395663B895569415 /* Info.plist */; };
+		AF745BD830C00E072A55CA1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7459456DB3EFEF7A7690E8 /* AppDelegate.m */; };
+		AF745E0DA3F403FBB4290EA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745CAE90126163BD699959 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF74501BEFBF91EF4B6A553F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745368011B0E0D09318F5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF7453B93DF1B5A94E58F011;
+			remoteInfo = "https-api";
+		};
+		AF7450F6253937AF42BCBB63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745368011B0E0D09318F5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF7453B93DF1B5A94E58F011;
+			remoteInfo = "https-api";
+		};
+		AF7453826330A158FC36A035 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FC5651C96418AFC71DA20186726E2639;
+			remoteInfo = AFNetworking;
+		};
+		AF745DA2A70601355251214C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 743CA84EBF716D8BE3E073F88604A86C;
+			remoteInfo = "Pods-https-api";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F5A7CB88F405E119A2305B6 /* libPods-https-api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-https-api.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C332E04E0C735877307EE30 /* Pods-https-api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-https-api.release.xcconfig"; path = "Pods/Target Support Files/Pods-https-api/Pods-https-api.release.xcconfig"; sourceTree = "<group>"; };
+		AD02B0343B85AF0C59274813 /* Pods-https-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-https-api.debug.xcconfig"; path = "Pods/Target Support Files/Pods-https-api/Pods-https-api.debug.xcconfig"; sourceTree = "<group>"; };
+		AF7450968A30A68CB3F40E23 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
+		AF745102AEF3D4FE18A0F873 /* https-apiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "https-apiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7451200B299CA872D7F184 /* https_apiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = https_apiTests.m; sourceTree = "<group>"; };
+		AF745121E94CE02B2B6AE640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF74520123AAB99683D1B8FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF7452373EF8BC2D547FDE0B /* https_apiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = https_apiUITests.m; sourceTree = "<group>"; };
+		AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		AF74574973113CA0DF2F4E62 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AF745770A1002FAFD71C1632 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file.cer; path = server.cer; sourceTree = "<group>"; };
+		AF74581899244FBFCFCE8B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF7458289935C5F04B477E8A /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = client.p12; sourceTree = "<group>"; };
+		AF7458A0CE476DA8B9B03FFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF745927CBEDB10E1B495C8B /* https-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "https-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7459456DB3EFEF7A7690E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF745980F574E43566460533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745AC3395663B895569415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745CAE90126163BD699959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF745CE3AAE664DE51134EF7 /* https-apiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "https-apiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF745F189D6830AF54D19A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745F8B78E5019C32E7770C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF7450CC8D47BE6514291BCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745E92AFF046C94F3D44BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745F2D9C43EA9831AF9CB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B257F9B3F54E497258051E9 /* libPods-https-api.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8FED5F23C5B9AF067CF7EBB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5A7CB88F405E119A2305B6 /* libPods-https-api.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF7451068223167F744883B6 /* https-apiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF745AC3395663B895569415 /* Info.plist */,
+				AF7452373EF8BC2D547FDE0B /* https_apiUITests.m */,
+			);
+			path = "https-apiUITests";
+			sourceTree = "<group>";
+		};
+		AF745136ED85806081E451B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF745927CBEDB10E1B495C8B /* https-api.app */,
+				AF745102AEF3D4FE18A0F873 /* https-apiTests.xctest */,
+				AF745CE3AAE664DE51134EF7 /* https-apiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF7451741106F99AAC433536 /* https-api */ = {
+			isa = PBXGroup;
+			children = (
+				AF745F189D6830AF54D19A27 /* Info.plist */,
+				AF74520123AAB99683D1B8FE /* Assets.xcassets */,
+				AF7453C6F11979E7BD97A98E /* LaunchScreen.storyboard */,
+				AF7458612B5F6272805963DE /* Supporting Files */,
+				AF7458A0CE476DA8B9B03FFC /* AppDelegate.h */,
+				AF7459456DB3EFEF7A7690E8 /* AppDelegate.m */,
+				AF745DC2B41978F075A4DC06 /* Main.storyboard */,
+				AF745F8B78E5019C32E7770C /* ViewController.h */,
+				AF74574973113CA0DF2F4E62 /* ViewController.m */,
+				AF7458289935C5F04B477E8A /* client.p12 */,
+				AF745770A1002FAFD71C1632 /* server.cer */,
+			);
+			path = "https-api";
+			sourceTree = "<group>";
+		};
+		AF7458612B5F6272805963DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF745CAE90126163BD699959 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF745A4BE35B07338301624E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF7453E8C84BFA83AB4EA1B0 /* libAFNetworking.a */,
+				AF7450D6D751503A093595AF /* libPods-https-api.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF745E8126193DA26C4B3C30 = {
+			isa = PBXGroup;
+			children = (
+				AF745136ED85806081E451B9 /* Products */,
+				AF7451741106F99AAC433536 /* https-api */,
+				AF745F0CEFFCD9186D343470 /* https-apiTests */,
+				AF7451068223167F744883B6 /* https-apiUITests */,
+				AF7450968A30A68CB3F40E23 /* PodFile */,
+				CFE9F6F9471329EA799A18F3 /* Pods */,
+				8FED5F23C5B9AF067CF7EBB1 /* Frameworks */,
+				AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		AF745F0CEFFCD9186D343470 /* https-apiTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF745980F574E43566460533 /* Info.plist */,
+				AF7451200B299CA872D7F184 /* https_apiTests.m */,
+			);
+			path = "https-apiTests";
+			sourceTree = "<group>";
+		};
+		CFE9F6F9471329EA799A18F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD02B0343B85AF0C59274813 /* Pods-https-api.debug.xcconfig */,
+				8C332E04E0C735877307EE30 /* Pods-https-api.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF7453B93DF1B5A94E58F011 /* https-api */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF7459A64BF8CDA46BDFF720 /* Build configuration list for PBXNativeTarget "https-api" */;
+			buildPhases = (
+				043387A75FBA10FE50CCB481 /* Check Pods Manifest.lock */,
+				AF745D8F2422540696211554 /* Sources */,
+				AF745F2D9C43EA9831AF9CB0 /* Frameworks */,
+				AF74590C084A3487B3588DC7 /* Resources */,
+				AE82915D0654EC5350F55A31 /* Embed Pods Frameworks */,
+				DCDEC1559050AA7591BB2FDA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "https-api";
+			productName = "https-api";
+			productReference = AF745927CBEDB10E1B495C8B /* https-api.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF745441ABA9FA1D57D4C479 /* https-apiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF7453ABA426E00BE7126DCD /* Build configuration list for PBXNativeTarget "https-apiUITests" */;
+			buildPhases = (
+				AF74562D8741652B87E6B9C3 /* Sources */,
+				AF745E92AFF046C94F3D44BB /* Frameworks */,
+				AF7459F19F9516FF8BE4C5F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF745F3A573296F8E98C3010 /* PBXTargetDependency */,
+			);
+			name = "https-apiUITests";
+			productName = "https-apiUITests";
+			productReference = AF745CE3AAE664DE51134EF7 /* https-apiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		AF745CCA3D05B457A84C75A9 /* https-apiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF7455B5DD58BD5122AEAE58 /* Build configuration list for PBXNativeTarget "https-apiTests" */;
+			buildPhases = (
+				AF745C0047AC69990DDC7621 /* Sources */,
+				AF7450CC8D47BE6514291BCF /* Frameworks */,
+				AF745C3C2A98DDDE21FC8275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF7458C539CA123E68588F13 /* PBXTargetDependency */,
+			);
+			name = "https-apiTests";
+			productName = "https-apiTests";
+			productReference = AF745102AEF3D4FE18A0F873 /* https-apiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF745368011B0E0D09318F5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+			};
+			buildConfigurationList = AF745EF2BBB212699C626AE8 /* Build configuration list for PBXProject "https-api" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF745E8126193DA26C4B3C30;
+			productRefGroup = AF745136ED85806081E451B9 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AF745A4BE35B07338301624E /* Products */;
+					ProjectRef = AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AF7453B93DF1B5A94E58F011 /* https-api */,
+				AF745CCA3D05B457A84C75A9 /* https-apiTests */,
+				AF745441ABA9FA1D57D4C479 /* https-apiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AF7450D6D751503A093595AF /* libPods-https-api.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-https-api.a";
+			remoteRef = AF745DA2A70601355251214C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AF7453E8C84BFA83AB4EA1B0 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = AF7453826330A158FC36A035 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF74590C084A3487B3588DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF7456EF452A18F1463595DA /* Info.plist in Resources */,
+				AF7455AB83ED88A433BB32F0 /* Assets.xcassets in Resources */,
+				AF74586F1AD3A9759F0274CC /* LaunchScreen.storyboard in Resources */,
+				AF74551D7888BC827888D127 /* Main.storyboard in Resources */,
+				AF74561443F5A460F68CE9C7 /* PodFile in Resources */,
+				AF745150E3E14D80E107F72A /* client.p12 in Resources */,
+				AF745772DF1E5F2CC2A9FA23 /* server.cer in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF7459F19F9516FF8BE4C5F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745B71E96C2640CC6755BA /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745C3C2A98DDDE21FC8275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF7455C0758817003BEFF9C5 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		043387A75FBA10FE50CCB481 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE82915D0654EC5350F55A31 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-https-api/Pods-https-api-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCDEC1559050AA7591BB2FDA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-https-api/Pods-https-api-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF74562D8741652B87E6B9C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745AC413E4CC116476AE97 /* https_apiUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745C0047AC69990DDC7621 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74557E523A2076F13C5B24 /* https_apiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745D8F2422540696211554 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745E0DA3F403FBB4290EA3 /* main.m in Sources */,
+				AF745BD830C00E072A55CA1C /* AppDelegate.m in Sources */,
+				AF7451FA0B2EC6C6405D13F6 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF7458C539CA123E68588F13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF7453B93DF1B5A94E58F011 /* https-api */;
+			targetProxy = AF7450F6253937AF42BCBB63 /* PBXContainerItemProxy */;
+		};
+		AF745F3A573296F8E98C3010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF7453B93DF1B5A94E58F011 /* https-api */;
+			targetProxy = AF74501BEFBF91EF4B6A553F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF7453C6F11979E7BD97A98E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF745121E94CE02B2B6AE640 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AF745DC2B41978F075A4DC06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF74581899244FBFCFCE8B49 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF745242FC5EE6BFCF676555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C332E04E0C735877307EE30 /* Pods-https-api.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "https-api/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-api";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Release;
+		};
+		AF7453942E8292D1AC39B9EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/https-api.app/https-api";
+				INFOPLIST_FILE = "https-apiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-apiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF745554E1E83D4EF5C223F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD02B0343B85AF0C59274813 /* Pods-https-api.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "https-api/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-api";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Debug;
+		};
+		AF74595EE0021D4A4FECAE20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/https-api.app/https-api";
+				INFOPLIST_FILE = "https-apiUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-apiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		AF7459E5E3C3C27C693B1968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF745AD673DE2CABD2504781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF745E0218AFAF1F03CC24B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/https-api.app/https-api";
+				INFOPLIST_FILE = "https-apiUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-apiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF745F1A30C737CE9806618F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/https-api.app/https-api";
+				INFOPLIST_FILE = "https-apiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jegarn.https-apiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF7453ABA426E00BE7126DCD /* Build configuration list for PBXNativeTarget "https-apiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF745E0218AFAF1F03CC24B2 /* Debug */,
+				AF74595EE0021D4A4FECAE20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF7455B5DD58BD5122AEAE58 /* Build configuration list for PBXNativeTarget "https-apiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF7453942E8292D1AC39B9EA /* Debug */,
+				AF745F1A30C737CE9806618F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF7459A64BF8CDA46BDFF720 /* Build configuration list for PBXNativeTarget "https-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF745554E1E83D4EF5C223F8 /* Debug */,
+				AF745242FC5EE6BFCF676555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF745EF2BBB212699C626AE8 /* Build configuration list for PBXProject "https-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF7459E5E3C3C27C693B1968 /* Debug */,
+				AF745AD673DE2CABD2504781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF745368011B0E0D09318F5A /* Project object */;
+}
