@@ -17,13 +17,15 @@
 
     //创建一个分组样式的UITableView
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    _tableView.contentInset = UIEdgeInsetsMake(kContactToolbarHeight, 0, 0, 0);
+    [self.view addSubview:_tableView];
+
+    [self addToolbar];
 
     //设置数据源，注意必须实现对应的UITableViewDataSource协议
     _tableView.dataSource = self;
 
     _tableView.delegate = self;
-
-    [self.view addSubview:_tableView];
 }
 
 
@@ -69,6 +71,89 @@
 
 }
 
+#pragma mark 添加工具栏
+
+- (void)addToolbar {
+    CGRect frame = self.view.frame;
+    _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, kContactToolbarHeight)];
+    //    _toolbar.backgroundColor=[UIColor colorWithHue:246/255.0 saturation:246/255.0 brightness:246/255.0 alpha:1];
+    [self.view addSubview:_toolbar];
+    UIBarButtonItem *removeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(remove)];
+    UIBarButtonItem *flexibleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+    NSArray *buttonArray = @[removeButton, flexibleButton, addButton];
+    _toolbar.items = buttonArray;
+}
+
+#pragma mark 删除
+
+- (void)remove {
+    //直接通过下面的方法设置编辑状态没有动画
+    //_tableView.editing=!_tableView.isEditing;
+    _isInsert = false;
+    [_tableView setEditing:!_tableView.isEditing animated:true];
+}
+
+#pragma mark 取得当前操作状态，根据不同的状态左侧出现不同的操作按钮
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_isInsert) {
+        return UITableViewCellEditingStyleInsert;
+    }
+    return UITableViewCellEditingStyleDelete;
+}
+
+#pragma mark 删除操作
+
+//实现了此方法向左滑动就会显示删除按钮
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    ContactGroup *group = _contacts[indexPath.section];
+    Contact *contact = group.contacts[indexPath.row];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [group.contacts removeObject:contact];
+        //考虑到性能这里不建议使用reloadData
+        //[tableView reloadData];
+        //使用下面的方法既可以局部刷新又有动画效果
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+
+        //如果当前组中没有数据则移除组刷新整个表格
+        if (group.contacts.count == 0) {
+            [_contacts removeObject:group];
+            [tableView reloadData];
+        }
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        Contact *newContact = [[Contact alloc] init];
+        newContact.firstName = @"first";
+        newContact.lastName = @"last";
+        newContact.phoneNumber = @"12345678901";
+        [group.contacts insertObject:newContact atIndex:indexPath.row];
+        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];//注意这里没有使用reladData刷新
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    ContactGroup *sourceGroup = _contacts[sourceIndexPath.section];
+    Contact *sourceContact = sourceGroup.contacts[sourceIndexPath.row];
+    ContactGroup *destinationGroup = _contacts[destinationIndexPath.section];
+
+    [sourceGroup.contacts removeObject:sourceContact];
+    if (sourceGroup.contacts.count == 0) {
+        [_contacts removeObject:sourceGroup];
+        [tableView reloadData];
+    }
+
+    [destinationGroup.contacts insertObject:sourceContact atIndex:destinationIndexPath.row];
+
+}
+
+
+#pragma mark 添加
+
+- (void)add {
+    _isInsert = true;
+    [_tableView setEditing:!_tableView.isEditing animated:true];
+}
+
 #pragma mark - 数据源方法
 #pragma mark 返回分组数
 
@@ -90,38 +175,38 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Cell重用机制 http://www.jianshu.com/p/b2bba60c0976
     //NSLog(@"生成单元格(组：%i,行%i)",indexPath.section,indexPath.row);
-    ContactGroup *group=_contacts[indexPath.section];
-    Contact *contact=group.contacts[indexPath.row];
+    ContactGroup *group = _contacts[indexPath.section];
+    Contact *contact = group.contacts[indexPath.row];
 
     //由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化
-    static NSString *cellIdentifier=@"UITableViewCellIdentifierKey1";
-    static NSString *cellIdentifierForFirstRow=@"UITableViewCellIdentifierKeyWithSwitch";
+    static NSString *cellIdentifier = @"UITableViewCellIdentifierKey1";
+    static NSString *cellIdentifierForFirstRow = @"UITableViewCellIdentifierKeyWithSwitch";
     //首先根据标示去缓存池取
     UITableViewCell *cell;
-    if (indexPath.row==0) {
-        cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifierForFirstRow];
-    }else{
-        cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifierForFirstRow];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     }
     //如果缓存池没有取到则重新创建并放到缓存池中
-    if(!cell){
-        if (indexPath.row==0) {
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifierForFirstRow];
-            UISwitch *sw=[[UISwitch alloc]init];
+    if (!cell) {
+        if (indexPath.row == 0) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifierForFirstRow];
+            UISwitch *sw = [[UISwitch alloc] init];
             [sw addTarget:self action:@selector(switchValueChange:) forControlEvents:UIControlEventValueChanged];
-            cell.accessoryView=sw;
-        }else{
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-            cell.accessoryType=UITableViewCellAccessoryDetailButton;
+            cell.accessoryView = sw;
+        } else {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+            cell.accessoryType = UITableViewCellAccessoryDetailButton;
         }
     }
 
-    if(indexPath.row==0){
-        ((UISwitch *)cell.accessoryView).tag=indexPath.section;
+    if (indexPath.row == 0) {
+        ((UISwitch *) cell.accessoryView).tag = indexPath.section;
     }
 
-    cell.textLabel.text=[contact getName];
-    cell.detailTextLabel.text=contact.phoneNumber;
+    cell.textLabel.text = [contact getName];
+    cell.detailTextLabel.text = contact.phoneNumber;
     //NSLog(@"cell:%@",cell);
 
     return cell;
@@ -218,8 +303,9 @@
 }
 
 #pragma mark 切换开关转化事件
--(void)switchValueChange:(UISwitch *)sw{
-    NSLog(@"section:%i,switch:%i",sw.tag, sw.on);
+
+- (void)switchValueChange:(UISwitch *)sw {
+    NSLog(@"section:%i,switch:%i", sw.tag, sw.on);
 }
 
 @end

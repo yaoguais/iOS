@@ -25,8 +25,8 @@
     // Override point for customization after application launch.
 
     // UITableView讲解: http://www.cocoachina.com/ios/20140922/9710.html
-    //self.window.rootViewController = [[ContactViewController alloc] init];
-    self.window.rootViewController = [[FeedTableViewController alloc] init];
+    self.window.rootViewController = [[ContactViewController alloc] init];
+    //self.window.rootViewController = [[FeedTableViewController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
 
     return YES;
