@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"FirstViewController load");
 
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = @"你好第一页";
 
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100,100,100,40)];
