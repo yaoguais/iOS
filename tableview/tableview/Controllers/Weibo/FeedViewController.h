@@ -6,5 +6,5 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface FeedTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @end

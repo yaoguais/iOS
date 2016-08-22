@@ -3,18 +3,18 @@
 // Copyright (c) 2016 tableview.jegarn.com. All rights reserved.
 //
 
-#import "FeedTableViewController.h"
+#import "FeedViewController.h"
 #import "FeedTableViewCell.h"
 #import "Feed.h"
 
-@interface FeedTableViewController () {
+@interface FeedViewController () {
     UITableView *_tableView;
     NSMutableArray *_status;
     NSMutableArray *_statusCells;//存储cell，用于计算高度
 }
 @end
 
-@implementation FeedTableViewController
+@implementation FeedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

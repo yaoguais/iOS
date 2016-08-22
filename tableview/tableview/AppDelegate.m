@@ -9,7 +9,8 @@
 
 #import "AppDelegate.h"
 #import "ContactViewController.h"
-#import "FeedTableViewController.h"
+#import "FeedViewController.h"
+#import "SearchViewController.h"
 
 
 @interface AppDelegate ()
@@ -25,8 +26,10 @@
     // Override point for customization after application launch.
 
     // UITableView讲解: http://www.cocoachina.com/ios/20140922/9710.html
-    self.window.rootViewController = [[ContactViewController alloc] init];
-    //self.window.rootViewController = [[FeedTableViewController alloc] init];
+    //self.window.rootViewController = [[ContactViewController alloc] init];
+    //self.window.rootViewController = [[FeedViewController alloc] init];
+    self.window.rootViewController = [[SearchViewController alloc] init];
+
     self.window.backgroundColor = [UIColor whiteColor];
 
     return YES;

@@ -10,5 +10,7 @@
 - [Json Model之间的转换](./JsonModel)
 - [NavigationController使用](./navigation)
 - [HTTPS之SSL双向认证](./https-api)
-- [UITableView常见使用及自定义Cell](./tableview)
+- [UITableView实现手机通讯录](./tableview/tableview/Controllers/Contacts)
+- [UITableView实现精简版微博Feed流](./tableview/tableview/Controllers/Weibo)
+- [UITableView实现搜索过滤功能](./tableview/tableview/Controllers/Search)
 

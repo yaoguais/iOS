@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AF745032453440C5F61EB629 /* tableviewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7458C338F1290017EC916C /* tableviewUITests.m */; };
+		AF7450D898DE42696E588006 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745CD9AB008AC958148071 /* SearchViewController.m */; };
 		AF74510ECC30C25838683768 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7457C27467E5FA0DEAC214 /* FeedTableViewCell.m */; };
 		AF7451638CD39DB8A1E55D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF745D4072893DC575DE0164 /* Main.storyboard */; };
 		AF74517044B61CA9E493C337 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74537B0F71D49E8868D0F1 /* Feed.m */; };
 		AF7451EE40AB69DF2493EB7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7454F5D79E49868A093752 /* ViewController.m */; };
+		AF7453801CC40751EC04816E /* SearchDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745873FD3A48C3D8900830 /* SearchDisplayViewController.m */; };
 		AF745530E360CC3BF9E18617 /* tableviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745240466D461A0793B0AC /* tableviewTests.m */; };
 		AF7456A35A23FB3BD1E8F8C6 /* avatar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF74548E3C6ACCAC88027014 /* avatar_1.png */; };
-		AF745782ED7913E7A7FD38E7 /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745466169D21D9E36A8ECF /* FeedTableViewController.m */; };
+		AF745782ED7913E7A7FD38E7 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745466169D21D9E36A8ECF /* FeedViewController.m */; };
 		AF74593651649C3E33BFECBC /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745833E50400307356CCAA /* ContactViewController.m */; };
 		AF74599277FEEA19D6F6E603 /* ContactGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7459BA87D73FBB4C072703 /* ContactGroup.m */; };
 		AF7459E907CAEA570D85CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF745C029FE488394065BA9E /* LaunchScreen.storyboard */; };
@@ -53,22 +55,24 @@
 		AF7450A00428CF0D80F24D81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF7450A42BDF2BD35C809293 /* imperial_crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imperial_crown.png; sourceTree = "<group>"; };
 		AF745240466D461A0793B0AC /* tableviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tableviewTests.m; sourceTree = "<group>"; };
-		AF7452D26AC5DA923FC6FBBA /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedTableViewController.h; path = Controllers/Weibo/FeedTableViewController.h; sourceTree = "<group>"; };
+		AF7452D26AC5DA923FC6FBBA /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = Controllers/Weibo/FeedViewController.h; sourceTree = "<group>"; };
 		AF74534492B482DC47AD754F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF74537B0F71D49E8868D0F1 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feed.m; path = Controllers/Weibo/Models/Feed.m; sourceTree = "<group>"; };
-		AF745466169D21D9E36A8ECF /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedTableViewController.m; path = Controllers/Weibo/FeedTableViewController.m; sourceTree = "<group>"; };
+		AF745466169D21D9E36A8ECF /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = Controllers/Weibo/FeedViewController.m; sourceTree = "<group>"; };
 		AF74548E3C6ACCAC88027014 /* avatar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_1.png; sourceTree = "<group>"; };
 		AF7454F5D79E49868A093752 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF7455A43B739E655421CC4B /* avatar_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_2.jpg; sourceTree = "<group>"; };
 		AF7456343CF24981CC308FED /* ContactGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactGroup.h; sourceTree = "<group>"; };
 		AF7456406EE6E6D767157E43 /* tableviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7456A020D6ECE509F8D1A0 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		AF7456B8FAFF8B553C0B58AF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Controllers/Search/SearchViewController.h; sourceTree = "<group>"; };
 		AF7457203381A9D1C13DDD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF7457C27467E5FA0DEAC214 /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedTableViewCell.m; path = Controllers/Weibo/FeedTableViewCell.m; sourceTree = "<group>"; };
 		AF7457E84BA953A728020CC0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AF7457EF5849475C859E2231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF745833E50400307356CCAA /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = Controllers/Contacts/ContactViewController.m; sourceTree = "<group>"; };
 		AF745863D6D8E14111028A13 /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedTableViewCell.h; path = Controllers/Weibo/FeedTableViewCell.h; sourceTree = "<group>"; };
+		AF745873FD3A48C3D8900830 /* SearchDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDisplayViewController.m; path = Controllers/SearchDisplay/SearchDisplayViewController.m; sourceTree = "<group>"; };
 		AF7458A0C4A8F5C0CA4F2FCB /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		AF7458C338F1290017EC916C /* tableviewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tableviewUITests.m; sourceTree = "<group>"; };
 		AF7458E9C1024F3AE9ECD59E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,8 +80,10 @@
 		AF74595686792A1FFDB28AFF /* avatar_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_3.jpg; sourceTree = "<group>"; };
 		AF7459BA87D73FBB4C072703 /* ContactGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactGroup.m; sourceTree = "<group>"; };
 		AF7459F76359E1A34E4DE51F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF745A6400F330F5C713F15F /* SearchDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDisplayViewController.h; path = Controllers/SearchDisplay/SearchDisplayViewController.h; sourceTree = "<group>"; };
 		AF745AEA54886A7CB4BD2BB1 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = Controllers/Contacts/ContactViewController.h; sourceTree = "<group>"; };
 		AF745C827D51DFC5EF352DB5 /* StatusInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = StatusInfo.plist; sourceTree = "<group>"; };
+		AF745CD9AB008AC958148071 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Controllers/Search/SearchViewController.m; sourceTree = "<group>"; };
 		AF745D21C10F87513BA1C078 /* tableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF745D327E0C52FF13F32E6A /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feed.h; path = Controllers/Weibo/Models/Feed.h; sourceTree = "<group>"; };
 		AF745D5ED1CB1F0DCD110ED3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -169,13 +175,17 @@
 				AF745D327E0C52FF13F32E6A /* Feed.h */,
 				AF7457C27467E5FA0DEAC214 /* FeedTableViewCell.m */,
 				AF745863D6D8E14111028A13 /* FeedTableViewCell.h */,
-				AF745466169D21D9E36A8ECF /* FeedTableViewController.m */,
-				AF7452D26AC5DA923FC6FBBA /* FeedTableViewController.h */,
+				AF745466169D21D9E36A8ECF /* FeedViewController.m */,
+				AF7452D26AC5DA923FC6FBBA /* FeedViewController.h */,
 				AF745C827D51DFC5EF352DB5 /* StatusInfo.plist */,
 				AF74548E3C6ACCAC88027014 /* avatar_1.png */,
 				AF7455A43B739E655421CC4B /* avatar_2.jpg */,
 				AF74595686792A1FFDB28AFF /* avatar_3.jpg */,
 				AF7450A42BDF2BD35C809293 /* imperial_crown.png */,
+				AF745CD9AB008AC958148071 /* SearchViewController.m */,
+				AF7456B8FAFF8B553C0B58AF /* SearchViewController.h */,
+				AF745873FD3A48C3D8900830 /* SearchDisplayViewController.m */,
+				AF745A6400F330F5C713F15F /* SearchDisplayViewController.h */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -356,7 +366,9 @@
 				AF74593651649C3E33BFECBC /* ContactViewController.m in Sources */,
 				AF74517044B61CA9E493C337 /* Feed.m in Sources */,
 				AF74510ECC30C25838683768 /* FeedTableViewCell.m in Sources */,
-				AF745782ED7913E7A7FD38E7 /* FeedTableViewController.m in Sources */,
+				AF745782ED7913E7A7FD38E7 /* FeedViewController.m in Sources */,
+				AF7450D898DE42696E588006 /* SearchViewController.m in Sources */,
+				AF7453801CC40751EC04816E /* SearchDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
