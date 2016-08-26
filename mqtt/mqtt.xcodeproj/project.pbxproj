@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF74510D86761BF3FE5DFD3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F389583FCC5FEFFF835 /* AppDelegate.m */; };
+		AF745124E3B9A5D36C65BF45 /* MQTTCFSocketTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7454C39FF4FA7CC58F2336 /* MQTTCFSocketTransport.m */; };
+		AF74517640BB5FF56B1A5033 /* MQTTSSLSecurityPolicyDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F10B23516344355B915 /* MQTTSSLSecurityPolicyDecoder.m */; };
+		AF74533EF9CE08CE75C5F1A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745AE93E7B6E42D00BBFB7 /* Info.plist */; };
+		AF745421B5C140C6E2FADD8D /* MQTTSessionSynchron.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74565C2809514D1801E4CE /* MQTTSessionSynchron.m */; };
+		AF74542CF56200729402F815 /* mqttTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7455268DC2C1B1B0079EC4 /* mqttTests.m */; };
+		AF7454E6339C9FABA34A7B89 /* MQTTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745B9C062F0863001E715A /* MQTTMessage.m */; };
+		AF7456A6B4D2C63F5530D1DA /* MQTTCoreDataPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745866C7D063A4FE0F9198 /* MQTTCoreDataPersistence.m */; };
+		AF745718780A7299CF84BF78 /* MQTTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7458186FDFD15995C2A3DF /* MQTTSession.m */; };
+		AF7457267C722C50BF8DBA89 /* MQTTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745CAEBBB763A64FFB1E94 /* MQTTSessionManager.m */; };
+		AF745790B7B812F33F4E5706 /* MQTTInMemoryPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74527B7E4C23860497B4D5 /* MQTTInMemoryPersistence.m */; };
+		AF74580CB6230DDB5FAF7E66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745F30D86B9B2EB308FCB8 /* Info.plist */; };
+		AF74582CE9B1DF60E80009CC /* MQTTSSLSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F5EEC77D54EA29805F0 /* MQTTSSLSecurityPolicy.m */; };
+		AF74590457A82A34487A8E6D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745B8B032E627BD5162099 /* Info.plist */; };
+		AF74591E9F2C6A428334C9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7455B9497C1F659EFC9C57 /* Main.storyboard */; };
+		AF7459DDD592622A1A5A39AD /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = AF745C8A069DB6EFA5E36F19 /* PodFile */; };
+		AF745A1B2BEDEFB99ACA7A90 /* MQTTSessionLegacy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7453CEC9FD89790E10431F /* MQTTSessionLegacy.m */; };
+		AF745A3914C63C9824C85BB1 /* MQTTCFSocketDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74587C41698A8F26D03146 /* MQTTCFSocketDecoder.m */; };
+		AF745A74BD72B180F0DA2AF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF745721E8B40E3EFEBC1B81 /* LaunchScreen.storyboard */; };
+		AF745A9547603B3947675886 /* MQTTDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F803D7DC0BA11B59D31 /* MQTTDecoder.m */; };
+		AF745A9F2994E5F29DE877EC /* MQTTSSLSecurityPolicyEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745CDD9EDD51C22B9FE28D /* MQTTSSLSecurityPolicyEncoder.m */; };
+		AF745AACC53A4C98AA308880 /* MQTTSSLSecurityPolicyTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7455968222599DCC34CEAB /* MQTTSSLSecurityPolicyTransport.m */; };
+		AF745ACD20F1A3DA09C12921 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7450D01F06BC01623D34D9 /* ViewController.m */; };
+		AF745B411211E882874360A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AF7459F4A881A23F8EB6B863 /* LICENSE */; };
+		AF745BC76B1EE0816AF5E23A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745A2499B28482525F5F4B /* main.m */; };
+		AF745C434AA36998431EBF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF745AD3030415D9755AFA47 /* Assets.xcassets */; };
+		AF745C9E233A32F00ECB6DF2 /* MQTTTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745626BDEE8FF615E9C240 /* MQTTTransport.m */; };
+		AF745CB1E380F087B9077443 /* mqttUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74541A398D41674B199A3E /* mqttUITests.m */; };
+		AF745D279BDD5F128087E729 /* MQTTCFSocketEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74517CAF248ABCC5049A4B /* MQTTCFSocketEncoder.m */; };
+		AF745DE7DE64B8B74F5AAA1E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AF7450F1FCC0569FCB84F8F2 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF745851B8378B38003AAE4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745DF8D5C885A4DD27CA65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF74581C1C1384F6EB9A32D7;
+			remoteInfo = mqtt;
+		};
+		AF745C59AAC97AE7B48781B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF745DF8D5C885A4DD27CA65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF74581C1C1384F6EB9A32D7;
+			remoteInfo = mqtt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF7450247CB38FEC7C284A06 /* MQTTPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTPersistence.h; sourceTree = "<group>"; };
+		AF745079F548096D147D7936 /* MQTTSessionSynchron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSessionSynchron.h; sourceTree = "<group>"; };
+		AF7450AC5C039F025BB53B22 /* mqttTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mqttTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7450B9AAE60FF2959CB24A /* MQTTCFSocketDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTCFSocketDecoder.h; sourceTree = "<group>"; };
+		AF7450D01F06BC01623D34D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AF7450D345E281695ACE1B04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF7450F1FCC0569FCB84F8F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AF74517CAF248ABCC5049A4B /* MQTTCFSocketEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCFSocketEncoder.m; sourceTree = "<group>"; };
+		AF74527B7E4C23860497B4D5 /* MQTTInMemoryPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTInMemoryPersistence.m; sourceTree = "<group>"; };
+		AF74528A6FEF00FA5131A6D1 /* MQTTTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTTransport.h; sourceTree = "<group>"; };
+		AF7453B4EDCC44BD2EEF60E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF7453CEC9FD89790E10431F /* MQTTSessionLegacy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSessionLegacy.m; sourceTree = "<group>"; };
+		AF7453DF86CBB4F6CABA8855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF74541A398D41674B199A3E /* mqttUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mqttUITests.m; sourceTree = "<group>"; };
+		AF74544AA81EF00FD65E3E24 /* MQTTSSLSecurityPolicyDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSSLSecurityPolicyDecoder.h; sourceTree = "<group>"; };
+		AF745493A8C22B2FE49C8827 /* MQTTMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTMessage.h; sourceTree = "<group>"; };
+		AF7454C39FF4FA7CC58F2336 /* MQTTCFSocketTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCFSocketTransport.m; sourceTree = "<group>"; };
+		AF7454DBC0F01B30FCB76014 /* MQTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTLog.h; sourceTree = "<group>"; };
+		AF7455268DC2C1B1B0079EC4 /* mqttTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mqttTests.m; sourceTree = "<group>"; };
+		AF74557CA4C1298BB29FD189 /* mqtt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mqtt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7455968222599DCC34CEAB /* MQTTSSLSecurityPolicyTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSSLSecurityPolicyTransport.m; sourceTree = "<group>"; };
+		AF745626BDEE8FF615E9C240 /* MQTTTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTTransport.m; sourceTree = "<group>"; };
+		AF74565C2809514D1801E4CE /* MQTTSessionSynchron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSessionSynchron.m; sourceTree = "<group>"; };
+		AF745719ECFAA119326DECAB /* MQTTDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTDecoder.h; sourceTree = "<group>"; };
+		AF74579A1B83FD1B193512BB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF7457EFF6E560544F502086 /* MQTTSSLSecurityPolicyEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSSLSecurityPolicyEncoder.h; sourceTree = "<group>"; };
+		AF7458186FDFD15995C2A3DF /* MQTTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSession.m; sourceTree = "<group>"; };
+		AF745866C7D063A4FE0F9198 /* MQTTCoreDataPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCoreDataPersistence.m; sourceTree = "<group>"; };
+		AF74587C41698A8F26D03146 /* MQTTCFSocketDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCFSocketDecoder.m; sourceTree = "<group>"; };
+		AF74599134EE74DB7CFC26AF /* MQTTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSession.h; sourceTree = "<group>"; };
+		AF7459F4A881A23F8EB6B863 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AF745A2499B28482525F5F4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF745AD3030415D9755AFA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF745AE93E7B6E42D00BBFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745AF244FD075278829B84 /* MQTTSessionLegacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSessionLegacy.h; sourceTree = "<group>"; };
+		AF745B20CDEC193E7467929F /* MQTTInMemoryPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTInMemoryPersistence.h; sourceTree = "<group>"; };
+		AF745B8B032E627BD5162099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745B9C062F0863001E715A /* MQTTMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTMessage.m; sourceTree = "<group>"; };
+		AF745C8A069DB6EFA5E36F19 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
+		AF745CAEBBB763A64FFB1E94 /* MQTTSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSessionManager.m; sourceTree = "<group>"; };
+		AF745CDD9EDD51C22B9FE28D /* MQTTSSLSecurityPolicyEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSSLSecurityPolicyEncoder.m; sourceTree = "<group>"; };
+		AF745CF578CA24C27EE29357 /* mqttUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mqttUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF745D25D1523E10B5E2BA2F /* MQTTSSLSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSSLSecurityPolicy.h; sourceTree = "<group>"; };
+		AF745D36858A819CD9DCDAF6 /* MQTTCFSocketEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTCFSocketEncoder.h; sourceTree = "<group>"; };
+		AF745DAEBF0B5F5471716B70 /* MQTTCFSocketTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTCFSocketTransport.h; sourceTree = "<group>"; };
+		AF745E8AB05716FAC69F7F6F /* MQTTSSLSecurityPolicyTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSSLSecurityPolicyTransport.h; sourceTree = "<group>"; };
+		AF745F10B23516344355B915 /* MQTTSSLSecurityPolicyDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSSLSecurityPolicyDecoder.m; sourceTree = "<group>"; };
+		AF745F30D86B9B2EB308FCB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745F389583FCC5FEFFF835 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF745F5EEC77D54EA29805F0 /* MQTTSSLSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSSLSecurityPolicy.m; sourceTree = "<group>"; };
+		AF745F757190442FD3AEAE48 /* MQTTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTClient.h; sourceTree = "<group>"; };
+		AF745F803D7DC0BA11B59D31 /* MQTTDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTDecoder.m; sourceTree = "<group>"; };
+		AF745FAED34F548CD744459B /* MQTTCoreDataPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTCoreDataPersistence.h; sourceTree = "<group>"; };
+		AF745FE58F7B962AD5C0A6C8 /* MQTTSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSessionManager.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF74520FBDD42AA84EBF0B36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745BFBAFCCAF0004136D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745DEDEB0465B110828F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF7450114BE67001ED341378 /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				AF7459F4A881A23F8EB6B863 /* LICENSE */,
+				AF7450F1FCC0569FCB84F8F2 /* README.md */,
+				AF745E9E2AD984EBD247B77F /* MQTTClient */,
+			);
+			path = MQTTClient;
+			sourceTree = "<group>";
+		};
+		AF7450151D1907C4B0047D2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF7459A0C7ED41FA989D2AB7 /* Headers */,
+				AF74534DAB53F7BE582A88B6 /* Local Podspecs */,
+				AF7450A23E33DC1C366BE8E4 /* Target Support Files */,
+				AF7450114BE67001ED341378 /* MQTTClient */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF7450A23E33DC1C366BE8E4 /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		AF74522CEC82F1E87F5532B3 /* mqttUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF745AE93E7B6E42D00BBFB7 /* Info.plist */,
+				AF74541A398D41674B199A3E /* mqttUITests.m */,
+			);
+			path = mqttUITests;
+			sourceTree = "<group>";
+		};
+		AF74534DAB53F7BE582A88B6 /* Local Podspecs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Podspecs";
+			sourceTree = "<group>";
+		};
+		AF74548288747A23DC0BADDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF74557CA4C1298BB29FD189 /* mqtt.app */,
+				AF7450AC5C039F025BB53B22 /* mqttTests.xctest */,
+				AF745CF578CA24C27EE29357 /* mqttUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF745485E92C96DA459DB709 /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				AF7454DBC0F01B30FCB76014 /* MQTTLog.h */,
+				AF745F757190442FD3AEAE48 /* MQTTClient.h */,
+				AF745719ECFAA119326DECAB /* MQTTDecoder.h */,
+				AF745F803D7DC0BA11B59D31 /* MQTTDecoder.m */,
+				AF745493A8C22B2FE49C8827 /* MQTTMessage.h */,
+				AF745B9C062F0863001E715A /* MQTTMessage.m */,
+				AF74599134EE74DB7CFC26AF /* MQTTSession.h */,
+				AF7458186FDFD15995C2A3DF /* MQTTSession.m */,
+				AF74528A6FEF00FA5131A6D1 /* MQTTTransport.h */,
+				AF745626BDEE8FF615E9C240 /* MQTTTransport.m */,
+				AF7450247CB38FEC7C284A06 /* MQTTPersistence.h */,
+				AF745AF244FD075278829B84 /* MQTTSessionLegacy.h */,
+				AF7453CEC9FD89790E10431F /* MQTTSessionLegacy.m */,
+				AF745FE58F7B962AD5C0A6C8 /* MQTTSessionManager.h */,
+				AF745CAEBBB763A64FFB1E94 /* MQTTSessionManager.m */,
+				AF7450B9AAE60FF2959CB24A /* MQTTCFSocketDecoder.h */,
+				AF74587C41698A8F26D03146 /* MQTTCFSocketDecoder.m */,
+				AF745D36858A819CD9DCDAF6 /* MQTTCFSocketEncoder.h */,
+				AF74517CAF248ABCC5049A4B /* MQTTCFSocketEncoder.m */,
+				AF745079F548096D147D7936 /* MQTTSessionSynchron.h */,
+				AF74565C2809514D1801E4CE /* MQTTSessionSynchron.m */,
+				AF745DAEBF0B5F5471716B70 /* MQTTCFSocketTransport.h */,
+				AF7454C39FF4FA7CC58F2336 /* MQTTCFSocketTransport.m */,
+				AF745D25D1523E10B5E2BA2F /* MQTTSSLSecurityPolicy.h */,
+				AF745F5EEC77D54EA29805F0 /* MQTTSSLSecurityPolicy.m */,
+				AF745FAED34F548CD744459B /* MQTTCoreDataPersistence.h */,
+				AF745866C7D063A4FE0F9198 /* MQTTCoreDataPersistence.m */,
+				AF745B20CDEC193E7467929F /* MQTTInMemoryPersistence.h */,
+				AF74527B7E4C23860497B4D5 /* MQTTInMemoryPersistence.m */,
+				AF74544AA81EF00FD65E3E24 /* MQTTSSLSecurityPolicyDecoder.h */,
+				AF745F10B23516344355B915 /* MQTTSSLSecurityPolicyDecoder.m */,
+				AF7457EFF6E560544F502086 /* MQTTSSLSecurityPolicyEncoder.h */,
+				AF745CDD9EDD51C22B9FE28D /* MQTTSSLSecurityPolicyEncoder.m */,
+				AF745E8AB05716FAC69F7F6F /* MQTTSSLSecurityPolicyTransport.h */,
+				AF7455968222599DCC34CEAB /* MQTTSSLSecurityPolicyTransport.m */,
+			);
+			path = MQTTClient;
+			sourceTree = "<group>";
+		};
+		AF745979EDEA5F77D514C7D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF745A2499B28482525F5F4B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF7459A0C7ED41FA989D2AB7 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		AF745C2B1AC16ABFD704CCCB /* mqttTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF745F30D86B9B2EB308FCB8 /* Info.plist */,
+				AF7455268DC2C1B1B0079EC4 /* mqttTests.m */,
+			);
+			path = mqttTests;
+			sourceTree = "<group>";
+		};
+		AF745C8A00D2C8BA64CA67C1 = {
+			isa = PBXGroup;
+			children = (
+				AF74548288747A23DC0BADDA /* Products */,
+				AF745E618CE7F26A73704B5D /* mqtt */,
+				AF745C2B1AC16ABFD704CCCB /* mqttTests */,
+				AF74522CEC82F1E87F5532B3 /* mqttUITests */,
+				AF745C8A069DB6EFA5E36F19 /* PodFile */,
+				AF7450151D1907C4B0047D2F /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		AF745E618CE7F26A73704B5D /* mqtt */ = {
+			isa = PBXGroup;
+			children = (
+				AF745B8B032E627BD5162099 /* Info.plist */,
+				AF745AD3030415D9755AFA47 /* Assets.xcassets */,
+				AF745721E8B40E3EFEBC1B81 /* LaunchScreen.storyboard */,
+				AF745979EDEA5F77D514C7D5 /* Supporting Files */,
+				AF7450D345E281695ACE1B04 /* AppDelegate.h */,
+				AF745F389583FCC5FEFFF835 /* AppDelegate.m */,
+				AF7455B9497C1F659EFC9C57 /* Main.storyboard */,
+				AF74579A1B83FD1B193512BB /* ViewController.h */,
+				AF7450D01F06BC01623D34D9 /* ViewController.m */,
+			);
+			path = mqtt;
+			sourceTree = "<group>";
+		};
+		AF745E9E2AD984EBD247B77F /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				AF745485E92C96DA459DB709 /* MQTTClient */,
+			);
+			path = MQTTClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF74552CA9C61A83C984DDA4 /* mqttTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF7457D105253B0BF0ED61ED /* Build configuration list for PBXNativeTarget "mqttTests" */;
+			buildPhases = (
+				AF745C9E217043DB85235CF0 /* Sources */,
+				AF74520FBDD42AA84EBF0B36 /* Frameworks */,
+				AF7459F10F3CD0FF970FBE78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF745D7F564E857F60C7A87D /* PBXTargetDependency */,
+			);
+			name = mqttTests;
+			productName = mqttTests;
+			productReference = AF7450AC5C039F025BB53B22 /* mqttTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF74581C1C1384F6EB9A32D7 /* mqtt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF745996002FA6B867F63878 /* Build configuration list for PBXNativeTarget "mqtt" */;
+			buildPhases = (
+				AF745F5D41D914F315E85A15 /* Sources */,
+				AF745BFBAFCCAF0004136D55 /* Frameworks */,
+				AF7451D68032832ADCC8E51C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mqtt;
+			productName = mqtt;
+			productReference = AF74557CA4C1298BB29FD189 /* mqtt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF745B23A380B171C13749A1 /* mqttUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF745777332CC7B19AE1B0F0 /* Build configuration list for PBXNativeTarget "mqttUITests" */;
+			buildPhases = (
+				AF745AFE4141E61CB298D633 /* Sources */,
+				AF745DEDEB0465B110828F8D /* Frameworks */,
+				AF7454AA52C7344AEBE9DDCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF74531220391BA936F4EED3 /* PBXTargetDependency */,
+			);
+			name = mqttUITests;
+			productName = mqttUITests;
+			productReference = AF745CF578CA24C27EE29357 /* mqttUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF745DF8D5C885A4DD27CA65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = mqtt.jegarn.com;
+			};
+			buildConfigurationList = AF745A80A4A732EB3FFC84AA /* Build configuration list for PBXProject "mqtt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF745C8A00D2C8BA64CA67C1;
+			productRefGroup = AF74548288747A23DC0BADDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF74581C1C1384F6EB9A32D7 /* mqtt */,
+				AF74552CA9C61A83C984DDA4 /* mqttTests */,
+				AF745B23A380B171C13749A1 /* mqttUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF7451D68032832ADCC8E51C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74590457A82A34487A8E6D /* Info.plist in Resources */,
+				AF745C434AA36998431EBF31 /* Assets.xcassets in Resources */,
+				AF745A74BD72B180F0DA2AF9 /* LaunchScreen.storyboard in Resources */,
+				AF74591E9F2C6A428334C9EA /* Main.storyboard in Resources */,
+				AF7459DDD592622A1A5A39AD /* PodFile in Resources */,
+				AF745B411211E882874360A0 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF7454AA52C7344AEBE9DDCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74533EF9CE08CE75C5F1A0 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF7459F10F3CD0FF970FBE78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74580CB6230DDB5FAF7E66 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF745AFE4141E61CB298D633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745CB1E380F087B9077443 /* mqttUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745C9E217043DB85235CF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF74542CF56200729402F815 /* mqttTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF745F5D41D914F315E85A15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF745BC76B1EE0816AF5E23A /* main.m in Sources */,
+				AF74510D86761BF3FE5DFD3B /* AppDelegate.m in Sources */,
+				AF745ACD20F1A3DA09C12921 /* ViewController.m in Sources */,
+				AF745DE7DE64B8B74F5AAA1E /* README.md in Sources */,
+				AF745A9547603B3947675886 /* MQTTDecoder.m in Sources */,
+				AF7454E6339C9FABA34A7B89 /* MQTTMessage.m in Sources */,
+				AF745718780A7299CF84BF78 /* MQTTSession.m in Sources */,
+				AF745C9E233A32F00ECB6DF2 /* MQTTTransport.m in Sources */,
+				AF745A1B2BEDEFB99ACA7A90 /* MQTTSessionLegacy.m in Sources */,
+				AF7457267C722C50BF8DBA89 /* MQTTSessionManager.m in Sources */,
+				AF745A3914C63C9824C85BB1 /* MQTTCFSocketDecoder.m in Sources */,
+				AF745D279BDD5F128087E729 /* MQTTCFSocketEncoder.m in Sources */,
+				AF745421B5C140C6E2FADD8D /* MQTTSessionSynchron.m in Sources */,
+				AF745124E3B9A5D36C65BF45 /* MQTTCFSocketTransport.m in Sources */,
+				AF74582CE9B1DF60E80009CC /* MQTTSSLSecurityPolicy.m in Sources */,
+				AF7456A6B4D2C63F5530D1DA /* MQTTCoreDataPersistence.m in Sources */,
+				AF745790B7B812F33F4E5706 /* MQTTInMemoryPersistence.m in Sources */,
+				AF74517640BB5FF56B1A5033 /* MQTTSSLSecurityPolicyDecoder.m in Sources */,
+				AF745A9F2994E5F29DE877EC /* MQTTSSLSecurityPolicyEncoder.m in Sources */,
+				AF745AACC53A4C98AA308880 /* MQTTSSLSecurityPolicyTransport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF74531220391BA936F4EED3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF74581C1C1384F6EB9A32D7 /* mqtt */;
+			targetProxy = AF745851B8378B38003AAE4C /* PBXContainerItemProxy */;
+		};
+		AF745D7F564E857F60C7A87D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF74581C1C1384F6EB9A32D7 /* mqtt */;
+			targetProxy = AF745C59AAC97AE7B48781B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF7455B9497C1F659EFC9C57 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF7453DF86CBB4F6CABA8855 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF745721E8B40E3EFEBC1B81 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF7453B4EDCC44BD2EEF60E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF74502446FF342068A4B47D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mqtt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqtt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF7450B680D68E68ADD78295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mqtt.app/mqtt";
+				INFOPLIST_FILE = mqttTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqttTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF7453D07A976B229C4822EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF74563418D28D9BC125DECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mqtt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqtt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF7458D3DE6C55647379BB40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mqtt.app/mqtt";
+				INFOPLIST_FILE = mqttTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqttTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		AF7459DAA51E2E7470AC764F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mqtt.app/mqtt";
+				INFOPLIST_FILE = mqttUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqttUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AF745AE30D4FA2F2B59E3748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF745B7512C43CE4159CF3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mqtt.app/mqtt";
+				INFOPLIST_FILE = mqttUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.mqttUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF745777332CC7B19AE1B0F0 /* Build configuration list for PBXNativeTarget "mqttUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF7459DAA51E2E7470AC764F /* Debug */,
+				AF745B7512C43CE4159CF3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF7457D105253B0BF0ED61ED /* Build configuration list for PBXNativeTarget "mqttTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF7450B680D68E68ADD78295 /* Debug */,
+				AF7458D3DE6C55647379BB40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF745996002FA6B867F63878 /* Build configuration list for PBXNativeTarget "mqtt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF74502446FF342068A4B47D /* Debug */,
+				AF74563418D28D9BC125DECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF745A80A4A732EB3FFC84AA /* Build configuration list for PBXProject "mqtt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF745AE30D4FA2F2B59E3748 /* Debug */,
+				AF7453D07A976B229C4822EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF745DF8D5C885A4DD27CA65 /* Project object */;
+}
