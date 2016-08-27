@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		2B257F9B3F54E497258051E9 /* libPods-https-api.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5A7CB88F405E119A2305B6 /* libPods-https-api.a */; };
 		AF7451FA0B2EC6C6405D13F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74574973113CA0DF2F4E62 /* ViewController.m */; };
+		AF74539A760DA1E8EF0551F3 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF74547DF7A453090F7A151D /* server.cer */; };
 		AF74551D7888BC827888D127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF745DC2B41978F075A4DC06 /* Main.storyboard */; };
 		AF74557E523A2076F13C5B24 /* https_apiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7451200B299CA872D7F184 /* https_apiTests.m */; };
 		AF7455AB83ED88A433BB32F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF74520123AAB99683D1B8FE /* Assets.xcassets */; };
 		AF7455C0758817003BEFF9C5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745980F574E43566460533 /* Info.plist */; };
 		AF74561443F5A460F68CE9C7 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = AF7450968A30A68CB3F40E23 /* PodFile */; };
-		AF7456893D51728CE268598A /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF74529FAF8535F9776EECFC /* server.cer */; };
 		AF7456EF452A18F1463595DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745F189D6830AF54D19A27 /* Info.plist */; };
+		AF74579395A4F4448D7FDD47 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = AF745DEB9CEA08B85BBEE352 /* client.p12 */; };
 		AF74586F1AD3A9759F0274CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7453C6F11979E7BD97A98E /* LaunchScreen.storyboard */; };
 		AF745AC413E4CC116476AE97 /* https_apiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452373EF8BC2D547FDE0B /* https_apiUITests.m */; };
 		AF745B71E96C2640CC6755BA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745AC3395663B895569415 /* Info.plist */; };
 		AF745BD830C00E072A55CA1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7459456DB3EFEF7A7690E8 /* AppDelegate.m */; };
 		AF745E0DA3F403FBB4290EA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745CAE90126163BD699959 /* main.m */; };
-		AF745EA7F3A7BA5D17847351 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = AF745E97161DA61F4553DA5A /* client.p12 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		AF745121E94CE02B2B6AE640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF74520123AAB99683D1B8FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF7452373EF8BC2D547FDE0B /* https_apiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = https_apiUITests.m; sourceTree = "<group>"; };
-		AF74529FAF8535F9776EECFC /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file.cer; path = server.cer; sourceTree = "<group>"; };
 		AF7452FCB939BC3AEB9C21A8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		AF74547DF7A453090F7A151D /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file.cer; path = server.cer; sourceTree = "<group>"; };
 		AF74574973113CA0DF2F4E62 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF74581899244FBFCFCE8B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF7458A0CE476DA8B9B03FFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		AF745AC3395663B895569415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF745CAE90126163BD699959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF745CE3AAE664DE51134EF7 /* https-apiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "https-apiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF745E97161DA61F4553DA5A /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = client.p12; sourceTree = "<group>"; };
+		AF745DEB9CEA08B85BBEE352 /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = client.p12; sourceTree = "<group>"; };
 		AF745F189D6830AF54D19A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF745F8B78E5019C32E7770C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +146,8 @@
 				AF745DC2B41978F075A4DC06 /* Main.storyboard */,
 				AF745F8B78E5019C32E7770C /* ViewController.h */,
 				AF74574973113CA0DF2F4E62 /* ViewController.m */,
-				AF745E97161DA61F4553DA5A /* client.p12 */,
-				AF74529FAF8535F9776EECFC /* server.cer */,
+				AF745DEB9CEA08B85BBEE352 /* client.p12 */,
+				AF74547DF7A453090F7A151D /* server.cer */,
 			);
 			path = "https-api";
 			sourceTree = "<group>";
@@ -320,8 +320,8 @@
 				AF74586F1AD3A9759F0274CC /* LaunchScreen.storyboard in Resources */,
 				AF74551D7888BC827888D127 /* Main.storyboard in Resources */,
 				AF74561443F5A460F68CE9C7 /* PodFile in Resources */,
-				AF745EA7F3A7BA5D17847351 /* client.p12 in Resources */,
-				AF7456893D51728CE268598A /* server.cer in Resources */,
+				AF74579395A4F4448D7FDD47 /* client.p12 in Resources */,
+				AF74539A760DA1E8EF0551F3 /* server.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

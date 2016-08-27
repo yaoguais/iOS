@@ -183,7 +183,7 @@ _Pragma("clang diagnostic pop")
 }
 
 +(BOOL)extractIdentity:(SecIdentityRef*)outIdentity andTrust:(SecTrustRef *)outTrust fromPKCS12Data:(NSData *)inPKCS12Data {
-    NSDictionary*optionsDictionary = @{(__bridge id) kSecImportExportPassphrase : @"export111111"};
+    NSDictionary*optionsDictionary = @{(__bridge id) kSecImportExportPassphrase : @"111111"};
 
     CFArrayRef items = CFArrayCreate(NULL, 0, 0, NULL);
     OSStatus securityError = SecPKCS12Import((__bridge CFDataRef)inPKCS12Data,(__bridge CFDictionaryRef)optionsDictionary,&items);
