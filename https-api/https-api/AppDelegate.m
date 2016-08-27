@@ -99,6 +99,9 @@ _Pragma("clang diagnostic pop")
     AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certSet];
     policy.allowInvalidCertificates = NO;
     policy.validatesDomainName = YES;
+    //AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    //policy.allowInvalidCertificates = YES;
+    //policy.validatesDomainName = NO;
 
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.securityPolicy = policy;
@@ -119,6 +122,19 @@ _Pragma("clang diagnostic pop")
         NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
         __autoreleasing NSURLCredential *credential =nil;
         if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+            /*  默认的serverTrust只包含系统的证书, 这里我们将本地携带的服务端证书零时注入系统证书链中
+                从而解决AFSecurityPolicy.m:259
+                 else if (!AFServerTrustIsValid(serverTrust) && !self.allowInvalidCertificates) {
+                    return NO;
+                 }
+                 返回NO(只验证系统证书), 造成的验证不通过的问题.
+             */
+            NSMutableArray *pinnedCertificates = [NSMutableArray array];
+            for (NSData *certificateData in self.manager.securityPolicy.pinnedCertificates) {
+                [pinnedCertificates addObject:(__bridge_transfer id)SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certificateData)];
+            }
+            SecTrustSetAnchorCertificates(challenge.protectionSpace.serverTrust, (__bridge CFArrayRef)pinnedCertificates);
+
             if([self.manager.securityPolicy evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:challenge.protectionSpace.host]) {
                 credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
                 if(credential) {
@@ -159,10 +175,10 @@ _Pragma("clang diagnostic pop")
         return disposition;
     }];
 
-    [manager GET:@"https://yaoguai.com:7080/index.php" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    [manager GET:@"https://jegarn.com:7080/index.php" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Data: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        NSLog(@"Error: %@ operation: %@", error, operation);
     }];
 }
 

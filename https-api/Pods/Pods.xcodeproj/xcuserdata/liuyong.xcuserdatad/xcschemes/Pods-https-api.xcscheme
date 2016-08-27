@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F85DDD917FA3CDE81C157C6E'
-               BlueprintName = 'Pods-https-api'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-https-api.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "069C5E6C32FF7344CE4960DE41C2C5B7"
+               BlueprintName = "Pods-https-api"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libPods-https-api.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
