@@ -9,43 +9,54 @@
 
 #import "AppDelegate.h"
 #import "MQTTCFSocketTransport.h"
-#import "MQTTSession.h"
 #import "MQTTSessionSynchron.h"
+#import "MQTTSSLSecurityPolicy.h"
+#import "MQTTSessionLegacy.h"
 
 
 @interface AppDelegate ()
-    @property(strong, nonatomic) MQTTSession *session;
+@property(strong, nonatomic) MQTTSession *session;
 @end
 
 @implementation AppDelegate
 
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setUpMqtt];
-    [self subscribeTest];
-    [self publishTest];
 
     return YES;
 }
 
-- (void) setUpMqtt {
-    MQTTCFSocketTransport *transport = [[MQTTCFSocketTransport alloc] init];
-    transport.host = @"127.0.0.1";
-    transport.port = 1883;
+- (void)setUpMqtt {
+
+    MQTTSSLSecurityPolicy *securityPolicy = [MQTTSSLSecurityPolicy policyWithPinningMode:MQTTSSLPinningModeCertificate];
+    NSString *certificate = [[NSBundle bundleForClass:[self class]] pathForResource:@"server" ofType:@"cer"];
+    securityPolicy.pinnedCertificates = @[[NSData dataWithContentsOfFile:certificate]];
+    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesCertificateChain = NO;
+
+    NSString *p12File = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];
+    NSString *p12Password = @"111111";
+    NSArray * certificates = [MQTTCFSocketTransport clientCertsFromP12:p12File passphrase:p12Password];
 
     _session = [[MQTTSession alloc] init];
-    _session.transport = transport;
+    _session.cleanSessionFlag = YES;
     _session.delegate = self;
     _session.userName = @"test";
     _session.password = @"test";
-    [_session connectAndWaitTimeout:30];
+    _session.securityPolicy = securityPolicy;
+    _session.certificates = certificates;
+
+    [_session connectToHost:@"jegarn.com" port:8883 usingSSL:YES connectHandler:^(NSError *error) {
+        NSLog(@"connect error %@", error);
+        // 简单测试订阅/发布
+        [self subscribeTest];
+        [self publishTest];
+    }];
 }
 
 - (void)subscribeTest {
-    [_session subscribeToTopic:@"world" atLevel:1 subscribeHandler:^(NSError *error, NSArray<NSNumber *> *gQoss){
+    [_session subscribeToTopic:@"world" atLevel:1 subscribeHandler:^(NSError *error, NSArray<NSNumber *> *gQoss) {
         if (error) {
             NSLog(@"Subscription failed %@", error.localizedDescription);
         } else {
@@ -54,12 +65,13 @@
     }];
 };
 
-- (void) publishTest {
+- (void)publishTest {
 
     [_session publishAndWaitData:[@"hello" dataUsingEncoding:NSUTF8StringEncoding]
-                                 onTopic :@"world"
+                         onTopic:@"world"
                           retain:NO
-                             qos:MQTTQosLevelAtLeastOnce];
+                             qos:MQTTQosLevelAtLeastOnce
+                         timeout:30];
 }
 
 - (void)newMessage:(MQTTSession *)session

@@ -10,6 +10,7 @@
 		AF74510D86761BF3FE5DFD3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F389583FCC5FEFFF835 /* AppDelegate.m */; };
 		AF745124E3B9A5D36C65BF45 /* MQTTCFSocketTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7454C39FF4FA7CC58F2336 /* MQTTCFSocketTransport.m */; };
 		AF74517640BB5FF56B1A5033 /* MQTTSSLSecurityPolicyDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745F10B23516344355B915 /* MQTTSSLSecurityPolicyDecoder.m */; };
+		AF7451B6BD595B719149BCBA /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF74529E4B34F654A197A4D2 /* server.cer */; };
 		AF74533EF9CE08CE75C5F1A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF745AE93E7B6E42D00BBFB7 /* Info.plist */; };
 		AF745421B5C140C6E2FADD8D /* MQTTSessionSynchron.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74565C2809514D1801E4CE /* MQTTSessionSynchron.m */; };
 		AF74542CF56200729402F815 /* mqttTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7455268DC2C1B1B0079EC4 /* mqttTests.m */; };
@@ -33,6 +34,7 @@
 		AF745B411211E882874360A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AF7459F4A881A23F8EB6B863 /* LICENSE */; };
 		AF745BC76B1EE0816AF5E23A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745A2499B28482525F5F4B /* main.m */; };
 		AF745C434AA36998431EBF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF745AD3030415D9755AFA47 /* Assets.xcassets */; };
+		AF745C5266FEDDDF4B382E27 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = AF7459FD4A4602E80B6FD82A /* client.p12 */; };
 		AF745C9E233A32F00ECB6DF2 /* MQTTTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745626BDEE8FF615E9C240 /* MQTTTransport.m */; };
 		AF745CB1E380F087B9077443 /* mqttUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74541A398D41674B199A3E /* mqttUITests.m */; };
 		AF745D279BDD5F128087E729 /* MQTTCFSocketEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74517CAF248ABCC5049A4B /* MQTTCFSocketEncoder.m */; };
@@ -67,6 +69,7 @@
 		AF74517CAF248ABCC5049A4B /* MQTTCFSocketEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCFSocketEncoder.m; sourceTree = "<group>"; };
 		AF74527B7E4C23860497B4D5 /* MQTTInMemoryPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTInMemoryPersistence.m; sourceTree = "<group>"; };
 		AF74528A6FEF00FA5131A6D1 /* MQTTTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTTransport.h; sourceTree = "<group>"; };
+		AF74529E4B34F654A197A4D2 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file.cer; path = server.cer; sourceTree = "<group>"; };
 		AF7453B4EDCC44BD2EEF60E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF7453CEC9FD89790E10431F /* MQTTSessionLegacy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSessionLegacy.m; sourceTree = "<group>"; };
 		AF7453DF86CBB4F6CABA8855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		AF74587C41698A8F26D03146 /* MQTTCFSocketDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTCFSocketDecoder.m; sourceTree = "<group>"; };
 		AF74599134EE74DB7CFC26AF /* MQTTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSession.h; sourceTree = "<group>"; };
 		AF7459F4A881A23F8EB6B863 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AF7459FD4A4602E80B6FD82A /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = client.p12; sourceTree = "<group>"; };
 		AF745A2499B28482525F5F4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF745AD3030415D9755AFA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF745AE93E7B6E42D00BBFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				AF7455B9497C1F659EFC9C57 /* Main.storyboard */,
 				AF74579A1B83FD1B193512BB /* ViewController.h */,
 				AF7450D01F06BC01623D34D9 /* ViewController.m */,
+				AF7459FD4A4602E80B6FD82A /* client.p12 */,
+				AF74529E4B34F654A197A4D2 /* server.cer */,
 			);
 			path = mqtt;
 			sourceTree = "<group>";
@@ -388,6 +394,8 @@
 				AF74591E9F2C6A428334C9EA /* Main.storyboard in Resources */,
 				AF7459DDD592622A1A5A39AD /* PodFile in Resources */,
 				AF745B411211E882874360A0 /* LICENSE in Resources */,
+				AF745C5266FEDDDF4B382E27 /* client.p12 in Resources */,
+				AF7451B6BD595B719149BCBA /* server.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
