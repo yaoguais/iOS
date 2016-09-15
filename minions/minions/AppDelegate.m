@@ -2,18 +2,17 @@
 //  AppDelegate.m
 //  minions
 //
-//  Created by 刘勇 on 16/7/20.
-//  Copyright (c) 2016 刘勇. All rights reserved.
+//  Created by Yao Guai on 16/9/10.
+//  Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
 
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import "AppDelegate.h"
-#import "LoginViewController.h"
-#import "ContactViewController.h"
-#import "MessageViewController.h"
-#import "GroupChatViewController.h"
-#import "ChatRoomViewController.h"
-#import "MainTabBarViewController.h"
+#import "YGHttpTest.h"
+#import "MNTest.h"
+#import "MNLoginViewController.h"
+#import "MNMainTabBarViewController.h"
 
 
 @interface AppDelegate ()
@@ -22,11 +21,14 @@
 
 @implementation AppDelegate
 
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.tabBarController = [[MainTabBarViewController alloc] init];
-    self.window.rootViewController = [[LoginViewController alloc] init];
-    self.window.backgroundColor = [UIColor whiteColor];
+    _window.rootViewController = [[MNMainTabBarViewController alloc] init];
+    _window.backgroundColor = [UIColor whiteColor];
+
     return YES;
 }
 

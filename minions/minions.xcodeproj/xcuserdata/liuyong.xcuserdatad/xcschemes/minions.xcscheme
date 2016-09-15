@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF745199F22070B8889E4C8A"
+               BlueprintIdentifier = "AF745E8C5A5EEB4290B5AE77"
                BuildableName = "minions.app"
                BlueprintName = "minions"
                ReferencedContainer = "container:minions.xcodeproj">
@@ -31,7 +31,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF745A100B589161FCDB2CCA"
+               BlueprintIdentifier = "AF74556957692E8DFECEAEEA"
                BuildableName = "minionsUITests.xctest"
                BlueprintName = "minionsUITests"
                ReferencedContainer = "container:minions.xcodeproj">
@@ -41,7 +41,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF745AD7636EF7647825F3D6"
+               BlueprintIdentifier = "AF74544C53C7AEFBD3295728"
                BuildableName = "minionsTests.xctest"
                BlueprintName = "minionsTests"
                ReferencedContainer = "container:minions.xcodeproj">
@@ -51,7 +51,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF745199F22070B8889E4C8A"
+            BlueprintIdentifier = "AF745E8C5A5EEB4290B5AE77"
             BuildableName = "minions.app"
             BlueprintName = "minions"
             ReferencedContainer = "container:minions.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF745199F22070B8889E4C8A"
+            BlueprintIdentifier = "AF745E8C5A5EEB4290B5AE77"
             BuildableName = "minions.app"
             BlueprintName = "minions"
             ReferencedContainer = "container:minions.xcodeproj">
@@ -92,7 +92,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF745199F22070B8889E4C8A"
+            BlueprintIdentifier = "AF745E8C5A5EEB4290B5AE77"
             BuildableName = "minions.app"
             BlueprintName = "minions"
             ReferencedContainer = "container:minions.xcodeproj">
