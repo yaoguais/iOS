@@ -6,10 +6,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MNChatViewController : UIViewController
+@class MNChatViewModel;
+@class MNUserModel;
 
-@property(nonatomic, strong) UITableView *contentTableView;
-@property(nonatomic, strong) UITextField *inputTextField;
-@property(nonatomic, strong) UIButton *sendButton;
+@interface MNChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+@property (nonatomic, strong) MNChatViewModel *viewModel;
+
+@property (nonatomic, strong) MNUserModel *loginUser;
+@property (nonatomic, strong) UITableView *contentTableView;
+@property (nonatomic, strong) UITextField *inputTextField;
+@property (nonatomic, strong) UIButton *sendButton;
 
 @end

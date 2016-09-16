@@ -1,0 +1,42 @@
+[
+  {
+    "user" : {
+      "uid": 1,
+      "username" : "Jack",
+      "avatar" : "avatar_g6.jpg"
+    },
+    "content" : "消息一\n消息一\n消息一\n消息一"
+  },
+  {
+    "user" : {
+      "uid": 2,
+      "username" : "Lucy",
+      "avatar" : "avatar_g7.jpg"
+    },
+    "content" : "消息二消息二消息二消息二消息二消息二消息二消息二消息二消息二消息二消息二消息二消息二"
+  },
+  {
+    "user" : {
+      "uid": 2,
+      "username" : "Lucy",
+      "avatar" : "avatar_g7.jpg"
+    },
+    "content" : "消息三消息三消息三消息三消息三消息三消息三消息三消息三消息三消息三消息三消息三消息三"
+  },
+  {
+    "user" : {
+      "uid": 1,
+      "username" : "Jack",
+      "avatar" : "avatar_g6.jpg"
+    },
+    "content" : "消息四消息四消息四消息四消息四消息四消息四\n消息四消息四消息四消息四消息四消息四消息四消息四"
+  },
+  {
+    "user" : {
+      "uid": 1,
+      "username" : "Jack",
+      "avatar" : "avatar_g6.jpg"
+    },
+    "content" : "消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五消息五"
+  }
+]

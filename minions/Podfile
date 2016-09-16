@@ -5,4 +5,5 @@ target 'minions' do
     pod 'AFNetworking', '~> 3.0'
     pod "UICKeyChainStore"
     pod 'YYModel'
+    pod 'YYKeyboardManager'
 end

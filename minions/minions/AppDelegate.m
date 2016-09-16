@@ -13,6 +13,7 @@
 #import "MNTest.h"
 #import "MNLoginViewController.h"
 #import "MNMainTabBarViewController.h"
+#import "MNChatViewModel.h"
 
 
 @interface AppDelegate ()

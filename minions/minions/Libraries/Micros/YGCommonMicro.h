@@ -28,4 +28,6 @@
 
 #define YGViewWidth(obj) obj.frame.size.width
 #define YGViewHeight(obj) obj.frame.size.height
+#define YGWindowWidth [UIScreen mainScreen].bounds.size.width
+#define YGWindowHeight [UIScreen mainScreen].bounds.size.height
 #define YGShowBorder(obj) {obj.layer.borderColor = [UIColor redColor].CGColor;obj.layer.borderWidth = 1.0;}

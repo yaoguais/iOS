@@ -20,7 +20,7 @@
     _messageInfoArr = @[
             @{
                     @"name" : @"会话一",
-                    @"icon" : @"avatar_b5.jpg"
+                    @"icon" : @"avatar_b9.jpg"
             },
             @{
                     @"name" : @"会话二",

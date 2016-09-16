@@ -9,7 +9,7 @@
 
 @implementation MNWidgetUtil
 
-+ (void)AlertWithController:(ViewController *)controller title:(NSString *)title mssage:(NSString *)message {
++ (void)alertWithController:(ViewController *)controller title:(NSString *)title mssage:(NSString *)message {
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:title message:message
                                                               preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:nil];

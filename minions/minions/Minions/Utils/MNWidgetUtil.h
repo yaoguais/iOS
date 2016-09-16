@@ -10,6 +10,6 @@
 
 @interface MNWidgetUtil : NSObject
 
-+ (void)AlertWithController:(ViewController *)controller title:(NSString *)title mssage:(NSString *)message;
++ (void)alertWithController:(ViewController *)controller title:(NSString *)title mssage:(NSString *)message;
 
 @end

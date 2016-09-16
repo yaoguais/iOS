@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF7450023E809E99F6CA970C /* group_counter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF74573B8E1388ED713B4D4F /* group_counter.jpg */; };
+		AF74500E3B00438659DD4A87 /* MNUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745445A00F87B23FA6A691 /* MNUserModel.m */; };
 		AF7450223E5E250082F284C5 /* tab_groupchat_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745808FB2283AA67AEBFA8 /* tab_groupchat_selected@3x.png */; };
 		AF745056B7F942F05BDC7FE1 /* YGEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745E75C93C8D8818E5F2D0 /* YGEnvironment.m */; };
 		AF7450696A9CCF389E7E70E8 /* YGHttpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7457340DEC833D98CBAE4C /* YGHttpTest.m */; };
@@ -33,9 +34,11 @@
 		AF7453B9A95821FC550BA804 /* MNConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745516169C0C6BDF069B94 /* MNConversationViewController.m */; };
 		AF7453CD1D76C12A37FF097B /* avatar_b4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF74567AE822EE715B54461F /* avatar_b4.jpg */; };
 		AF74540E9133BFDF6A44618F /* tab_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7454F4B1ADA93CE4323EA4 /* tab_conversation.png */; };
+		AF745412D7AD42773DC5C512 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = AF745E6D8263B85575110519 /* messages.json */; };
 		AF745428787FD508BF9438B9 /* tab_groupchat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7450FB0DE513557E155AFE /* tab_groupchat@2x.png */; };
 		AF74544A2AE9C60E34F80936 /* MNMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745FB7D530C91005603BFA /* MNMainTabBarViewController.m */; };
 		AF74547EB4654BF99B1EF6F3 /* tab_groupchat_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7456853F673C84AE80F6BF /* tab_groupchat_selected@2x.png */; };
+		AF7454970EE48BB89F4B5CF6 /* MNChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452FD85950789E8924868 /* MNChatMessageModel.m */; };
 		AF7454ADD9AE6A4FF6E4C10E /* tab_chatroom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745811182FDAAAFCB5C6AC /* tab_chatroom@3x.png */; };
 		AF745507B16142C7D74EB13C /* tab_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745F5DFB6B516553BE6822 /* tab_contact.png */; };
 		AF74559198BDEA5ABAD5BB09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7458BA36CD671D10F36980 /* ViewController.m */; };
@@ -56,6 +59,7 @@
 		AF745759C0133C4102C9AB99 /* avatar_g3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745A49339094A98728AE1A /* avatar_g3.jpg */; };
 		AF7457688DFB2836A1AF5413 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = AF745B6D9AC68365E138FEBD /* PodFile */; };
 		AF74576E889985ACF562D448 /* avatar_g6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745D3ED749EABA4D1240E3 /* avatar_g6.jpg */; };
+		AF745787B89172525C157825 /* MNChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74539619055AD0E27CC7FC /* MNChatTableViewCell.m */; };
 		AF7457BBFACE2822E0A57501 /* send_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7456B70FAC6B91FDB47954 /* send_button.png */; };
 		AF7457EEBAFCE3F9F0850638 /* YGHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74514323A07B187A7E61A0 /* YGHttpResponse.m */; };
 		AF745827C3305B808AFD9C54 /* avatar_g0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745C1835A458C06B17A548 /* avatar_g0.jpg */; };
@@ -66,6 +70,7 @@
 		AF7458BCD56009EA885E3176 /* YGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74511FA074CEF31413B161 /* YGViewModel.m */; };
 		AF74592C02112719A9617B54 /* YGHttpsSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745C2218EB441037D272D3 /* YGHttpsSessionManager.m */; };
 		AF745930880CB0786100BA02 /* MNTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7457F60956A9D2EF886F88 /* MNTest.m */; };
+		AF745942A3F6F73778794A12 /* MNChatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745A599F52DA8624C9B811 /* MNChatViewModel.m */; };
 		AF74595F2A24D47FA7BA50AC /* YGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745355319A1D69D32F9AE0 /* YGHttpRequest.m */; };
 		AF74597A58BD83F6B9C701B9 /* avatar_g9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745FAA1354379E7DD06538 /* avatar_g9.jpg */; };
 		AF74598D0F270088AFF33088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7455F6D9E054DD056714C3 /* Main.storyboard */; };
@@ -126,21 +131,26 @@
 		AF74514323A07B187A7E61A0 /* YGHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpResponse.m; path = Libraries/Networks/Http/YGHttpResponse.m; sourceTree = "<group>"; };
 		AF7451479D476EC7AFB33E03 /* avatar_g7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g7.jpg; sourceTree = "<group>"; };
 		AF74519DEB3679FECFC7A661 /* chat_to_bg.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_to_bg.9.png; sourceTree = "<group>"; };
+		AF7451ACBB213093F5EE23EF /* MNChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNChatTableViewCell.h; path = ChatTableViewCell/MNChatTableViewCell.h; sourceTree = "<group>"; };
 		AF7451E02219A79C4BEE0890 /* YGHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpManager.h; path = Libraries/Networks/Http/YGHttpManager.h; sourceTree = "<group>"; };
 		AF7452E4CADADF15ACEA59DA /* MNChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNChatRoomViewController.h; sourceTree = "<group>"; };
+		AF7452FD85950789E8924868 /* MNChatMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatMessageModel.m; path = Message/MNChatMessageModel.m; sourceTree = "<group>"; };
 		AF74531BCC87B879A2B8C1F8 /* MNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNLoginViewController.h; path = Login/MNLoginViewController.h; sourceTree = "<group>"; };
 		AF74531D3E52465C40F4753F /* tab_conversation@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation@3x.png"; sourceTree = "<group>"; };
 		AF745355319A1D69D32F9AE0 /* YGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpRequest.m; path = Libraries/Networks/Http/YGHttpRequest.m; sourceTree = "<group>"; };
 		AF7453588F1D7F256715CC6F /* YGEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGEnvironment.h; path = Libraries/Environments/YGEnvironment.h; sourceTree = "<group>"; };
+		AF74539619055AD0E27CC7FC /* MNChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatTableViewCell.m; path = ChatTableViewCell/MNChatTableViewCell.m; sourceTree = "<group>"; };
 		AF7453BCFFF6351201C5856A /* YGHttpSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpSessionManager.m; path = Libraries/Networks/Http/SessionManager/YGHttpSessionManager.m; sourceTree = "<group>"; };
 		AF7453CA72669B862D65A256 /* avatar_b6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b6.jpg; sourceTree = "<group>"; };
 		AF7453D067EE896D273AB31B /* MNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginViewController.m; path = Login/MNLoginViewController.m; sourceTree = "<group>"; };
 		AF7453DE3C24DBEEE78D78DD /* MNHttpsSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNHttpsSessionManager.m; path = Minions/SessionManagers/MNHttpsSessionManager.m; sourceTree = "<group>"; };
 		AF745423B7AE25150C925480 /* avatar_b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b1.jpg; sourceTree = "<group>"; };
+		AF745445A00F87B23FA6A691 /* MNUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNUserModel.m; path = User/MNUserModel.m; sourceTree = "<group>"; };
 		AF745454D7A5D07289E20C88 /* tab_conversation_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation_selected@2x.png"; sourceTree = "<group>"; };
 		AF7454D4D74E6D1110B1972A /* MNGroupChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNGroupChatViewController.h; sourceTree = "<group>"; };
 		AF7454E0696E3DC8A2B3F64C /* avatar_b0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b0.jpg; sourceTree = "<group>"; };
 		AF7454F4B1ADA93CE4323EA4 /* tab_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_conversation.png; sourceTree = "<group>"; };
+		AF7454F7BD9964CA046CC72B /* MNChatViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNChatViewModel.h; path = ChatViewModel/MNChatViewModel.h; sourceTree = "<group>"; };
 		AF745516169C0C6BDF069B94 /* MNConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNConversationViewController.m; sourceTree = "<group>"; };
 		AF74552D09F9008F0CCA236D /* tab_groupchat_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_groupchat_selected.png; sourceTree = "<group>"; };
 		AF74558D3D338327E1EDDA59 /* minionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsUITests.m; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 		AF74587DC9AEF69C6921ED04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF7458821EEDBF2D90CE7E34 /* avatar_g4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g4.jpg; sourceTree = "<group>"; };
 		AF7458858050D88F29310BE0 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		AF7458AC69621D1613301634 /* MNChatMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNChatMessageModel.h; path = Message/MNChatMessageModel.h; sourceTree = "<group>"; };
 		AF7458B396A39999E7A71A7C /* avatar_b7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b7.jpg; sourceTree = "<group>"; };
 		AF7458BA36CD671D10F36980 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF7458E5DB2915A7BE8CCFE0 /* tab_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation@2x.png"; sourceTree = "<group>"; };
@@ -190,6 +201,8 @@
 		AF7459F1FB64F81C42E601DA /* YGCommonMicro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGCommonMicro.h; path = Libraries/Micros/YGCommonMicro.h; sourceTree = "<group>"; };
 		AF745A294403FC0AAEC357F3 /* YGHttpSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpSessionManager.h; path = Libraries/Networks/Http/SessionManager/YGHttpSessionManager.h; sourceTree = "<group>"; };
 		AF745A49339094A98728AE1A /* avatar_g3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g3.jpg; sourceTree = "<group>"; };
+		AF745A57119F3997447D1A92 /* MNUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNUserModel.h; path = User/MNUserModel.h; sourceTree = "<group>"; };
+		AF745A599F52DA8624C9B811 /* MNChatViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatViewModel.m; path = ChatViewModel/MNChatViewModel.m; sourceTree = "<group>"; };
 		AF745A7963CE734F0C829E6F /* avatar_b2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b2.jpg; sourceTree = "<group>"; };
 		AF745A7EAAE09BCB422FB870 /* MNHttpsSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNHttpsSessionManager.h; path = Minions/SessionManagers/MNHttpsSessionManager.h; sourceTree = "<group>"; };
 		AF745A8049354BCACCC0409F /* MNGroupChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNGroupChatViewController.m; sourceTree = "<group>"; };
@@ -222,6 +235,7 @@
 		AF745E38CE567CAF072380B7 /* UIDevice+HardWare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+HardWare.m"; path = "Libraries/Environments/UIDevice+HardWare.m"; sourceTree = "<group>"; };
 		AF745E39AC5762E0453DA9CE /* NSURLSessionTask+YGHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLSessionTask+YGHttpRequest.m"; path = "Libraries/Networks/Http/NSURLSessionTask+YGHttpRequest.m"; sourceTree = "<group>"; };
 		AF745E67934C9D60198A31A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF745E6D8263B85575110519 /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = messages.json; path = TestData/messages.json; sourceTree = "<group>"; };
 		AF745E75C93C8D8818E5F2D0 /* YGEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGEnvironment.m; path = Libraries/Environments/YGEnvironment.m; sourceTree = "<group>"; };
 		AF745EDB118B4E4C8691F68E /* YGHttpFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpFile.m; path = Libraries/Networks/Http/YGHttpFile.m; sourceTree = "<group>"; };
 		AF745F041E62779E35A66A59 /* tab_groupchat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_groupchat@3x.png"; sourceTree = "<group>"; };
@@ -298,6 +312,10 @@
 		AF74514F6B3B3946B17E9CD1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF745445A00F87B23FA6A691 /* MNUserModel.m */,
+				AF745A57119F3997447D1A92 /* MNUserModel.h */,
+				AF7452FD85950789E8924868 /* MNChatMessageModel.m */,
+				AF7458AC69621D1613301634 /* MNChatMessageModel.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -435,6 +453,10 @@
 			children = (
 				AF745BE3862FD3AC9F1342CC /* MNChatViewController.h */,
 				AF745986C1F60136132283D4 /* MNChatViewController.m */,
+				AF74539619055AD0E27CC7FC /* MNChatTableViewCell.m */,
+				AF7451ACBB213093F5EE23EF /* MNChatTableViewCell.h */,
+				AF745A599F52DA8624C9B811 /* MNChatViewModel.m */,
+				AF7454F7BD9964CA046CC72B /* MNChatViewModel.h */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -576,6 +598,7 @@
 				AF74504A6E6F7BC3C2C5CF52 /* tab_chatroom_selected */,
 				AF745A595E30FFF4109874DC /* tab_groupchat_selected */,
 				AF74536BE444BD081890B9C4 /* tab_conversation_selected */,
+				AF745E6D8263B85575110519 /* messages.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -795,6 +818,7 @@
 				AF745653E299903205DB3357 /* tab_conversation_selected.png in Resources */,
 				AF7451C3BAE6DB119FB54CC3 /* tab_conversation_selected@2x.png in Resources */,
 				AF7452083A00EE1ACA51173B /* tab_conversation_selected@3x.png in Resources */,
+				AF745412D7AD42773DC5C512 /* messages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +902,10 @@
 				AF74544A2AE9C60E34F80936 /* MNMainTabBarViewController.m in Sources */,
 				AF7451D1147378F6FD264C79 /* MNWidgetUtil.m in Sources */,
 				AF7453B9A95821FC550BA804 /* MNConversationViewController.m in Sources */,
+				AF745787B89172525C157825 /* MNChatTableViewCell.m in Sources */,
+				AF745942A3F6F73778794A12 /* MNChatViewModel.m in Sources */,
+				AF74500E3B00438659DD4A87 /* MNUserModel.m in Sources */,
+				AF7454970EE48BB89F4B5CF6 /* MNChatMessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,6 +1073,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};
@@ -1081,6 +1110,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jegarn.minions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
