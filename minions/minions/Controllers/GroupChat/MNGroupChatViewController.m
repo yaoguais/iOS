@@ -1,5 +1,5 @@
 //
-// Created by 刘勇 on 16/7/24.
+// Created by Yao Guai on 16/7/24.
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
@@ -10,6 +10,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.tabBar.hidden = NO;
+    self.tabBarController.title = @"GroupChat";
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 
     _groupInfoArr = @[
             @{

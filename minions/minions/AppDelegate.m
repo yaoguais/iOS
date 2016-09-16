@@ -21,12 +21,11 @@
 
 @implementation AppDelegate
 
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    _window.rootViewController = [[MNMainTabBarViewController alloc] init];
+    MNMainTabBarViewController * tabBarViewController = [[MNMainTabBarViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarViewController];
+    _window.rootViewController = navigationController;
     _window.backgroundColor = [UIColor whiteColor];
 
     return YES;

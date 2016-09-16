@@ -1,12 +1,12 @@
 //
-// Created by 刘勇 on 16/7/24.
+// Created by Yao Guai on 16/7/24.
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MNMessageViewController : UITableViewController
+@interface MNConversationViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray * messageInfoArr;
 

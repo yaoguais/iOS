@@ -1,17 +1,21 @@
 //
-// Created by 刘勇 on 16/7/24.
+// Created by Yao Guai on 16/7/24.
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
-#import "MNMessageViewController.h"
+#import "MNConversationViewController.h"
 #import "AppDelegate.h"
 #import "MNChatViewController.h"
 
 
-@implementation MNMessageViewController
+@implementation MNConversationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.tabBar.hidden = NO;
+    self.tabBarController.title = @"Conversation";
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     _messageInfoArr = @[
             @{
@@ -56,8 +60,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    delegate.window.rootViewController = [[MNChatViewController alloc] init];
+    MNChatViewController * chatViewController = [[MNChatViewController alloc] init];
+    chatViewController.title = _messageInfoArr[(NSUInteger) indexPath.row][@"name"];
+    [self.navigationController pushViewController:chatViewController animated:NO];
 }
 
 
