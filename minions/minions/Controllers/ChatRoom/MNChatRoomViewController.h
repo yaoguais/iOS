@@ -6,8 +6,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class MNChatRoomViewModel;
+
 @interface MNChatRoomViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray * groupInfoArr;
+@property (nonatomic, strong) MNChatRoomViewModel * viewModel;
 
 @end

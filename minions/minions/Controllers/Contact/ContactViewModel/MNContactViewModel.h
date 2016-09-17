@@ -15,9 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *users;
 
 - (NSUInteger)count;
-
 - (MNUserModel *)userForRowAtIndexPath:(NSIndexPath *)indexPath;
-
 - (void)requestForUsersForCallback:(void (^)(MNContactViewModel *))callback;
 
 @end

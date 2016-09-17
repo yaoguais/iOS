@@ -3,39 +3,40 @@
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
+#import <YYWebImage/UIImageView+YYWebImage.h>
 #import "MNGroupChatViewController.h"
-
+#import "MNGroupChatViewModel.h"
+#import "MNResourceUtil.h"
+#import "YGWeakifyStrongifyMicro.h"
+#import "MNErrorCode.h"
+#import "MNWidgetUtil.h"
+#import "MNGroupModel.h"
 
 @implementation MNGroupChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _viewModel = [[MNGroupChatViewModel alloc] init];
     self.tabBarController.tabBar.hidden = NO;
     self.tabBarController.title = @"GroupChat";
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self requestForGroups];
+}
 
-    _groupInfoArr = @[
-            @{
-                    @"name" : @"群组一",
-                    @"icon" : @"avatar_g0.jpg"
-            },
-            @{
-                    @"name" : @"群组二",
-                    @"icon" : @"avatar_g1.jpg"
-            },
-            @{
-                    @"name" : @"群组三",
-                    @"icon" : @"avatar_g2.jpg"
-            },
-            @{
-                    @"name" : @"群组四",
-                    @"icon" : @"avatar_g3.jpg"
-            }
-    ];
+- (void)requestForGroups {
+    @weakify(self);
+    [_viewModel requestGroupsWithCallback:^(MNGroupChatViewModel *viewModel) {
+        @strongify(self);
+        if (![MNErrorCode isSuccess:viewModel.code]) {
+            [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
+        } else {
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_groupInfoArr count];
+    return [_viewModel count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,10 +45,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSDictionary *item = _groupInfoArr[(NSUInteger) indexPath.row];
+    MNGroupModel *groupModel = [_viewModel groupForRowAtIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.textLabel setText:item[@"name"]];
-    [cell.imageView setImage:[UIImage imageNamed:item[@"icon"]]];
+    [cell.textLabel setText:groupModel.name];
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:[MNResourceUtil getUrl:groupModel.icon]] placeholder:[MNResourceUtil getAvatarPlaceholder]];
 
     return cell;
 }

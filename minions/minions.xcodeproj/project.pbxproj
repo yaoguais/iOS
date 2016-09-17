@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF7450023E809E99F6CA970C /* group_counter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF74573B8E1388ED713B4D4F /* group_counter.jpg */; };
+		AF74500341FB4B0240BD666F /* MNGroupChatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7456D8DF03F2FA87C878C6 /* MNGroupChatViewModel.m */; };
 		AF74500E3B00438659DD4A87 /* MNUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745445A00F87B23FA6A691 /* MNUserModel.m */; };
 		AF7450223E5E250082F284C5 /* tab_groupchat_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745808FB2283AA67AEBFA8 /* tab_groupchat_selected@3x.png */; };
 		AF745056B7F942F05BDC7FE1 /* YGEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745E75C93C8D8818E5F2D0 /* YGEnvironment.m */; };
@@ -48,6 +49,7 @@
 		AF74559198BDEA5ABAD5BB09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7458BA36CD671D10F36980 /* ViewController.m */; };
 		AF7455AC651E84623A353421 /* avatar_b0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7454E0696E3DC8A2B3F64C /* avatar_b0.jpg */; };
 		AF7455BCADBFB9C6055A4F73 /* YGHttpFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745EDB118B4E4C8691F68E /* YGHttpFile.m */; };
+		AF7455E656007FECA4ADFFBC /* MNChatRoomViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7455FA84AECB708A59DCC9 /* MNChatRoomViewModel.m */; };
 		AF745613DDC9D4316C53D4BD /* tab_groupchat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745F041E62779E35A66A59 /* tab_groupchat@3x.png */; };
 		AF74562025A7085B9FA6DFA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7459CC444F706BEA5F3F55 /* Assets.xcassets */; };
 		AF7456259BCB591BC6690777 /* chat_to_bg.9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF74519DEB3679FECFC7A661 /* chat_to_bg.9.png */; };
@@ -93,6 +95,7 @@
 		AF745D1D0D4CEF2DC07AE062 /* avatar_g8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF74559C8729BD1D4DE3E2F8 /* avatar_g8.jpg */; };
 		AF745D2365CF34F8C4C85C9A /* tab_contact_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF74585D48E5F8F1919013E7 /* tab_contact_selected@2x.png */; };
 		AF745D63FF1EE5526B963D76 /* minionsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74558D3D338327E1EDDA59 /* minionsUITests.m */; };
+		AF745DA0A28EE8943A7D2FFD /* MNGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745117CFE1A9837D20AD46 /* MNGroupModel.m */; };
 		AF745E006418FBB9FDCE0254 /* tab_chatroom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745D9ABBE1753334B96B54 /* tab_chatroom@2x.png */; };
 		AF745E032F583C698E0860E5 /* avatar_b6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7453CA72669B862D65A256 /* avatar_b6.jpg */; };
 		AF745E75244097F9100C2817 /* avatar_g2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7456A87921C794FBE4C00B /* avatar_g2.jpg */; };
@@ -132,8 +135,10 @@
 		AF74508B93D0D53828C72D26 /* avatar_b9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b9.jpg; sourceTree = "<group>"; };
 		AF7450F61911D4BAAB46FAE9 /* avatar_b8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b8.jpg; sourceTree = "<group>"; };
 		AF7450FB0DE513557E155AFE /* tab_groupchat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_groupchat@2x.png"; sourceTree = "<group>"; };
+		AF745117CFE1A9837D20AD46 /* MNGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNGroupModel.m; path = Group/MNGroupModel.m; sourceTree = "<group>"; };
 		AF745118CF015A1BE9FD4571 /* YGHttpsSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpsSessionManager.h; path = Libraries/Networks/Http/SessionManager/YGHttpsSessionManager.h; sourceTree = "<group>"; };
 		AF74511FA074CEF31413B161 /* YGViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGViewModel.m; path = Libraries/ViewModels/YGViewModel.m; sourceTree = "<group>"; };
+		AF74513FBD0FD97095943A36 /* MNGroupChatViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNGroupChatViewModel.h; path = GroupChatViewModel/MNGroupChatViewModel.h; sourceTree = "<group>"; };
 		AF74514323A07B187A7E61A0 /* YGHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpResponse.m; path = Libraries/Networks/Http/YGHttpResponse.m; sourceTree = "<group>"; };
 		AF7451479D476EC7AFB33E03 /* avatar_g7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g7.jpg; sourceTree = "<group>"; };
 		AF74515E6C52A885E7D49424 /* MNLoginUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginUserModel.m; path = User/MNLoginUserModel.m; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		AF74558D3D338327E1EDDA59 /* minionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsUITests.m; sourceTree = "<group>"; };
 		AF74559C8729BD1D4DE3E2F8 /* avatar_g8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g8.jpg; sourceTree = "<group>"; };
 		AF7455A04788E20E06D27E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF7455FA84AECB708A59DCC9 /* MNChatRoomViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatRoomViewModel.m; path = ChatRoomViewModel/MNChatRoomViewModel.m; sourceTree = "<group>"; };
 		AF7456148176541F824F372E /* avatar_b3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b3.jpg; sourceTree = "<group>"; };
 		AF74561EE35A3C58B88B6550 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF74565083999A3DE2E0146E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		AF7456A87921C794FBE4C00B /* avatar_g2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g2.jpg; sourceTree = "<group>"; };
 		AF7456B70FAC6B91FDB47954 /* send_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_button.png; sourceTree = "<group>"; };
 		AF7456BD47B69147EE20107F /* MNWidgetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNWidgetUtil.m; sourceTree = "<group>"; };
+		AF7456D8DF03F2FA87C878C6 /* MNGroupChatViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNGroupChatViewModel.m; path = GroupChatViewModel/MNGroupChatViewModel.m; sourceTree = "<group>"; };
 		AF7456FC3F5048CF25B3129E /* tab_chatroom_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_chatroom_selected.png; sourceTree = "<group>"; };
 		AF74570238BEBC7387BA0335 /* YGSingletonMicro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGSingletonMicro.h; path = Libraries/Micros/YGSingletonMicro.h; sourceTree = "<group>"; };
 		AF7457131DFAF6AD01502E5C /* tab_conversation_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_conversation_selected.png; sourceTree = "<group>"; };
@@ -217,6 +224,7 @@
 		AF7459E38D1AE4B02EE1B25D /* minionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsTests.m; sourceTree = "<group>"; };
 		AF7459F1FB64F81C42E601DA /* YGCommonMicro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGCommonMicro.h; path = Libraries/Micros/YGCommonMicro.h; sourceTree = "<group>"; };
 		AF745A294403FC0AAEC357F3 /* YGHttpSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpSessionManager.h; path = Libraries/Networks/Http/SessionManager/YGHttpSessionManager.h; sourceTree = "<group>"; };
+		AF745A33FD1C02731F00CAAF /* MNChatRoomViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNChatRoomViewModel.h; path = ChatRoomViewModel/MNChatRoomViewModel.h; sourceTree = "<group>"; };
 		AF745A49339094A98728AE1A /* avatar_g3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g3.jpg; sourceTree = "<group>"; };
 		AF745A57119F3997447D1A92 /* MNUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNUserModel.h; path = User/MNUserModel.h; sourceTree = "<group>"; };
 		AF745A599F52DA8624C9B811 /* MNChatViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatViewModel.m; path = ChatViewModel/MNChatViewModel.m; sourceTree = "<group>"; };
@@ -235,6 +243,7 @@
 		AF745BAA7CC2728ABEF2C037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF745BC54842B0F45C1CD8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF745BE3862FD3AC9F1342CC /* MNChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNChatViewController.h; sourceTree = "<group>"; };
+		AF745BFAE2BE0FEDC8BB3CD6 /* MNGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNGroupModel.h; path = Group/MNGroupModel.h; sourceTree = "<group>"; };
 		AF745C1835A458C06B17A548 /* avatar_g0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g0.jpg; sourceTree = "<group>"; };
 		AF745C2218EB441037D272D3 /* YGHttpsSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpsSessionManager.m; path = Libraries/Networks/Http/SessionManager/YGHttpsSessionManager.m; sourceTree = "<group>"; };
 		AF745CCA206302AE8C89D8C9 /* MNChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNChatRoomViewController.m; sourceTree = "<group>"; };
@@ -337,6 +346,8 @@
 				AF7458AC69621D1613301634 /* MNChatMessageModel.h */,
 				AF74515E6C52A885E7D49424 /* MNLoginUserModel.m */,
 				AF74538B9016A60821AA3BAF /* MNLoginUserModel.h */,
+				AF745117CFE1A9837D20AD46 /* MNGroupModel.m */,
+				AF745BFAE2BE0FEDC8BB3CD6 /* MNGroupModel.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +378,8 @@
 			children = (
 				AF7454D4D74E6D1110B1972A /* MNGroupChatViewController.h */,
 				AF745A8049354BCACCC0409F /* MNGroupChatViewController.m */,
+				AF7456D8DF03F2FA87C878C6 /* MNGroupChatViewModel.m */,
+				AF74513FBD0FD97095943A36 /* MNGroupChatViewModel.h */,
 			);
 			path = GroupChat;
 			sourceTree = "<group>";
@@ -476,7 +489,7 @@
 			path = avatar;
 			sourceTree = "<group>";
 		};
-		AF7455D9CB03388B1834DF53 /* Chat */ = {
+		AF7455D9CB03388B1834DF53 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
 				AF745BE3862FD3AC9F1342CC /* MNChatViewController.h */,
@@ -486,7 +499,7 @@
 				AF745A599F52DA8624C9B811 /* MNChatViewModel.m */,
 				AF7454F7BD9964CA046CC72B /* MNChatViewModel.h */,
 			);
-			path = Chat;
+			path = Chats;
 			sourceTree = "<group>";
 		};
 		AF7456608ED782BC0E176042 /* Utils */ = {
@@ -533,7 +546,7 @@
 			children = (
 				AF7453D067EE896D273AB31B /* MNLoginViewController.m */,
 				AF74531BCC87B879A2B8C1F8 /* MNLoginViewController.h */,
-				AF7455D9CB03388B1834DF53 /* Chat */,
+				AF7455D9CB03388B1834DF53 /* Chats */,
 				AF745B3FB9276C196C655BAA /* ChatRoom */,
 				AF7451996F318F832ECFF676 /* Contact */,
 				AF74526B3B4ACDA4C6C632B6 /* GroupChat */,
@@ -607,6 +620,8 @@
 			children = (
 				AF7452E4CADADF15ACEA59DA /* MNChatRoomViewController.h */,
 				AF745CCA206302AE8C89D8C9 /* MNChatRoomViewController.m */,
+				AF7455FA84AECB708A59DCC9 /* MNChatRoomViewModel.m */,
+				AF745A33FD1C02731F00CAAF /* MNChatRoomViewModel.h */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -944,6 +959,9 @@
 				AF745F29A68CD766D103DBD5 /* MNLoginUserManager.m in Sources */,
 				AF7450ED92876ECAC4D3BD5A /* MNResourceUtil.m in Sources */,
 				AF7455894E2E8855EE015D96 /* MNContactViewModel.m in Sources */,
+				AF7455E656007FECA4ADFFBC /* MNChatRoomViewModel.m in Sources */,
+				AF745DA0A28EE8943A7D2FFD /* MNGroupModel.m in Sources */,
+				AF74500341FB4B0240BD666F /* MNGroupChatViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

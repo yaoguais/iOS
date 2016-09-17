@@ -6,8 +6,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class MNGroupChatViewModel;
+
 @interface MNGroupChatViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray * groupInfoArr;
+@property (nonatomic, strong) MNGroupChatViewModel * viewModel;
 
 @end
