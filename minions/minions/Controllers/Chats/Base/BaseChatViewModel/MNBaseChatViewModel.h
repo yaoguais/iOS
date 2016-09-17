@@ -8,7 +8,7 @@
 @class MNChatMessageModel;
 @class MNUserModel;
 
-@interface MNChatViewModel : NSObject
+@interface MNBaseChatViewModel : NSObject
 
 @property (strong, nonatomic) NSMutableArray * messages;
 

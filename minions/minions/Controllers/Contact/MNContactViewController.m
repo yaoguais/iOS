@@ -11,7 +11,8 @@
 #import "MNErrorCode.h"
 #import "MNWidgetUtil.h"
 #import "YGWeakifyStrongifyMicro.h"
-#import "MNChatViewController.h"
+#import "MNBaseChatViewController.h"
+#import "MNChatsChatViewController.h"
 
 
 @implementation MNContactViewController
@@ -64,7 +65,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MNUserModel *userModel = [_viewModel userForRowAtIndexPath:indexPath];
-    MNChatViewController *chatViewController = [[MNChatViewController alloc] init];
+    MNChatsChatViewController *chatViewController = [[MNChatsChatViewController alloc] init];
     chatViewController.title = userModel.account;
     chatViewController.chatWithUser = userModel;
     [self.navigationController pushViewController:chatViewController animated:NO];

@@ -13,7 +13,7 @@
 #import "MNTest.h"
 #import "MNLoginViewController.h"
 #import "MNMainTabBarViewController.h"
-#import "MNChatViewModel.h"
+#import "MNBaseChatViewModel.h"
 #import "MNHttpsSessionManager.h"
 #import "YGHttpManager.h"
 

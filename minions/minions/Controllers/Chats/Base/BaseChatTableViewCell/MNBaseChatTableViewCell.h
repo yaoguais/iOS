@@ -8,7 +8,7 @@
 
 @class MNChatMessageModel;
 
-@interface MNChatTableViewCell : UITableViewCell
+@interface MNBaseChatTableViewCell : UITableViewCell
 
 @property (nonatomic) BOOL isLoginUser;
 @property (strong, nonatomic) UIImageView *avatar;

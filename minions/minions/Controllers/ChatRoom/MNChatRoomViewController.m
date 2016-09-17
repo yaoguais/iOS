@@ -11,6 +11,7 @@
 #import "YGWeakifyStrongifyMicro.h"
 #import "MNErrorCode.h"
 #import "MNWidgetUtil.h"
+#import "MNChatsChatRoomViewController.h"
 
 
 @implementation MNChatRoomViewController
@@ -56,6 +57,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MNGroupModel *groupModel = [_viewModel groupForRowAtIndexPath:indexPath];
+    MNChatsChatRoomViewController *chatRoomViewController = [[MNChatsChatRoomViewController alloc] init];
+    chatRoomViewController.groupModel = groupModel;
+    chatRoomViewController.title = groupModel.name;
+    [self.navigationController pushViewController:chatRoomViewController animated:NO];
 }
 
 @end

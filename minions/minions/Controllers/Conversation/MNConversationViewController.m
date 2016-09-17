@@ -4,7 +4,7 @@
 //
 
 #import "MNConversationViewController.h"
-#import "MNChatViewController.h"
+#import "MNBaseChatViewController.h"
 #import "UIImageView+YYWebImage.h"
 #import "MNResourceUtil.h"
 
@@ -62,7 +62,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    MNChatViewController * chatViewController = [[MNChatViewController alloc] init];
+    MNBaseChatViewController * chatViewController = [[MNBaseChatViewController alloc] init];
     chatViewController.title = _messageInfoArr[(NSUInteger) indexPath.row][@"name"];
     [self.navigationController pushViewController:chatViewController animated:NO];
 }

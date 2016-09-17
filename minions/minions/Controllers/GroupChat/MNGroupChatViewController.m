@@ -11,6 +11,7 @@
 #import "MNErrorCode.h"
 #import "MNWidgetUtil.h"
 #import "MNGroupModel.h"
+#import "MNChatsGroupChatViewController.h"
 
 @implementation MNGroupChatViewController
 
@@ -55,6 +56,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MNGroupModel * groupModel = [_viewModel groupForRowAtIndexPath:indexPath];
+    MNChatsGroupChatViewController * groupChatViewController = [[MNChatsGroupChatViewController alloc] init];
+    groupChatViewController.groupModel = groupModel;
+    groupChatViewController.title = groupModel.name;
+    [self.navigationController pushViewController:groupChatViewController animated:NO];
 }
 
 @end

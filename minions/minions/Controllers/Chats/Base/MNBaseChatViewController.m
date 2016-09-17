@@ -3,10 +3,10 @@
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
-#import "MNChatViewController.h"
+#import "MNBaseChatViewController.h"
 #import "YGCommonMicro.h"
-#import "MNChatViewModel.h"
-#import "MNChatTableViewCell.h"
+#import "MNBaseChatViewModel.h"
+#import "MNBaseChatTableViewCell.h"
 #import "MNChatMessageModel.h"
 #import "MNUserModel.h"
 #import "MNWidgetUtil.h"
@@ -15,7 +15,7 @@
 #import "MNLoginUserModel.h"
 
 
-@implementation MNChatViewController
+@implementation MNBaseChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,7 +27,7 @@
     UIColor *commonHighlightColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:0.44];
 
     _loginUser = [MNLoginUserManager sharedInstance].loginUser;
-    _viewModel = [[MNChatViewModel alloc] init];
+    _viewModel = [[MNBaseChatViewModel alloc] init];
 
     _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, YGWindowWidth, YGWindowHeight - 40) style:UITableViewStylePlain];
     _contentTableView.delegate = self;
@@ -86,14 +86,14 @@
     }
 
     MNChatMessageModel *chatMessageModel = [[MNChatMessageModel alloc] init];
-    if (arc4random() % 2 == 1) {
-        chatMessageModel.user = _loginUser;
-    } else {
-        chatMessageModel.user = _chatWithUser;
-    }
+    chatMessageModel.user = _loginUser;
     chatMessageModel.content = content;
     NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
-    [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    if ([_viewModel count] < 10) {
+        [_contentTableView reloadData];
+    } else {
+        [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }
     _inputTextField.text = @"";
     [_inputTextField becomeFirstResponder];
     if ([_viewModel count] > 0) {
@@ -112,13 +112,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    MNChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MNBaseChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[MNChatTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[MNBaseChatTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     MNChatMessageModel *chatMessage = [_viewModel chatMessageForRowAtIndexPath:indexPath];
     [cell renderFromChatMessage:chatMessage isLoginUser:[chatMessage.user.uid isEqualToString:_loginUser.uid]];
-    [MNChatTableViewCell storageHeight:cell.height ForRowAtIndexPath:indexPath];
+    [MNBaseChatTableViewCell storageHeight:cell.height ForRowAtIndexPath:indexPath];
 
     return cell;
 }
@@ -128,7 +128,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [MNChatTableViewCell heightForRowAtIndexPath:indexPath];
+    return [MNBaseChatTableViewCell heightForRowAtIndexPath:indexPath];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

@@ -3,12 +3,12 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
-#import "MNChatViewModel.h"
+#import "MNBaseChatViewModel.h"
 #import "NSObject+YYModel.h"
 #import "YYModel-prefix.pch"
 #import "MNChatMessageModel.h"
 
-@implementation MNChatViewModel
+@implementation MNBaseChatViewModel
 
 - (instancetype)init {
     self = [super init];

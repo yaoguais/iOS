@@ -4,14 +4,14 @@
 //
 
 #import <YYWebImage/UIImageView+YYWebImage.h>
-#import "MNChatTableViewCell.h"
+#import "MNBaseChatTableViewCell.h"
 #import "MNChatMessageModel.h"
 #import "MNUserModel.h"
 #import "YGCommonMicro.h"
 #import "MNResourceUtil.h"
 
 
-@implementation MNChatTableViewCell
+@implementation MNBaseChatTableViewCell
 
 static NSMutableDictionary *chatTableViewCellHeights;
 
