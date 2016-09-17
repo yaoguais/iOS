@@ -6,13 +6,29 @@
 #import "MNHttpsSessionManager.h"
 #import "YGHttpRequest.h"
 #import "YGEnvironment.h"
-
+#import "AFNetworking.h"
 
 @implementation MNHttpsSessionManager
 
 - (instancetype)init {
     self = [super init];
     if (self) {
+        AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        policy.allowInvalidCertificates = YES;
+        policy.validatesDomainName = NO;
+
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.securityPolicy = policy;
+        manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+        manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+        [manager setSessionDidBecomeInvalidBlock:^(NSURLSession *_Nonnull session, NSError *_Nonnull error) {
+            NSLog(@"setSessionDidBecomeInvalidBlock %@", error);
+        }];
+
+        _manager = manager;
+
         _requestBeforeRequestCallback = ^(YGHttpRequest *httpRequest) {
             YGEnvironment *env = [YGEnvironment sharedInstance];
             httpRequest.queryParams[@"nbid"] = env.nbid;

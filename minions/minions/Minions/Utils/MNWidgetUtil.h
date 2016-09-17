@@ -5,11 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class ViewController;
-
+@class UIViewController;
 
 @interface MNWidgetUtil : NSObject
 
-+ (void)alertWithController:(ViewController *)controller title:(NSString *)title mssage:(NSString *)message;
++ (void)alertWithController:(UIViewController *)controller title:(NSString *)title mssage:(NSString *)message;
 
 @end

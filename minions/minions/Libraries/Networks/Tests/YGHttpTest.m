@@ -11,6 +11,7 @@
 #import "YGHttpResponse.h"
 #import "AFHTTPSessionManager.h"
 #import "YGHttpFile.h"
+#import "MNHttpsSessionManager.h"
 
 
 @implementation YGHttpTest
@@ -72,4 +73,21 @@
 
     NSLog(@"done");
 }
+
++ (void) test2
+{
+    YGHttpsSessionManager *manager = [[MNHttpsSessionManager alloc] init];
+    [YGHttpManager setDefaultManager:manager];
+    NSLog(@"go");
+    YGHttpRequest *httpRequest = [[YGHttpRequest alloc] init];
+    httpRequest.url = @"https://jegarn.com/api/user/recommend";
+    httpRequest.method = YGHttpRequestMethod_GET;
+    httpRequest.timeout = 3;
+    httpRequest.requestCompleteCallback = ^(YGHttpRequest *request, YGHttpResponse *response) {
+        NSLog(@"Data: %@ Error:%@", [[NSString alloc] initWithData:response.responseObject encoding:NSUTF8StringEncoding], response.error);
+    };
+    [httpRequest send];
+    NSLog(@"done");
+}
+
 @end

@@ -9,7 +9,7 @@
 @interface MNUserModel : NSObject
 
 @property (nonatomic, copy) NSString * uid;
-@property (nonatomic, copy) NSString * username;
+@property (nonatomic, copy) NSString * account;
 @property (nonatomic, copy) NSString * avatar;
 
 @end

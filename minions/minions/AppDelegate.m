@@ -14,6 +14,8 @@
 #import "MNLoginViewController.h"
 #import "MNMainTabBarViewController.h"
 #import "MNChatViewModel.h"
+#import "MNHttpsSessionManager.h"
+#import "YGHttpManager.h"
 
 
 @interface AppDelegate ()
@@ -24,10 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    MNMainTabBarViewController * tabBarViewController = [[MNMainTabBarViewController alloc] init];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarViewController];
-    _window.rootViewController = navigationController;
     _window.backgroundColor = [UIColor whiteColor];
+    [self presentLoginViewController];
+    [self initHttpManager];
 
     return YES;
 }
@@ -54,6 +55,25 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) initHttpManager
+{
+    YGHttpsSessionManager *manager = [[MNHttpsSessionManager alloc] init];
+    [YGHttpManager setDefaultManager:manager];
+}
+
+- (void) presentMainTabBarViewController
+{
+    MNMainTabBarViewController *tabBarViewController = [[MNMainTabBarViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarViewController];
+    _window.rootViewController = navigationController;
+}
+
+- (void) presentLoginViewController
+{
+    MNLoginViewController * loginViewController = [[MNLoginViewController alloc] init];
+    _window.rootViewController = loginViewController;
 }
 
 

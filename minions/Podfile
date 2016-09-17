@@ -6,4 +6,5 @@ target 'minions' do
     pod "UICKeyChainStore"
     pod 'YYModel'
     pod 'YYKeyboardManager'
+    pod 'YYWebImage'
 end

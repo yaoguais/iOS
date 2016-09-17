@@ -14,5 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void) presentMainTabBarViewController;
+- (void) presentLoginViewController;
 
 @end

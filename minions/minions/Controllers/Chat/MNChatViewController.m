@@ -11,6 +11,8 @@
 #import "MNUserModel.h"
 #import "MNWidgetUtil.h"
 #import "YYKeyboardManager.h"
+#import "MNLoginUserManager.h"
+#import "MNLoginUserModel.h"
 
 
 @implementation MNChatViewController
@@ -24,10 +26,7 @@
     UIColor *commonColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:1];
     UIColor *commonHighlightColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:0.44];
 
-    _loginUser = [[MNUserModel alloc] init];
-    _loginUser.uid = @"1";
-    _loginUser.username = @"Jack";
-    _loginUser.avatar = @"avatar_g6.jpg";
+    _loginUser = [MNLoginUserManager sharedInstance].loginUser;
     _viewModel = [[MNChatViewModel alloc] init];
 
     _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, YGWindowWidth, YGWindowHeight - 40) style:UITableViewStylePlain];

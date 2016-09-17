@@ -3,8 +3,15 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
+#import "YGWeakifyStrongifyMicro.h"
 #import "MNLoginViewController.h"
 #import "YGCommonMicro.h"
+#import "MNWidgetUtil.h"
+#import "MNLoginViewModel.h"
+#import "MNErrorCode.h"
+#import "MNLoginUserManager.h"
+#import "AppDelegate.h"
+#import "MNLoginUserModel.h"
 
 
 @implementation MNLoginViewController
@@ -27,27 +34,28 @@
     [self.view addSubview:_signLabel];
 
     const CGFloat usernameMarginTop = 200;
-    _usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop, commonWidth, 20)];
-    _usernameLabel.text = @"USERNAME";
-    _usernameLabel.textColor = [UIColor colorWithRed:161 / 255.0 green:161 / 255.0 blue:164 / 255.0 alpha:1];
-    _usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-    [self.view addSubview:_usernameLabel];
+    _accountLabel = [[UILabel alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop, commonWidth, 20)];
+    _accountLabel.text = @"USERNAME";
+    _accountLabel.textColor = [UIColor colorWithRed:161 / 255.0 green:161 / 255.0 blue:164 / 255.0 alpha:1];
+    _accountTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    [self.view addSubview:_accountLabel];
 
-    _usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop + 32, commonWidth, 32)];
-    _usernameTextField.keyboardType = UIKeyboardTypeAlphabet;
-    [_usernameTextField becomeFirstResponder];
-    [_usernameTextField setFont:[UIFont systemFontOfSize:18]];
-    [self.view addSubview:_usernameTextField];
+    _accountTextField = [[UITextField alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop + 32, commonWidth, 32)];
+    _accountTextField.keyboardType = UIKeyboardTypeAlphabet;
+    _accountTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _accountTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    [_accountTextField becomeFirstResponder];
+    [_accountTextField setFont:[UIFont systemFontOfSize:18]];
+    [self.view addSubview:_accountTextField];
 
-    _usernameLineView = [[UIView alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop + 70, commonWidth, 1)];
-    _usernameLineView.backgroundColor = [UIColor colorWithRed:36 / 255.0 green:37 / 255.0 blue:42 / 255.0 alpha:1];
-    [self.view addSubview:_usernameLineView];
+    _accountLineView = [[UIView alloc] initWithFrame:CGRectMake(commonMarginLeft, usernameMarginTop + 70, commonWidth, 1)];
+    _accountLineView.backgroundColor = [UIColor colorWithRed:36 / 255.0 green:37 / 255.0 blue:42 / 255.0 alpha:1];
+    [self.view addSubview:_accountLineView];
 
     const CGFloat passwordMarginTop = usernameMarginTop + 110;
     _passwordLabel = [[UILabel alloc] initWithFrame:CGRectMake(commonMarginLeft, passwordMarginTop, commonWidth, 20)];
     _passwordLabel.text = @"PASSWORD";
     _passwordLabel.textColor = [UIColor colorWithRed:161 / 255.0 green:161 / 255.0 blue:164 / 255.0 alpha:1];
-    _passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.view addSubview:_passwordLabel];
 
     _passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(commonMarginLeft, passwordMarginTop + 32, commonWidth, 32)];
@@ -68,8 +76,34 @@
     _loginButton.layer.borderColor = commonColor.CGColor;
     _loginButton.layer.borderWidth = 2.0;
     _loginButton.layer.cornerRadius = 10.0;
+    [_loginButton addTarget:self action:@selector(loginButtonClick) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:_loginButton];
 }
 
+
+- (void) loginButtonClick{
+    NSString *account = _accountTextField.text;
+    if (YGIsEmptyString(account)) {
+        [MNWidgetUtil alertWithController:self title:@"Alter" mssage:@"username can not be empty"];
+        return;
+    }
+
+    NSString *password = _passwordTextField.text;
+    if (YGIsEmptyString(password)) {
+        [MNWidgetUtil alertWithController:self title:@"Alter" mssage:@"password can not be empty"];
+        return;
+    }
+
+    @weakify(self);
+    [MNLoginViewModel loginWithAccount:account password:password callback:^(MNLoginViewModel *viewModel) {
+        @strongify(self);
+        if (![MNErrorCode isSuccess:viewModel.code] || !YGIsNotNull(viewModel.user)) {
+            [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
+        } else {
+            [MNLoginUserManager sharedInstance].loginUser = viewModel.user;
+            [(AppDelegate *) [[UIApplication sharedApplication] delegate] presentMainTabBarViewController];
+        }
+    }];
+}
 
 @end

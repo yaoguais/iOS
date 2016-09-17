@@ -7,13 +7,13 @@
 #import <UIKit/UIKit.h>
 
 @class MNChatViewModel;
-@class MNUserModel;
+@class MNLoginUserModel;
 
 @interface MNChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (nonatomic, strong) MNChatViewModel *viewModel;
 
-@property (nonatomic, strong) MNUserModel *loginUser;
+@property (nonatomic, strong) MNLoginUserModel *loginUser;
 @property (nonatomic, strong) UITableView *contentTableView;
 @property (nonatomic, strong) UITextField *inputTextField;
 @property (nonatomic, strong) UIButton *sendButton;

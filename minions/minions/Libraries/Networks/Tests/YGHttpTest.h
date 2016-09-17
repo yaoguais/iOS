@@ -8,4 +8,5 @@
 
 @interface YGHttpTest : NSObject
 + (void) test;
++ (void) test2;
 @end

@@ -3,10 +3,12 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
+#import <YYWebImage/UIImageView+YYWebImage.h>
 #import "MNChatTableViewCell.h"
 #import "MNChatMessageModel.h"
 #import "MNUserModel.h"
 #import "YGCommonMicro.h"
+#import "MNResourceUtil.h"
 
 
 @implementation MNChatTableViewCell
@@ -32,8 +34,9 @@ static NSMutableDictionary *chatTableViewCellHeights;
 - (void)renderFromChatMessage:(MNChatMessageModel *)chatMessage isLoginUser:(BOOL)isLoginUser {
     _isLoginUser = isLoginUser;
     _avatar.image = [UIImage imageNamed:chatMessage.user.avatar];
+    [_avatar yy_setImageWithURL:[NSURL URLWithString:[MNResourceUtil getUrl:chatMessage.user.avatar]] placeholder:[MNResourceUtil getAvatarPlaceholder]];
     _avatar.contentMode = UIViewContentModeScaleAspectFit;
-    _username.text = chatMessage.user.username;
+    _username.text = chatMessage.user.account;
     _content.text = chatMessage.content;
     const CGFloat avatarWidth = 50;
     const CGFloat commonMargin = 2;

@@ -4,8 +4,9 @@
 //
 
 #import "MNConversationViewController.h"
-#import "AppDelegate.h"
 #import "MNChatViewController.h"
+#import "UIImageView+YYWebImage.h"
+#import "MNResourceUtil.h"
 
 
 @implementation MNConversationViewController
@@ -20,19 +21,19 @@
     _messageInfoArr = @[
             @{
                     @"name" : @"会话一",
-                    @"icon" : @"avatar_b9.jpg"
+                    @"icon" : @"/upload/avatar/default/b2.jpg"
             },
             @{
                     @"name" : @"会话二",
-                    @"icon" : @"avatar_b6.jpg"
+                    @"icon" : @"/upload/avatar/default/b6.jpg"
             },
             @{
                     @"name" : @"会话三",
-                    @"icon" : @"avatar_b7.jpg"
+                    @"icon" : @"/upload/avatar/default/b7.jpg"
             },
             @{
                     @"name" : @"会话四",
-                    @"icon" : @"avatar_b8.jpg"
+                    @"icon" : @"/upload/avatar/default/b8.jpg"
             }
     ];
 
@@ -51,6 +52,7 @@
     NSDictionary *item = _messageInfoArr[(NSUInteger) indexPath.row];
     [cell.textLabel setText:item[@"name"]];
     [cell.imageView setImage:[UIImage imageNamed:item[@"icon"]]];
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:[MNResourceUtil getUrl:item[@"icon"]]] placeholder:[MNResourceUtil getAvatarPlaceholder]];
 
     return cell;
 }
