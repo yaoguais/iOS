@@ -45,6 +45,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     NSDictionary *item = _groupInfoArr[(NSUInteger) indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.textLabel setText:item[@"name"]];
     [cell.imageView setImage:[UIImage imageNamed:item[@"icon"]]];
 

@@ -86,7 +86,11 @@
     }
 
     MNChatMessageModel *chatMessageModel = [[MNChatMessageModel alloc] init];
-    chatMessageModel.user = _loginUser;
+    if (arc4random() % 2 == 1) {
+        chatMessageModel.user = _loginUser;
+    } else {
+        chatMessageModel.user = _chatWithUser;
+    }
     chatMessageModel.content = content;
     NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
     [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];

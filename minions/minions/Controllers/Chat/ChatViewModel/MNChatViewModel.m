@@ -13,7 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self requestForMessages];
+        _messages = [[NSMutableArray alloc] init];
     }
 
     return self;

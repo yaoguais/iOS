@@ -9,6 +9,8 @@
 #import "YGWeakifyStrongifyMicro.h"
 #import "MNErrorCode.h"
 #import "MNHttpRequestUrl.h"
+#import "YGCommonMicro.h"
+#import "MNLoginUserModel.h"
 
 
 @implementation MNLoginViewModel
@@ -19,7 +21,7 @@
     };
 }
 
-+ (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(void (^)(MNLoginViewModel *))callback {
+- (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(void (^)(MNLoginViewModel *))callback {
     YGHttpRequest *httpRequest = [[YGHttpRequest alloc] init];
     httpRequest.url = MNHttpRequestLoginUrl;
     httpRequest.dataParams = [@{@"account" : account, @"password" : password} mutableCopy];
@@ -34,6 +36,11 @@
             loginViewModel.code = [MNErrorCode getNetworkErrorCode];
         } else {
             loginViewModel = [MNLoginViewModel yy_modelWithJSON:response.responseObject];
+            if (!YGIsNotNull(loginViewModel.user)) {
+                loginViewModel.code = [MNErrorCode getNetworkErrorCode];
+            }else{
+                self.user = loginViewModel.user;
+            }
         }
         callback(loginViewModel);
     };

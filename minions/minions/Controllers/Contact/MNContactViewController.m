@@ -3,40 +3,44 @@
 // Copyright (c) 2016 ___FULLUSERNAME___. All rights reserved.
 //
 
+#import <YYWebImage/UIImageView+YYWebImage.h>
 #import "MNContactViewController.h"
+#import "MNContactViewModel.h"
+#import "MNUserModel.h"
+#import "MNResourceUtil.h"
+#import "MNErrorCode.h"
+#import "MNWidgetUtil.h"
+#import "YGWeakifyStrongifyMicro.h"
+#import "MNChatViewController.h"
 
 
 @implementation MNContactViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _viewModel = [[MNContactViewModel alloc] init];
     self.tabBarController.tabBar.hidden = NO;
     self.tabBarController.title = @"Contact";
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self requestForUsers];
+}
 
-    _userInfoArr = @[
-            @{
-                    @"name" : @"张三",
-                    @"avatar" : @"avatar.jpg"
-            },
-            @{
-                    @"name" : @"李四",
-                    @"avatar" : @"avatar_b0.jpg"
-            },
-            @{
-                    @"name" : @"王二",
-                    @"avatar" : @"avatar_b1.jpg"
-            },
-            @{
-                    @"name" : @"赵五",
-                    @"avatar" : @"avatar_b2.jpg"
-            }
-    ];
+- (void) requestForUsers
+{
+    @weakify(self);
+    [_viewModel requestForUsersForCallback:^(MNContactViewModel *viewModel) {
+        @strongify(self);
+        if (![MNErrorCode isSuccess:viewModel.code]) {
+            [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
+        }else{
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_userInfoArr count];
+    return [_viewModel count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,15 +49,25 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSDictionary *item = _userInfoArr[(NSUInteger) indexPath.row];
-    [cell.textLabel setText:item[@"name"]];
-    [cell.imageView setImage:[UIImage imageNamed:item[@"avatar"]]];
+    MNUserModel * userModel = [_viewModel userForRowAtIndexPath:indexPath];
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell.textLabel setText:userModel.account];
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:[MNResourceUtil getUrl:userModel.avatar]] placeholder:[MNResourceUtil getAvatarPlaceholder]];
 
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MNUserModel *userModel = [_viewModel userForRowAtIndexPath:indexPath];
+    MNChatViewController *chatViewController = [[MNChatViewController alloc] init];
+    chatViewController.title = userModel.account;
+    chatViewController.chatWithUser = userModel;
+    [self.navigationController pushViewController:chatViewController animated:NO];
 }
 
 @end

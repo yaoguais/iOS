@@ -6,8 +6,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class MNContactViewModel;
+
 @interface MNContactViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray * userInfoArr;
+@property (nonatomic, strong) MNContactViewModel *viewModel;
 
 @end

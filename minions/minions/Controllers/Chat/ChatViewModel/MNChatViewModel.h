@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @class MNChatMessageModel;
+@class MNUserModel;
 
 @interface MNChatViewModel : NSObject
 

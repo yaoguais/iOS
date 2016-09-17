@@ -19,7 +19,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     _messageInfoArr = @[
-            @{
+            /*@{
                     @"name" : @"会话一",
                     @"icon" : @"/upload/avatar/default/b2.jpg"
             },
@@ -34,7 +34,7 @@
             @{
                     @"name" : @"会话四",
                     @"icon" : @"/upload/avatar/default/b8.jpg"
-            }
+            }*/
     ];
 
 }

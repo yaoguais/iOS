@@ -16,6 +16,6 @@
 @property (nonatomic) NSInteger code;
 @property (nonatomic, strong) MNLoginUserModel *user;
 
-+ (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(void (^)(MNLoginViewModel *))callback;
+- (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(void (^)(MNLoginViewModel *))callback;
 
 @end

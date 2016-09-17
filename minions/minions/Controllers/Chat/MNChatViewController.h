@@ -8,12 +8,14 @@
 
 @class MNChatViewModel;
 @class MNLoginUserModel;
+@class MNUserModel;
 
 @interface MNChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (nonatomic, strong) MNChatViewModel *viewModel;
 
 @property (nonatomic, strong) MNLoginUserModel *loginUser;
+@property (nonatomic, strong) MNUserModel * chatWithUser;
 @property (nonatomic, strong) UITableView *contentTableView;
 @property (nonatomic, strong) UITextField *inputTextField;
 @property (nonatomic, strong) UIButton *sendButton;

@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    _viewModel = [[MNLoginViewModel alloc] init];
     const CGFloat commonMarginLeft = 60;
     const CGFloat commonWidth = YGViewWidth(self.view) - 2 * commonMarginLeft;
     UIColor * commonColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:1];
@@ -103,9 +104,9 @@
     }
 
     @weakify(self);
-    [MNLoginViewModel loginWithAccount:account password:password callback:^(MNLoginViewModel *viewModel) {
+    [_viewModel loginWithAccount:account password:password callback:^(MNLoginViewModel *viewModel) {
         @strongify(self);
-        if (![MNErrorCode isSuccess:viewModel.code] || !YGIsNotNull(viewModel.user)) {
+        if (![MNErrorCode isSuccess:viewModel.code]) {
             [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
         } else {
             [MNLoginUserManager sharedInstance].loginUser = viewModel.user;

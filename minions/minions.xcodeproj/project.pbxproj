@@ -44,6 +44,7 @@
 		AF7454970EE48BB89F4B5CF6 /* MNChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7452FD85950789E8924868 /* MNChatMessageModel.m */; };
 		AF7454ADD9AE6A4FF6E4C10E /* tab_chatroom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745811182FDAAAFCB5C6AC /* tab_chatroom@3x.png */; };
 		AF745507B16142C7D74EB13C /* tab_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745F5DFB6B516553BE6822 /* tab_contact.png */; };
+		AF7455894E2E8855EE015D96 /* MNContactViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74566E461AD3C2F6129FF0 /* MNContactViewModel.m */; };
 		AF74559198BDEA5ABAD5BB09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7458BA36CD671D10F36980 /* ViewController.m */; };
 		AF7455AC651E84623A353421 /* avatar_b0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7454E0696E3DC8A2B3F64C /* avatar_b0.jpg */; };
 		AF7455BCADBFB9C6055A4F73 /* YGHttpFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745EDB118B4E4C8691F68E /* YGHttpFile.m */; };
@@ -158,6 +159,7 @@
 		AF745423B7AE25150C925480 /* avatar_b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b1.jpg; sourceTree = "<group>"; };
 		AF745445A00F87B23FA6A691 /* MNUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNUserModel.m; path = User/MNUserModel.m; sourceTree = "<group>"; };
 		AF745454D7A5D07289E20C88 /* tab_conversation_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation_selected@2x.png"; sourceTree = "<group>"; };
+		AF7454752F134420DAB15A81 /* MNContactViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNContactViewModel.h; path = ContactViewModel/MNContactViewModel.h; sourceTree = "<group>"; };
 		AF7454D4D74E6D1110B1972A /* MNGroupChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNGroupChatViewController.h; sourceTree = "<group>"; };
 		AF7454E0696E3DC8A2B3F64C /* avatar_b0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b0.jpg; sourceTree = "<group>"; };
 		AF7454E92BF4FA9621C8D957 /* MNLoginUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginUserManager.m; path = Minions/UserManager/MNLoginUserManager.m; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		AF7456148176541F824F372E /* avatar_b3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b3.jpg; sourceTree = "<group>"; };
 		AF74561EE35A3C58B88B6550 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF74565083999A3DE2E0146E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF74566E461AD3C2F6129FF0 /* MNContactViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNContactViewModel.m; path = ContactViewModel/MNContactViewModel.m; sourceTree = "<group>"; };
 		AF74567AE822EE715B54461F /* avatar_b4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b4.jpg; sourceTree = "<group>"; };
 		AF74567F06ED035EF0A7F284 /* YGViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGViewModel.h; path = Libraries/ViewModels/YGViewModel.h; sourceTree = "<group>"; };
 		AF7456853F673C84AE80F6BF /* tab_groupchat_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_groupchat_selected@2x.png"; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 			children = (
 				AF745FAC7CA0C8DFDB2C156E /* MNContactViewController.h */,
 				AF7457EDCF308780F947634C /* MNContactViewController.m */,
+				AF74566E461AD3C2F6129FF0 /* MNContactViewModel.m */,
+				AF7454752F134420DAB15A81 /* MNContactViewModel.h */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -938,6 +943,7 @@
 				AF7450F0131073377CC66DA4 /* MNErrorCode.m in Sources */,
 				AF745F29A68CD766D103DBD5 /* MNLoginUserManager.m in Sources */,
 				AF7450ED92876ECAC4D3BD5A /* MNResourceUtil.m in Sources */,
+				AF7455894E2E8855EE015D96 /* MNContactViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
