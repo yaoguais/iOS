@@ -8,7 +8,7 @@
 
 @class MNLoginViewModel;
 
-@interface MNLoginViewController : UIViewController
+@interface MNLoginViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) UILabel * signLabel;
 @property (strong, nonatomic) UILabel * accountLabel;

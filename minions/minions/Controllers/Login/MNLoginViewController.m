@@ -62,6 +62,7 @@
     _passwordTextField.keyboardType = UIKeyboardTypeAlphabet;
     [_passwordTextField setFont:[UIFont systemFontOfSize:18]];
     [_passwordTextField setSecureTextEntry:YES];
+    _passwordTextField.delegate = self;
     [self.view addSubview:_passwordTextField];
 
     _passwordLineView = [[UIView alloc] initWithFrame:CGRectMake(commonMarginLeft, passwordMarginTop + 70, commonWidth, 1)];
@@ -88,6 +89,13 @@
         return;
     }
 
+    MNLoginUserModel *fakeUser = [MNLoginUserManager sharedInstance].fakeUser;
+    if ([account isEqualToString:fakeUser.account]) {
+        [MNLoginUserManager sharedInstance].loginUser = fakeUser;
+        [(AppDelegate *) [[UIApplication sharedApplication] delegate] presentMainTabBarViewController];
+        return;
+    }
+
     NSString *password = _passwordTextField.text;
     if (YGIsEmptyString(password)) {
         [MNWidgetUtil alertWithController:self title:@"Alter" mssage:@"password can not be empty"];
@@ -104,6 +112,11 @@
             [(AppDelegate *) [[UIApplication sharedApplication] delegate] presentMainTabBarViewController];
         }
     }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self loginButtonClick];
+    return NO;
 }
 
 @end

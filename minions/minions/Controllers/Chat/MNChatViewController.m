@@ -62,7 +62,7 @@
     CGRect toFrame = [manager convertRect:transition.toFrame toView:self.view];
     BOOL toVisible = transition.toVisible;
     if (toVisible) {
-        _contentTableView.frame = CGRectMake(0, 0, YGWindowWidth, YGWindowHeight - 40 - toFrame.size.height);
+        _contentTableView.frame = CGRectMake(0, 0, YGWindowWidth, YGWindowHeight - 60 - toFrame.size.height);
         _inputTextField.frame = CGRectMake(5, YGWindowHeight - 39 - toFrame.size.height, YGWindowWidth - 95, 30);
         _sendButton.frame = CGRectMake(YGWindowWidth - 82, YGWindowHeight - 42 - toFrame.size.height, 80, 36);
     } else {

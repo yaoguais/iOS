@@ -12,6 +12,7 @@
 @interface MNLoginUserManager : NSObject
 
 @property (nonatomic, strong) MNLoginUserModel * loginUser;
+@property (nonatomic, strong) MNLoginUserModel * fakeUser;
 
 YGSingletonH(MNLoginUserManager);
 
