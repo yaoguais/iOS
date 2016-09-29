@@ -13,6 +13,8 @@
 #import "MNTest.h"
 #import "MNLoginViewController.h"
 #import "MNMainTabBarViewController.h"
+#import "YGNSStreamTest.h"
+#import "JegarnCFSocketTransport.h"
 #import "MNBaseChatViewModel.h"
 #import "MNHttpsSessionManager.h"
 #import "YGHttpManager.h"
@@ -29,6 +31,10 @@
     _window.backgroundColor = [UIColor whiteColor];
     [self presentLoginViewController];
     [self initHttpManager];
+    [self testJegarnCore];
+
+    // _streamTest = [[YGNSStreamTest alloc] init];
+    // [_streamTest initNetworkCommunication];
 
     return YES;
 }
@@ -75,6 +81,23 @@
     MNLoginViewController * loginViewController = [[MNLoginViewController alloc] init];
     _window.rootViewController = loginViewController;
 }
+
+- (void) testJegarn
+{
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                 selector:@selector(testJegarnCore)
+                                                   object:nil];
+    [myThread start];
+}
+
+- (void)testJegarnCore
+{
+    _transport = [[JegarnCFSocketTransport alloc] init];
+    _transport.host = @"127.0.0.1";
+    _transport.port = 8883;
+    [_transport open];
+    //[_transport close];
+};
 
 
 @end

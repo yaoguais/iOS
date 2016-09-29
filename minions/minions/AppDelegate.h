@@ -9,9 +9,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class JegarnCFSocketTransport;
+@class YGNSStreamTest;
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) YGNSStreamTest * streamTest;
+@property (strong, nonatomic) JegarnCFSocketTransport * transport;
 @property (strong, nonatomic) UIWindow *window;
 
 - (void) presentMainTabBarViewController;
