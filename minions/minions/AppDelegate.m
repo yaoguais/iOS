@@ -17,7 +17,11 @@
 #import "JegarnCFSocketTransport.h"
 #import "MNBaseChatViewModel.h"
 #import "MNHttpsSessionManager.h"
+#import "JegarnCFSslSocketTransport.h"
 #import "YGHttpManager.h"
+#import "JegarnCFSslSecurityPolicy.h"
+#import "JegarnCFSslSocketTransport.h"
+#import "JegarnSslConvert.h"
 
 
 @interface AppDelegate ()
@@ -31,7 +35,8 @@
     _window.backgroundColor = [UIColor whiteColor];
     [self presentLoginViewController];
     [self initHttpManager];
-    [self testJegarnCore];
+    //[self testJegarnCore];
+    [self testSslJegarnCore];
 
     // _streamTest = [[YGNSStreamTest alloc] init];
     // [_streamTest initNetworkCommunication];
@@ -98,6 +103,28 @@
     [_transport open];
     //[_transport close];
 };
+
+- (void) testSslJegarnCore
+{
+    JegarnCFSslSecurityPolicy *securityPolicy = [JegarnCFSslSecurityPolicy policyWithPinningMode:JegarnSSLPinningModeCertificate];
+    NSString *certificate = [[NSBundle bundleForClass:[self class]] pathForResource:@"server" ofType:@"cer"];
+    securityPolicy.pinnedCertificates = @[[NSData dataWithContentsOfFile:certificate]];
+    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesCertificateChain = NO;
+
+    NSString *p12File = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];
+    NSString *p12Password = @"111111";
+    NSArray * certificates = [JegarnSslConvert clientCertsFromP12:p12File passphrase:p12Password];
+
+    _sslTransport = [[JegarnCFSslSocketTransport alloc] init];
+    _sslTransport.securityPolicy = securityPolicy;
+    _sslTransport.tls = true;
+    _sslTransport.certificates = certificates;
+    _sslTransport.host = @"jegarn.com";
+    //_sslTransport.host = @"123.56.79.160";
+    _sslTransport.port = 7773;
+    [_sslTransport open];
+}
 
 
 @end

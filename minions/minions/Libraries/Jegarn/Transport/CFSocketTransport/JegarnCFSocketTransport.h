@@ -11,7 +11,5 @@
 @interface JegarnCFSocketTransport : JegarnTransport <JegarnTransport, JegarnCFSocketDecoderDelegate, JegarnCFSocketEncoderDelegate>
 @property (strong, nonatomic) NSString *host;
 @property (nonatomic) UInt16 port;
-@property (nonatomic) BOOL tls;
-@property (strong, nonatomic) NSArray *certificates;
 
 @end

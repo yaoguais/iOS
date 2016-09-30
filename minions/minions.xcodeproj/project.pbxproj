@@ -22,7 +22,9 @@
 		AF74514A8013031C70AB9BD4 /* chat_from_bg.9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745AA4FA2EDE32070A12FF /* chat_from_bg.9.png */; };
 		AF74515941931A79E72A2A1B /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745F96C5CA4D2739B2053B /* test.jpg */; };
 		AF745167C3466DBEAD667CDF /* tab_contact@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745F248D872C1B7BD58CB4 /* tab_contact@2x.png */; };
+		AF74517972CD96C2860A333F /* JegarnCFSslSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745AD9F55706CAC8FBD854 /* JegarnCFSslSecurityPolicy.m */; };
 		AF74517F1BE94C3B9D554678 /* UIDevice+HardWare.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745E38CE567CAF072380B7 /* UIDevice+HardWare.m */; };
+		AF7451B149FCF1C3ACA786BE /* JegarnCFSslSocketEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745BFD8B6DB6EA2BEB923A /* JegarnCFSslSocketEncoder.m */; };
 		AF7451C2FD012859DD1C71AA /* MNChatsChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7453FCA2CC6D49DC85D5D6 /* MNChatsChatViewController.m */; };
 		AF7451C3BAE6DB119FB54CC3 /* tab_conversation_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745454D7A5D07289E20C88 /* tab_conversation_selected@2x.png */; };
 		AF7451D1147378F6FD264C79 /* MNWidgetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7456BD47B69147EE20107F /* MNWidgetUtil.m */; };
@@ -70,6 +72,7 @@
 		AF7457688DFB2836A1AF5413 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = AF745B6D9AC68365E138FEBD /* PodFile */; };
 		AF74576E889985ACF562D448 /* avatar_g6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745D3ED749EABA4D1240E3 /* avatar_g6.jpg */; };
 		AF745796E48BDA97EBDA05BB /* JegarnTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745B79F9D2DE30B3855774 /* JegarnTransport.m */; };
+		AF74579E3004AB09D60D9027 /* JegarnCFSslSocketDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74541F4EE7C84BEC9E642B /* JegarnCFSslSocketDecoder.m */; };
 		AF7457BBFACE2822E0A57501 /* send_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7456B70FAC6B91FDB47954 /* send_button.png */; };
 		AF7457EEBAFCE3F9F0850638 /* YGHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74514323A07B187A7E61A0 /* YGHttpResponse.m */; };
 		AF745827C3305B808AFD9C54 /* avatar_g0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745C1835A458C06B17A548 /* avatar_g0.jpg */; };
@@ -78,6 +81,7 @@
 		AF745894F5F70206047F4FEF /* avatar_g7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7451479D476EC7AFB33E03 /* avatar_g7.jpg */; };
 		AF7458BBE320B6F2DABAE74E /* tab_contact_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745839A02E376888394186 /* tab_contact_selected@3x.png */; };
 		AF7458BCD56009EA885E3176 /* YGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74511FA074CEF31413B161 /* YGViewModel.m */; };
+		AF7458FD51B680C3EB9A8A4F /* JegarnCFSslSocketTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745D2CD41AB6D72FBFBB35 /* JegarnCFSslSocketTransport.m */; };
 		AF74592C02112719A9617B54 /* YGHttpsSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745C2218EB441037D272D3 /* YGHttpsSessionManager.m */; };
 		AF745930880CB0786100BA02 /* MNTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7457F60956A9D2EF886F88 /* MNTest.m */; };
 		AF74595F2A24D47FA7BA50AC /* YGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745355319A1D69D32F9AE0 /* YGHttpRequest.m */; };
@@ -95,6 +99,7 @@
 		AF745B9F6D906E0519478308 /* NSURLSessionTask+YGHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745E39AC5762E0453DA9CE /* NSURLSessionTask+YGHttpRequest.m */; };
 		AF745BB22FA03A86B339D3CD /* MNBaseChatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74571B20E806B808AD7158 /* MNBaseChatViewModel.m */; };
 		AF745BC270E06CBE17FC5417 /* tab_contact@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745D4CAB0C703A0CB58042 /* tab_contact@3x.png */; };
+		AF745C17C0B49C8EDE0B0312 /* JegarnSslConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745BC84EBA0D3D3818082A /* JegarnSslConvert.m */; };
 		AF745C5FBB9368AD3DD840CF /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF745859E2DCD00872455B72 /* Contents.json */; };
 		AF745C67B4FDC46D8460EEBB /* tab_groupchat_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AF74552D09F9008F0CCA236D /* tab_groupchat_selected.png */; };
 		AF745C85A124892C22240E06 /* tab_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7458E5DB2915A7BE8CCFE0 /* tab_conversation@2x.png */; };
@@ -170,8 +175,10 @@
 		AF7453CA72669B862D65A256 /* avatar_b6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b6.jpg; sourceTree = "<group>"; };
 		AF7453D067EE896D273AB31B /* MNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginViewController.m; path = Login/MNLoginViewController.m; sourceTree = "<group>"; };
 		AF7453DE3C24DBEEE78D78DD /* MNHttpsSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNHttpsSessionManager.m; path = Minions/SessionManagers/MNHttpsSessionManager.m; sourceTree = "<group>"; };
+		AF7453E388B82D67694D2168 /* JegarnCFSslSocketEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnCFSslSocketEncoder.h; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketEncoder.h; sourceTree = "<group>"; };
 		AF7453F9075093C1A2FC0A21 /* MNErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNErrorCode.h; path = Minions/ErrorCode/MNErrorCode.h; sourceTree = "<group>"; };
 		AF7453FCA2CC6D49DC85D5D6 /* MNChatsChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatsChatViewController.m; path = Chat/MNChatsChatViewController.m; sourceTree = "<group>"; };
+		AF74541F4EE7C84BEC9E642B /* JegarnCFSslSocketDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnCFSslSocketDecoder.m; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketDecoder.m; sourceTree = "<group>"; };
 		AF745423B7AE25150C925480 /* avatar_b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b1.jpg; sourceTree = "<group>"; };
 		AF745445A00F87B23FA6A691 /* MNUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNUserModel.m; path = User/MNUserModel.m; sourceTree = "<group>"; };
 		AF745454D7A5D07289E20C88 /* tab_conversation_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation_selected@2x.png"; sourceTree = "<group>"; };
@@ -181,6 +188,7 @@
 		AF7454E92BF4FA9621C8D957 /* MNLoginUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginUserManager.m; path = Minions/UserManager/MNLoginUserManager.m; sourceTree = "<group>"; };
 		AF7454F4B1ADA93CE4323EA4 /* tab_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_conversation.png; sourceTree = "<group>"; };
 		AF745516169C0C6BDF069B94 /* MNConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNConversationViewController.m; sourceTree = "<group>"; };
+		AF745528BA0E164645ED2B27 /* JegarnCFSslSocketTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnCFSslSocketTransport.h; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketTransport.h; sourceTree = "<group>"; };
 		AF74552D09F9008F0CCA236D /* tab_groupchat_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_groupchat_selected.png; sourceTree = "<group>"; };
 		AF74558D3D338327E1EDDA59 /* minionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minionsUITests.m; sourceTree = "<group>"; };
 		AF74559C8729BD1D4DE3E2F8 /* avatar_g8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g8.jpg; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 		AF74581891B876D1A9253BC4 /* MNBaseChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBaseChatViewController.h; sourceTree = "<group>"; };
 		AF745839A02E376888394186 /* tab_contact_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_contact_selected@3x.png"; sourceTree = "<group>"; };
 		AF745844D02566D50A287F74 /* NSURLSessionTask+YGHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLSessionTask+YGHttpRequest.h"; path = "Libraries/Networks/Http/NSURLSessionTask+YGHttpRequest.h"; sourceTree = "<group>"; };
+		AF74584FB93E4213EB76B90E /* JegarnSslConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnSslConvert.h; path = Libraries/Jegarn/Core/JegarnSslConvert.h; sourceTree = "<group>"; };
 		AF745859E2DCD00872455B72 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		AF74585C8794BF0D39E06AF8 /* MNConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNConversationViewController.h; sourceTree = "<group>"; };
 		AF74585D48E5F8F1919013E7 /* tab_contact_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_contact_selected@2x.png"; sourceTree = "<group>"; };
@@ -251,9 +260,11 @@
 		AF745ACA695E42D65093099C /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		AF745ACE169B2095C3AB6045 /* MNLoginUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNLoginUserManager.h; path = Minions/UserManager/MNLoginUserManager.h; sourceTree = "<group>"; };
 		AF745AD15F05910EA14EC389 /* tab_groupchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_groupchat.png; sourceTree = "<group>"; };
+		AF745AD9F55706CAC8FBD854 /* JegarnCFSslSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnCFSslSecurityPolicy.m; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSecurityPolicy.m; sourceTree = "<group>"; };
 		AF745B00876B5916D77E51DB /* JegarnLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnLog.h; path = Libraries/Jegarn/JegarnLog.h; sourceTree = "<group>"; };
 		AF745B06638C9013F466E936 /* minions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF745B205DB7B63B809111CB /* tab_contact_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_contact_selected.png; sourceTree = "<group>"; };
+		AF745B21F5963E70A0DD323A /* JegarnCFSslSocketDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnCFSslSocketDecoder.h; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketDecoder.h; sourceTree = "<group>"; };
 		AF745B4413527B25B87E5A1E /* MNBaseChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBaseChatTableViewCell.m; sourceTree = "<group>"; };
 		AF745B6D9AC68365E138FEBD /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
 		AF745B76F78B9445C8027E87 /* MNChatsGroupChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatsGroupChatViewController.m; path = GroupChat/MNChatsGroupChatViewController.m; sourceTree = "<group>"; };
@@ -264,13 +275,16 @@
 		AF745BAA7CC2728ABEF2C037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF745BAFC9B22982255DD7E0 /* MNBaseChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBaseChatTableViewCell.h; sourceTree = "<group>"; };
 		AF745BC54842B0F45C1CD8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AF745BC84EBA0D3D3818082A /* JegarnSslConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnSslConvert.m; path = Libraries/Jegarn/Core/JegarnSslConvert.m; sourceTree = "<group>"; };
 		AF745BFAE2BE0FEDC8BB3CD6 /* MNGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNGroupModel.h; path = Group/MNGroupModel.h; sourceTree = "<group>"; };
+		AF745BFD8B6DB6EA2BEB923A /* JegarnCFSslSocketEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnCFSslSocketEncoder.m; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketEncoder.m; sourceTree = "<group>"; };
 		AF745C1835A458C06B17A548 /* avatar_g0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g0.jpg; sourceTree = "<group>"; };
 		AF745C2218EB441037D272D3 /* YGHttpsSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGHttpsSessionManager.m; path = Libraries/Networks/Http/SessionManager/YGHttpsSessionManager.m; sourceTree = "<group>"; };
 		AF745C4D5E5C20C2162AED8E /* JegarnTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnTransport.h; path = Libraries/Jegarn/Transport/JegarnTransport.h; sourceTree = "<group>"; };
 		AF745C7D4AE18B0588C5D0FE /* MNChatsChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatsChatRoomViewController.m; path = ChatRoom/MNChatsChatRoomViewController.m; sourceTree = "<group>"; };
 		AF745CA71385D67FF00CDD45 /* MNBaseChatViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBaseChatViewModel.h; sourceTree = "<group>"; };
 		AF745CCA206302AE8C89D8C9 /* MNChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNChatRoomViewController.m; sourceTree = "<group>"; };
+		AF745D2CD41AB6D72FBFBB35 /* JegarnCFSslSocketTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnCFSslSocketTransport.m; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSocketTransport.m; sourceTree = "<group>"; };
 		AF745D3ED749EABA4D1240E3 /* avatar_g6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g6.jpg; sourceTree = "<group>"; };
 		AF745D4CAB0C703A0CB58042 /* tab_contact@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_contact@3x.png"; sourceTree = "<group>"; };
 		AF745D6FC0590107A8E0E3E6 /* avatar_g5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g5.jpg; sourceTree = "<group>"; };
@@ -280,6 +294,7 @@
 		AF745DB1BDCE56E745BA3295 /* JegarnDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnDecoder.h; path = Libraries/Jegarn/Core/JegarnDecoder.h; sourceTree = "<group>"; };
 		AF745DBC625C8BA72E356833 /* MNTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNTest.h; path = Minions/Tests/MNTest.h; sourceTree = "<group>"; };
 		AF745DC2D36E7CE7993060B9 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file.cer; path = server.cer; sourceTree = "<group>"; };
+		AF745DFFA7C74A0BDB88C2F1 /* JegarnCFSslSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnCFSslSecurityPolicy.h; path = Libraries/Jegarn/Transport/CFSslSocketTransport/JegarnCFSslSecurityPolicy.h; sourceTree = "<group>"; };
 		AF745E0458B88B0725DB8712 /* YGUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGUrl.m; path = Libraries/Networks/Url/YGUrl.m; sourceTree = "<group>"; };
 		AF745E0FE1EB53F1F7191B24 /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = client.p12; sourceTree = "<group>"; };
 		AF745E236222581E45C99FCC /* YGHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpResponse.h; path = Libraries/Networks/Http/YGHttpResponse.h; sourceTree = "<group>"; };
@@ -488,6 +503,16 @@
 				AF74578A9FB739FE5118263B /* YGHttpTest.h */,
 				AF7452A8EE1741F2EBC85B75 /* YGNSStreamTest.m */,
 				AF7455F8C8D6EEFCA0045C59 /* YGNSStreamTest.h */,
+				AF74541F4EE7C84BEC9E642B /* JegarnCFSslSocketDecoder.m */,
+				AF745B21F5963E70A0DD323A /* JegarnCFSslSocketDecoder.h */,
+				AF745BFD8B6DB6EA2BEB923A /* JegarnCFSslSocketEncoder.m */,
+				AF7453E388B82D67694D2168 /* JegarnCFSslSocketEncoder.h */,
+				AF745D2CD41AB6D72FBFBB35 /* JegarnCFSslSocketTransport.m */,
+				AF745528BA0E164645ED2B27 /* JegarnCFSslSocketTransport.h */,
+				AF745AD9F55706CAC8FBD854 /* JegarnCFSslSecurityPolicy.m */,
+				AF745DFFA7C74A0BDB88C2F1 /* JegarnCFSslSecurityPolicy.h */,
+				AF745BC84EBA0D3D3818082A /* JegarnSslConvert.m */,
+				AF74584FB93E4213EB76B90E /* JegarnSslConvert.h */,
 			);
 			path = minions;
 			sourceTree = "<group>";
@@ -1042,6 +1067,11 @@
 				AF74562797161AE74221F316 /* JegarnDecoder.m in Sources */,
 				AF7454E8E16A2FCDDDC0C1B3 /* YGHttpTest.m in Sources */,
 				AF745DEADF8556BE3BFA9D99 /* YGNSStreamTest.m in Sources */,
+				AF74579E3004AB09D60D9027 /* JegarnCFSslSocketDecoder.m in Sources */,
+				AF7451B149FCF1C3ACA786BE /* JegarnCFSslSocketEncoder.m in Sources */,
+				AF7458FD51B680C3EB9A8A4F /* JegarnCFSslSocketTransport.m in Sources */,
+				AF74517972CD96C2860A333F /* JegarnCFSslSecurityPolicy.m in Sources */,
+				AF745C17C0B49C8EDE0B0312 /* JegarnSslConvert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

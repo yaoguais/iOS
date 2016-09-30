@@ -24,8 +24,6 @@
     self.port = 8883;
     self.runLoop = [NSRunLoop currentRunLoop];
     self.runLoopMode = NSDefaultRunLoopMode;
-    self.tls = false;
-    self.certificates = nil;
     return self;
 }
 
