@@ -17,8 +17,20 @@
 }
 @synthesize stream = _stream;
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _buffer = [[NSMutableData alloc] init];
+    }
+
+    return self;
+}
+
+
 - (void)stream:(NSStream*)sender handleEvent:(NSStreamEvent)eventCode {
-    DDLogVerbose(@"[JegarnPacketWriter] NSStreamEvent %d", eventCode);
+#ifdef DEBUG
+    [self streamHandledEvents:eventCode];
+#endif
 
     if (eventCode & NSStreamEventHasSpaceAvailable) {
         if (self.enableSsl) {
@@ -63,6 +75,27 @@
             }
         }
         return YES;
+    }
+}
+
+- (void)streamHandledEvents:(NSStreamEvent)eventCode {
+    if (eventCode & NSStreamEventNone) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventNone");
+    }
+    if (eventCode & NSStreamEventOpenCompleted) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventOpenCompleted");
+    }
+    if (eventCode & NSStreamEventHasBytesAvailable) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventHasBytesAvailable");
+    }
+    if (eventCode & NSStreamEventHasSpaceAvailable) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventHasSpaceAvailable");
+    }
+    if (eventCode & NSStreamEventErrorOccurred) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventErrorOccurred");
+    }
+    if (eventCode & NSStreamEventEndEncountered) {
+        DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventEndEncountered");
     }
 }
 

@@ -14,9 +14,9 @@
 - (void) connectToServer
 {
     _client = [[JegarnClient alloc] init];
-    _client.account = @"";
-    _client.password = @"";
-    _client.host = @"";
+    _client.account = @"test";
+    _client.password = @"test";
+    _client.host = @"jegarn.com";
     _client.port = 7773;
     _client.listener = [[JegarnListener alloc] init];
     _client.runLoop = [NSRunLoop currentRunLoop];
@@ -27,7 +27,8 @@
 }
 
 - (void)sslTransportSendMessageHandler {
-    [_client.packetWriter send:[@"hello world" dataUsingEncoding:NSUTF8StringEncoding]];
+    BOOL sendRet = [_client.packetWriter send:[@"hello world" dataUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"send ret %d", sendRet);
 }
 
 - (void) disconnectToServer

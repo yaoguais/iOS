@@ -14,7 +14,9 @@
 @synthesize stream = _stream;
 
 - (void)stream:(NSStream*)sender handleEvent:(NSStreamEvent)eventCode {
-    DDLogVerbose(@"[JegarnPacketReader] NSStreamEvent %d", eventCode);
+#ifdef DEBUG
+    [self streamHandledEvents:eventCode];
+#endif
 
     if (eventCode &  NSStreamEventHasBytesAvailable) {
         if(self.enableSsl){
@@ -48,6 +50,25 @@
     }
 }
 
-
+- (void)streamHandledEvents:(NSStreamEvent)eventCode {
+    if (eventCode & NSStreamEventNone) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventNone");
+    }
+    if (eventCode & NSStreamEventOpenCompleted) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventOpenCompleted");
+    }
+    if (eventCode & NSStreamEventHasBytesAvailable) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventHasBytesAvailable");
+    }
+    if (eventCode & NSStreamEventHasSpaceAvailable) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventHasSpaceAvailable");
+    }
+    if (eventCode & NSStreamEventErrorOccurred) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventErrorOccurred");
+    }
+    if (eventCode & NSStreamEventEndEncountered) {
+        DDLogVerbose(@"[JegarnPacketReader] NSStreamEventEndEncountered");
+    }
+}
 
 @end

@@ -17,7 +17,7 @@
 - (BOOL) checkConfig
 {
     if([JegarnStringUtil isEmptyString:self.account]){
-        DDLogError(@"[JegarnClient] empty host");
+        DDLogError(@"[JegarnClient] empty account");
         return NO;
     }
     if([JegarnStringUtil isEmptyString:self.password]){
