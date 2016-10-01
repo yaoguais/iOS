@@ -5,13 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import "JegarnPacket.h"
-#import "JegarnAuthPacketContent.h"
 
-typedef enum {
-    JegarnAuthPacketStatusNeedAuth = 1,
-    JegarnAuthPacketStatusAuthSuccess = 2,
-    JegarnAuthPacketStatusAuthFailed = 3
-}JegarnAuthPacketStatus;
+@class JegarnAuthPacketContent;
 
 @interface JegarnAuthPacket : JegarnPacket
 @property (nonatomic, strong) JegarnAuthPacketContent *content;

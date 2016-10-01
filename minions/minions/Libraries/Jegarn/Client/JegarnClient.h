@@ -19,6 +19,12 @@ typedef enum {
     JegarnErrorTypeSendPacketValid
 } JegarnErrorType;
 
+typedef NS_ENUM(NSInteger, JegarnAuthPacketStatus) {
+    JegarnAuthPacketStatusNeedAuth = 1,
+    JegarnAuthPacketStatusAuthSuccess = 2,
+    JegarnAuthPacketStatusAuthFailed = 3
+};
+
 #define JegarnSessionKey @"session_id"
 
 @interface JegarnClient : NSObject

@@ -18,7 +18,7 @@
     _client.password = @"test";
     _client.host = @"jegarn.com";
     _client.port = 7773;
-    _client.reconnectInterval = 7.0;
+    _client.reconnectInterval = 30.0;
     _client.listener = [[JegarnListener alloc] init];
     _client.runLoop = [NSRunLoop currentRunLoop];
     _client.runLoopMode = NSDefaultRunLoopMode;
@@ -28,8 +28,8 @@
 }
 
 - (void)sslTransportSendMessageHandler {
-    BOOL sendRet = [_client.packetWriter send:[@"hello world" dataUsingEncoding:NSUTF8StringEncoding]];
-    NSLog(@"send ret %d", sendRet);
+    //BOOL sendRet = [_client.packetWriter send:[@"hello world" dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSLog(@"send ret %d", sendRet);
 }
 
 - (void) disconnectToServer

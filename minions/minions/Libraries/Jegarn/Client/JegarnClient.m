@@ -11,6 +11,7 @@
 #import "JegarnLog.h"
 #import "JegarnSecurityPolicy.h"
 #import "JegarnAuthPacket.h"
+#import "JegarnAuthPacketContent.h"
 
 
 @implementation JegarnClient {
@@ -152,10 +153,12 @@
 }
 
 - (void)auth {
-    JegarnAuthPacket *packet = [[JegarnAuthPacket alloc] init];
-    packet.content.account = self.account;
-    packet.content.password = self.password;
-    [self sendPacket:packet];
+    if (!self.authorized) {
+        JegarnAuthPacket *packet = [[JegarnAuthPacket alloc] init];
+        packet.content.account = self.account;
+        packet.content.password = self.password;
+        [self sendPacket:packet];
+    }
 }
 
 - (BOOL)sendPacket:(JegarnPacket *)packet {

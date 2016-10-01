@@ -5,6 +5,18 @@
 
 #import "JegarnAuthPacketContent.h"
 
-
 @implementation JegarnAuthPacketContent
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _uid = @"";
+        _account = @"";
+        _password = @"";
+    }
+
+    return self;
+}
+
+
 @end

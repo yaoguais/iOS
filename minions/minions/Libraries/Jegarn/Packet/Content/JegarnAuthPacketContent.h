@@ -12,6 +12,6 @@
 @property (nonatomic, copy) NSString * uid;
 @property (nonatomic, copy) NSString * account;
 @property (nonatomic, copy) NSString * password;
-@property (nonatomic) JegarnAuthPacketStatus status;
+@property (nonatomic) NSInteger status;
 
 @end

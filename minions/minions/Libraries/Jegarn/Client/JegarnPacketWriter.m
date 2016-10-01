@@ -79,13 +79,17 @@
     }
 
     NSData *lengthData = [JegarnConvertUtil intToBinaryString:[packetData length]];
-    [self send:lengthData];
-    [self send:packetData];
+    @synchronized (self) {
+        [self.buffer appendData:lengthData];
+        [self.buffer appendData:packetData];
+    }
+    [self send:nil];
 
     return YES;
 }
 
 - (BOOL)send:(NSData *)data {
+    DDLogVerbose(@"[JegarnPacketWriter] send data(client.running:%d enableWrite:%d)", self.client.running, self.enableWrite);
     if (!self.client.running) {
         return NO;
     }

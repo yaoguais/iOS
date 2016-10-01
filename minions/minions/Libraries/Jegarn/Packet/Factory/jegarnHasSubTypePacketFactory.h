@@ -10,7 +10,7 @@
 
 @interface jegarnHasSubTypePacketFactory : NSObject
 
-- (JegarnPacket *)getPacket:(NSString *)from to:(NSStream *)to type:(NSString *)type content:(id)content;
+- (JegarnPacket *)getPacket:(NSString *)from to:(NSString *)to type:(NSString *)type content:(id)content;
 + (instancetype)sharedInstance;
 
 @end

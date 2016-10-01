@@ -11,6 +11,7 @@
 #import "MPMessagePackReader.h"
 #import "JegarnStringUtil.h"
 #import "JegarnAuthPacket.h"
+#import "jegarnHasSubTypePacketFactory.h"
 
 @interface JegarnPacketReader ()
 @property (strong, nonatomic) NSMutableData *buffer;
@@ -52,7 +53,7 @@
         }
     }
 
-    if (eventCode & NSStreamEventErrorOccurred) {
+    if (eventCode & NSStreamEventErrorOccurred || eventCode & NSStreamEventEndEncountered) {
         [self.client.listener errorListener:JegarnErrorTypeNetworkError client:self.client];
         [self.client reconnectDelayInterval];
     }
@@ -68,7 +69,7 @@
     for (; ;) {
         UInt8 buffer[768];
         n = [(NSInputStream *) sender read:buffer maxLength:sizeof(buffer)];
-        DDLogVerbose(@"[JegarnPacketReader] read(%d) %s", n, buffer);
+        DDLogVerbose(@"[JegarnPacketReader] read(%d) %s", n, (char *) buffer);
         if (n < 0) {
             DDLogVerbose(@"[JegarnPacketReader] parsePackets error %@", sender.streamError);
             break;
@@ -80,6 +81,9 @@
             break;
         }
         [self.buffer appendBytes:buffer length:n];
+        if (![(NSInputStream *) sender hasBytesAvailable]) {
+            break;
+        }
     }
 
     recvDataLen = [self.buffer length];
@@ -122,32 +126,35 @@
 {
     NSData * packetData = [data subdataWithRange:NSMakeRange(offset, length)];
     NSError * error = nil;
-    id packet = [MPMessagePackReader readData:packetData error:&error];
-    NSLog(@"[JegarnPacketReader] parseOnePacketData packet class %@", [packet class]);
-    if(error || ![packet isKindOfClass:[NSDictionary class]]){
+    id packetDict = [MPMessagePackReader readData:packetData error:&error];
+    NSLog(@"[JegarnPacketReader] parseOnePacketData packetDict %@", packetDict);
+    if(error || ![packetDict isKindOfClass:[NSDictionary class]]){
+        DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData parse full packet failed");
+        [self.client.listener errorListener:JegarnErrorTypeRecvPacketCrashed client:self.client];
         return NO;
     }
-    NSString *sessionId = packet[JegarnSessionKey];
-    NSString *from = packet[@"from"];
-    NSString *to = packet[@"to"];
-    NSString *type = packet[@"type"];
-    id content = packet[@"content"];
+    NSString *sessionId = packetDict[JegarnSessionKey];
+    NSString *from = packetDict[@"from"];
+    NSString *to = packetDict[@"to"];
+    NSString *type = packetDict[@"type"];
+    id content = packetDict[@"content"];
     if([JegarnStringUtil isEmptyString:from] || [JegarnStringUtil isEmptyString:to] || [JegarnStringUtil isEmptyString:type]) {
         DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData packet empty from/to/type");
         [self.client.listener errorListener:JegarnErrorTypeRecvPacketCrashed client:self.client];
-        return NO;
+        return YES;
     }
     if(!content || ![content isKindOfClass:[NSDictionary class]]){
         DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData packet empty content");
         [self.client.listener errorListener:JegarnErrorTypeRecvPacketCrashed client:self.client];
-        return NO;
+        return YES;
     }
     if(!self.client.authorized){
         if (![type isEqualToString:[JegarnAuthPacket packetType]]) {
+            DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData recv other packet before authorized");
             [self.client.listener errorListener:JegarnErrorTypeRecvPacketCrashed client:self.client];
         }else{
             NSString * uid = content[@"uid"];
-            JegarnAuthPacketStatus status = (JegarnAuthPacketStatus) content[@"status"];
+            NSInteger status = [(NSNumber *) content[@"status"] integerValue];
             switch (status) {
                 case JegarnAuthPacketStatusNeedAuth:
                     [self.client auth];
@@ -159,32 +166,33 @@
                     [self.client.listener connectListener:self.client];
                     break;
                 case JegarnAuthPacketStatusAuthFailed:
+                    DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData auth failed");
                     [self.client.listener errorListener:JegarnErrorTypeAuthFailed client:self.client];
                     break;
                 default:
+                    DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData recv auth packet status(%d) not defined", status);
                     [self.client.listener errorListener:JegarnErrorTypeRecvPacketCrashed client:self.client];
                     break;
             }
         }
     }else{
-
+        JegarnPacket * packet = [[jegarnHasSubTypePacketFactory sharedInstance] getPacket:from to:to type:type content:content];
+        if(packet){
+            [self processPacket:packet];
+        }else{
+            DDLogVerbose(@"[JegarnPacketReader] parseOnePacketData packet not support");
+            [self.client.listener errorListener:JegarnErrorTypeRecvPacketType client:self.client];
+        }
     }
 
     return YES;
 }
-/*
-        } else {
-            Packet packet = HasSubTypeFactory.getInstance().getPacket(from, to, type, content);
-            System.out.println("recv packet parsed instance: " + packet.toString());
-            if (packet != null) {
-                processPacket(packet);
-            } else {
-                this.client.listener.errorListener(Client.ErrorType.RECV_PACKET_TYPE, client);
-            }
-        }
-        return true;
-    }
- */
+
+- (void) processPacket:(JegarnPacket *) packet
+{
+    [self.client.listener packetListener:packet client:self.client];
+}
+
 - (void)streamHandledEvents:(NSStreamEvent)eventCode {
     if (eventCode & NSStreamEventNone) {
         DDLogVerbose(@"[JegarnPacketReader] NSStreamEventNone");
