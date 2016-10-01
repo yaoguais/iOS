@@ -5,10 +5,11 @@
 
 #import <Foundation/Foundation.h>
 #import "JegarnPacketStream.h"
+#import "JegarnPacket.h"
 
 @interface JegarnPacketWriter : JegarnPacketStream
 @property (strong, nonatomic, readwrite) NSOutputStream *stream;
 
-- (BOOL)send:(NSData *)data;
+- (BOOL)sendPacket:(JegarnPacket *)packet;
 
 @end

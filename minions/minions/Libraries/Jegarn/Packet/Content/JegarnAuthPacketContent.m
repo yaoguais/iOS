@@ -3,10 +3,8 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
-#import "JegarnPacket.h"
+#import "JegarnAuthPacketContent.h"
 
 
-@implementation JegarnPacket {
-
-}
+@implementation JegarnAuthPacketContent
 @end

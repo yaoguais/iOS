@@ -7,6 +7,8 @@
 #import "JegarnLog.h"
 #import "JegarnClient.h"
 #import "JegarnListener.h"
+#import "MPMessagePackWriter.h"
+#import "JegarnConvertUtil.h"
 
 @interface JegarnPacketWriter()
 @property (strong, nonatomic) NSMutableData *buffer;
@@ -42,9 +44,6 @@
 #ifdef DEBUG
     [self streamHandledEvents:eventCode];
 #endif
-    if (eventCode & NSStreamEventOpenCompleted) {
-        [self.client.listener connectListener:self.client];
-    }
 
     if (eventCode & NSStreamEventHasSpaceAvailable) {
         if (self.client.enableSsl) {
@@ -62,6 +61,28 @@
         [self.client.listener errorListener:JegarnErrorTypeNetworkError client:self.client];
         [self.client reconnectDelayInterval];
     }
+}
+
+- (BOOL)sendPacket:(JegarnPacket *)packet {
+    DDLogVerbose(@"[JegarnPacketWriter] sendPacket pending");
+    if (![self.client.listener sendListener:packet client:self.client]) {
+        return NO;
+    }
+    NSMutableDictionary *packetDict = packet.convertToDictionary;
+    packetDict[JegarnSessionKey] = self.client.sessionId;
+
+    NSError *error = nil;
+    NSData *packetData = [MPMessagePackWriter writeObject:packetDict error:&error];
+    if (error) {
+        DDLogVerbose(@"[JegarnPacketWriter] sendPacket error %@", error);
+        return NO;
+    }
+
+    NSData *lengthData = [JegarnConvertUtil intToBinaryString:[packetData length]];
+    [self send:lengthData];
+    [self send:packetData];
+
+    return YES;
 }
 
 - (BOOL)send:(NSData *)data {

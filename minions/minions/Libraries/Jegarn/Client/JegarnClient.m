@@ -10,43 +10,43 @@
 #import "JegarnStringUtil.h"
 #import "JegarnLog.h"
 #import "JegarnSecurityPolicy.h"
+#import "JegarnAuthPacket.h"
 
 
 @implementation JegarnClient {
     NSTimeInterval _reconnectInterval;
 }
 
-- (BOOL) checkConfig
-{
-    if([JegarnStringUtil isEmptyString:self.account]){
+- (BOOL)checkConfig {
+    if ([JegarnStringUtil isEmptyString:self.account]) {
         DDLogError(@"[JegarnClient] empty account");
         return NO;
     }
-    if([JegarnStringUtil isEmptyString:self.password]){
+    if ([JegarnStringUtil isEmptyString:self.password]) {
         DDLogError(@"[JegarnClient] empty password");
         return NO;
     }
-    if([JegarnStringUtil isEmptyString:self.host]){
+    if ([JegarnStringUtil isEmptyString:self.host]) {
         DDLogError(@"[JegarnClient] empty host");
         return NO;
     }
 
-    if(self.port <= 0){
+    if (self.port <= 0) {
         DDLogError(@"[JegarnClient] port error");
         return NO;
     }
 
-    if(!self.listener){
+    if (!self.listener) {
         DDLogError(@"[JegarnClient] empty listener");
         return NO;
     }
 
-    if(!self.runLoop){
+    if (!self.runLoop) {
         DDLogError(@"[JegarnClient] empty runLoop");
         return NO;
     }
 
-    if([JegarnStringUtil isEmptyString:self.runLoopMode]){
+    if ([JegarnStringUtil isEmptyString:self.runLoopMode]) {
         DDLogError(@"[JegarnClient] empty runLoopMode");
         return NO;
     }
@@ -59,12 +59,11 @@
     return YES;
 }
 
-- (BOOL) initSocket
-{
+- (BOOL)initSocket {
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
 
-    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)self.host, self.port, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef) self.host, self.port, &readStream, &writeStream);
     CFReadStreamSetProperty(readStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
     CFWriteStreamSetProperty(writeStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 
@@ -77,12 +76,12 @@
             sslOptions[(NSString *) kCFStreamSSLCertificates] = self.certificates;
         }
 
-        if(!CFReadStreamSetProperty(readStream, kCFStreamPropertySSLSettings, (__bridge CFDictionaryRef)(sslOptions))){
+        if (!CFReadStreamSetProperty(readStream, kCFStreamPropertySSLSettings, (__bridge CFDictionaryRef) (sslOptions))) {
             DDLogError(@"[JegarnClient] Fail to init ssl input stream!");
             return NO;
         }
 
-        if(!CFWriteStreamSetProperty(writeStream, kCFStreamPropertySSLSettings, (__bridge CFDictionaryRef)(sslOptions))){
+        if (!CFWriteStreamSetProperty(writeStream, kCFStreamPropertySSLSettings, (__bridge CFDictionaryRef) (sslOptions))) {
             DDLogError(@"[JegarnClient] Fail to init ssl output stream!");
             return NO;
         }
@@ -90,7 +89,7 @@
 
     self.packetReader = [[JegarnPacketReader alloc] init];
     self.packetReader.client = self;
-    self.packetReader.stream =  CFBridgingRelease(readStream);
+    self.packetReader.stream = CFBridgingRelease(readStream);
 
     self.packetWriter = [[JegarnPacketWriter alloc] init];
     self.packetWriter.client = self;
@@ -99,11 +98,11 @@
     return YES;
 }
 
-- (BOOL) connect{
-    if(![self checkConfig]){
+- (BOOL)connect {
+    if (![self checkConfig]) {
         return NO;
     }
-    if(![self initSocket]){
+    if (![self initSocket]) {
         [self disconnect];
         return NO;
     }
@@ -119,25 +118,23 @@
     return YES;
 }
 
-- (void) disconnect
-{
+- (void)disconnect {
     self.running = NO;
-    if(self.reconnectTimer){
+    if (self.reconnectTimer) {
         [self.reconnectTimer invalidate];
         self.reconnectTimer = nil;
     }
-    if(self.packetReader){
+    if (self.packetReader) {
         [self.packetReader shutdown];
     }
-    if(self.packetWriter){
+    if (self.packetWriter) {
         [self.packetWriter shutdown];
     }
     DDLogVerbose(@"[JegarnClient] disconnect");
     [self.listener disconnectListener:self];
 }
 
-- (void) reconnect
-{
+- (void)reconnect {
     DDLogVerbose(@"[JegarnClient] reconnect");
     [self disconnect];
     [self connect];
@@ -152,6 +149,20 @@
                                                     userInfo:nil repeats:NO];
         [self.runLoop addTimer:self.reconnectTimer forMode:NSDefaultRunLoopMode];
     }
+}
+
+- (void)auth {
+    JegarnAuthPacket *packet = [[JegarnAuthPacket alloc] init];
+    packet.content.account = self.account;
+    packet.content.password = self.password;
+    [self sendPacket:packet];
+}
+
+- (BOOL)sendPacket:(JegarnPacket *)packet {
+    if (self.packetWriter) {
+        [self.packetWriter sendPacket:packet];
+    }
+    return NO;
 }
 
 @end

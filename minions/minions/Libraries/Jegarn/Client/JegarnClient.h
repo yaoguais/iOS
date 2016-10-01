@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JegarnPacket.h"
 
 @class JegarnListener;
 @class JegarnPacketReader;
@@ -18,7 +19,7 @@ typedef enum {
     JegarnErrorTypeSendPacketValid
 } JegarnErrorType;
 
-#define JegarnSessionKey "session_id"
+#define JegarnSessionKey @"session_id"
 
 @interface JegarnClient : NSObject
 
@@ -45,5 +46,7 @@ typedef enum {
 - (void) disconnect;
 - (void) reconnect;
 - (void) reconnectDelayInterval;
+- (void) auth;
+- (BOOL) sendPacket:(JegarnPacket *)packet;
 
 @end

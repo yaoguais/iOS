@@ -7,4 +7,5 @@ target 'minions' do
     pod 'YYModel'
     pod 'YYKeyboardManager'
     pod 'YYWebImage'
+    pod "MPMessagePack"
 end

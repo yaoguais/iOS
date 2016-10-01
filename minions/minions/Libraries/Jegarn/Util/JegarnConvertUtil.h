@@ -6,5 +6,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface JegarnPacket : NSObject
+@interface JegarnConvertUtil : NSObject
+
++ (NSData *)intToBinaryString:(NSInteger)value;
++ (NSInteger) binaryStringToInt:(NSData *)data;
+
 @end
