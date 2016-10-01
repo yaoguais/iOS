@@ -8,9 +8,9 @@
 
 @implementation JegarnStringUtil
 
-+ (BOOL) isEmptyString: (NSString *) str
++ (BOOL) isEmptyString: (id) str
 {
-    return !str || [str length] == 0;
+    return !str || ![str isKindOfClass:[NSString class]] || [str length] == 0;
 }
 
 @end

@@ -8,5 +8,5 @@
 
 @interface JegarnStringUtil : NSObject
 
-+ (BOOL) isEmptyString: (NSString *) str;
++ (BOOL) isEmptyString: (id) str;
 @end

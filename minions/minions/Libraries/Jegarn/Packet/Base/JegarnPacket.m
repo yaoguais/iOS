@@ -8,6 +8,17 @@
 
 @implementation JegarnPacket
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _from = @"";
+        _to = @"";
+        _type = @"";
+    }
+
+    return self;
+}
+
 - (BOOL) isFromSystemUser
 {
     return [@"system" isEqualToString:self.from];

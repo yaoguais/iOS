@@ -5,6 +5,13 @@
 
 #import "jegarnHasSubTypePacketFactory.h"
 #import "JegarnPacket.h"
+#import "JegarnStringUtil.h"
+#import "JegarnChatPacket.h"
+#import "JegarnChatPacketFactory.h"
+#import "JegarnGroupChatPacket.h"
+#import "JegarnGroupChatPacketFactory.h"
+#import "JegarnChatRoomPacket.h"
+#import "JegarnChatRoomPacketFactory.h"
 
 
 @implementation jegarnHasSubTypePacketFactory
@@ -19,8 +26,19 @@ static id _instance;
     return _instance;
 }
 
-- (JegarnPacket *)getPacket:(NSString *)from to:(NSString *)to type:(NSString *)type content:(id)content
-{
+- (JegarnPacket *)getPacket:(NSString *)from to:(NSString *)to type:(NSString *)type content:(id)content {
+    if ([JegarnStringUtil isEmptyString:type]) {
+        return nil;
+    }
+    if ([[JegarnChatPacket packetType] isEqualToString:type]) {
+        return [[JegarnChatPacketFactory sharedInstance] getPacket:from to:to type:type content:content];
+    }
+    if ([[JegarnGroupChatPacket packetType] isEqualToString:type]) {
+        return [[JegarnGroupChatPacketFactory sharedInstance] getPacket:from to:to type:type content:content];
+    }
+    if ([[JegarnChatRoomPacket packetType] isEqualToString:type]) {
+        return [[JegarnChatRoomPacketFactory sharedInstance] getPacket:from to:to type:type content:content];
+    }
     return nil;
 }
 
