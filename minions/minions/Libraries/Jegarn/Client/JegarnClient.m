@@ -12,7 +12,9 @@
 #import "JegarnSecurityPolicy.h"
 
 
-@implementation JegarnClient
+@implementation JegarnClient {
+    NSTimeInterval _reconnectInterval;
+}
 
 - (BOOL) checkConfig
 {
@@ -87,20 +89,12 @@
     }
 
     self.packetReader = [[JegarnPacketReader alloc] init];
+    self.packetReader.client = self;
     self.packetReader.stream =  CFBridgingRelease(readStream);
-    self.packetReader.enableSsl = self.enableSsl;
-    self.packetReader.securityDomain = self.enableSsl ? self.host : nil;
-    self.packetReader.securityPolicy = self.enableSsl ? self.securityPolicy : nil;
-    self.packetReader.runLoop = self.runLoop;
-    self.packetReader.runLoopMode = self.runLoopMode;
 
     self.packetWriter = [[JegarnPacketWriter alloc] init];
+    self.packetWriter.client = self;
     self.packetWriter.stream = CFBridgingRelease(writeStream);
-    self.packetWriter.enableSsl = self.enableSsl;
-    self.packetWriter.securityDomain = self.enableSsl ? self.host : nil;
-    self.packetWriter.securityPolicy = self.enableSsl ? self.securityPolicy : nil;
-    self.packetWriter.runLoop = self.runLoop;
-    self.packetWriter.runLoopMode = self.runLoopMode;
 
     return YES;
 }
@@ -118,8 +112,9 @@
     self.uid = @"";
     self.sessionId = @"";
     self.authorized = NO;
+    self.reconnectTimer = nil;
     self.running = YES;
-    DDLogVerbose(@"[JegarnClient] close");
+    DDLogVerbose(@"[JegarnClient] connect");
 
     return YES;
 }
@@ -127,12 +122,35 @@
 - (void) disconnect
 {
     self.running = NO;
-    DDLogVerbose(@"[JegarnClient] close");
+    if(self.reconnectTimer){
+        [self.reconnectTimer invalidate];
+        self.reconnectTimer = nil;
+    }
     if(self.packetReader){
         [self.packetReader shutdown];
     }
     if(self.packetWriter){
         [self.packetWriter shutdown];
+    }
+    DDLogVerbose(@"[JegarnClient] disconnect");
+    [self.listener disconnectListener:self];
+}
+
+- (void) reconnect
+{
+    DDLogVerbose(@"[JegarnClient] reconnect");
+    [self disconnect];
+    [self connect];
+}
+
+- (void)reconnectDelayInterval {
+    self.running = NO;
+    if (self.reconnectInterval > 0 && !self.reconnectTimer) {
+        self.reconnectTimer = [NSTimer timerWithTimeInterval:self.reconnectInterval
+                                                      target:self
+                                                    selector:@selector(reconnect)
+                                                    userInfo:nil repeats:NO];
+        [self.runLoop addTimer:self.reconnectTimer forMode:NSDefaultRunLoopMode];
     }
 }
 

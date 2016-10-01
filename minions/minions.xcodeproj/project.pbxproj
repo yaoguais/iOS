@@ -78,6 +78,7 @@
 		AF7457EEBAFCE3F9F0850638 /* YGHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74514323A07B187A7E61A0 /* YGHttpResponse.m */; };
 		AF745827C3305B808AFD9C54 /* avatar_g0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745C1835A458C06B17A548 /* avatar_g0.jpg */; };
 		AF7458635921C7084918D505 /* avatar_b2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745A7963CE734F0C829E6F /* avatar_b2.jpg */; };
+		AF74587A908880C4FE242763 /* JegarnPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745A5EF794ADFC5C401540 /* JegarnPacket.m */; };
 		AF745882D611C0EC823FC377 /* avatar_b9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF74508B93D0D53828C72D26 /* avatar_b9.jpg */; };
 		AF745894F5F70206047F4FEF /* avatar_g7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7451479D476EC7AFB33E03 /* avatar_g7.jpg */; };
 		AF7458BBE320B6F2DABAE74E /* tab_contact_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745839A02E376888394186 /* tab_contact_selected@3x.png */; };
@@ -245,6 +246,7 @@
 		AF7458BA36CD671D10F36980 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF7458E5DB2915A7BE8CCFE0 /* tab_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_conversation@2x.png"; sourceTree = "<group>"; };
 		AF74591E044A13DCA93D0A2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF745928E2DE2115202788BC /* JegarnPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JegarnPacket.h; path = Libraries/Jegarn/Packet/JegarnPacket.h; sourceTree = "<group>"; };
 		AF7459483353D4E2E1F4FA0F /* tab_chatroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_chatroom.png; sourceTree = "<group>"; };
 		AF745987D2C7C475BB06FB07 /* JegarnExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnExample.m; path = Libraries/Jegarn/Example/JegarnExample.m; sourceTree = "<group>"; };
 		AF7459914EA442E0924551DA /* MNErrorCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNErrorCode.m; path = Minions/ErrorCode/MNErrorCode.m; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		AF745A48912F7F5625D43FFD /* JegarnStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnStringUtil.m; path = Libraries/Jegarn/Util/JegarnStringUtil.m; sourceTree = "<group>"; };
 		AF745A49339094A98728AE1A /* avatar_g3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_g3.jpg; sourceTree = "<group>"; };
 		AF745A57119F3997447D1A92 /* MNUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNUserModel.h; path = User/MNUserModel.h; sourceTree = "<group>"; };
+		AF745A5EF794ADFC5C401540 /* JegarnPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnPacket.m; path = Libraries/Jegarn/Packet/JegarnPacket.m; sourceTree = "<group>"; };
 		AF745A7963CE734F0C829E6F /* avatar_b2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b2.jpg; sourceTree = "<group>"; };
 		AF745A7EAAE09BCB422FB870 /* MNHttpsSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNHttpsSessionManager.h; path = Minions/SessionManagers/MNHttpsSessionManager.h; sourceTree = "<group>"; };
 		AF745A8049354BCACCC0409F /* MNGroupChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNGroupChatViewController.m; sourceTree = "<group>"; };
@@ -508,6 +511,8 @@
 				AF745C455F2D2CD1B2F8C3BE /* JegarnExample.h */,
 				AF7457708B08C8F4965BA964 /* JegarnSslExample.m */,
 				AF745830BF438ABD587D09A6 /* JegarnSslExample.h */,
+				AF745A5EF794ADFC5C401540 /* JegarnPacket.m */,
+				AF745928E2DE2115202788BC /* JegarnPacket.h */,
 			);
 			path = minions;
 			sourceTree = "<group>";
@@ -1066,6 +1071,7 @@
 				AF745CA6203F988DBECC2693 /* JegarnPacketStream.m in Sources */,
 				AF745752B2C0C2F4CDCFF6C0 /* JegarnExample.m in Sources */,
 				AF7456549926F865D6FDB98B /* JegarnSslExample.m in Sources */,
+				AF74587A908880C4FE242763 /* JegarnPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

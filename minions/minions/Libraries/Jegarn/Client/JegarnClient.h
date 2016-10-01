@@ -11,11 +11,11 @@
 @class JegarnSecurityPolicy;
 
 typedef enum {
-    JegarnNetworkError,
-    JegarnRecvPacketCrashed,
-    JegarnRecvPacketType,
-    JegarnAuthFailed,
-    JegarnSendPacketValid
+    JegarnErrorTypeNetworkError,
+    JegarnErrorTypeRecvPacketCrashed,
+    JegarnErrorTypeRecvPacketType,
+    JegarnErrorTypeAuthFailed,
+    JegarnErrorTypeSendPacketValid
 } JegarnErrorType;
 
 #define JegarnSessionKey "session_id"
@@ -30,7 +30,6 @@ typedef enum {
 @property (nonatomic) BOOL running;
 @property (nonatomic, copy) NSString *sessionId;
 @property (nonatomic) BOOL authorized;
-@property (nonatomic) NSInteger reconnectInterval;
 @property (nonatomic) BOOL enableSsl;
 @property (strong, nonatomic) NSArray *certificates;
 @property(strong, nonatomic) JegarnSecurityPolicy *securityPolicy;
@@ -39,8 +38,12 @@ typedef enum {
 @property (nonatomic, strong) JegarnPacketWriter *packetWriter;
 @property (strong, nonatomic) NSRunLoop *runLoop;
 @property (strong, nonatomic) NSString *runLoopMode;
+@property (strong, nonatomic) NSTimer *reconnectTimer;
+@property (nonatomic) double reconnectInterval;
 
 - (BOOL) connect;
 - (void) disconnect;
+- (void) reconnect;
+- (void) reconnectDelayInterval;
 
 @end

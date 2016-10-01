@@ -4,8 +4,9 @@
 //
 
 #import "JegarnPacketWriter.h"
-#import "JegarnSecurityPolicy.h"
 #import "JegarnLog.h"
+#import "JegarnClient.h"
+#import "JegarnListener.h"
 
 @interface JegarnPacketWriter()
 @property (strong, nonatomic) NSMutableData *buffer;
@@ -26,14 +27,27 @@
     return self;
 }
 
+- (void)startup {
+    self.enableWrite = NO;
+    [super startup];
+}
+
+- (void)shutdown {
+    self.enableWrite = NO;
+    [super shutdown];
+}
+
 
 - (void)stream:(NSStream*)sender handleEvent:(NSStreamEvent)eventCode {
 #ifdef DEBUG
     [self streamHandledEvents:eventCode];
 #endif
+    if (eventCode & NSStreamEventOpenCompleted) {
+        [self.client.listener connectListener:self.client];
+    }
 
     if (eventCode & NSStreamEventHasSpaceAvailable) {
-        if (self.enableSsl) {
+        if (self.client.enableSsl) {
             if (![self applySSLSecurityPolicy:sender withEvent:eventCode]) {
                 DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventHasSpaceAvailable error %@", sender.streamError);
                 self.enableWrite = NO;
@@ -44,13 +58,18 @@
             self.enableWrite = YES;
         }
     }
-    if (eventCode &  NSStreamEventEndEncountered) {}
-    if (eventCode & NSStreamEventErrorOccurred) {}
+    if (eventCode & NSStreamEventErrorOccurred) {
+        [self.client.listener errorListener:JegarnErrorTypeNetworkError client:self.client];
+        [self.client reconnectDelayInterval];
+    }
 }
 
 - (BOOL)send:(NSData *)data {
+    if (!self.client.running) {
+        return NO;
+    }
     @synchronized(self) {
-        if(!self.enableWrite){
+        if (!self.enableWrite) {
             return NO;
         }
 

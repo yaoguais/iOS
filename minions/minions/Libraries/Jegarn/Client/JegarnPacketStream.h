@@ -6,16 +6,13 @@
 #import <Foundation/Foundation.h>
 
 @class JegarnSecurityPolicy;
+@class JegarnClient;
 
 
 @interface JegarnPacketStream : NSObject <NSStreamDelegate>
 
+@property (weak, nonatomic) JegarnClient * client;
 @property (strong, nonatomic, readonly) NSStream *stream;
-@property(strong, nonatomic) JegarnSecurityPolicy *securityPolicy;
-@property (strong, nonatomic) NSString *securityDomain;
-@property (nonatomic) BOOL enableSsl;
-@property (strong, nonatomic) NSRunLoop *runLoop;
-@property (strong, nonatomic) NSString *runLoopMode;
 @property (nonatomic) BOOL securityPolicyApplied;
 
 - (BOOL)applySSLSecurityPolicy:(NSStream *)readStream withEvent:(NSStreamEvent)eventCode;

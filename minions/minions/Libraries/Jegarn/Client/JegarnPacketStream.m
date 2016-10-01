@@ -6,19 +6,20 @@
 #import "JegarnPacketStream.h"
 #import "JegarnSecurityPolicy.h"
 #import "JegarnLog.h"
+#import "JegarnClient.h"
 
 
 @implementation JegarnPacketStream
 
 - (void)startup {
     [self.stream setDelegate:self];
-    [self.stream scheduleInRunLoop:self.runLoop forMode:self.runLoopMode];
+    [self.stream scheduleInRunLoop:self.client.runLoop forMode:self.client.runLoopMode];
     [self.stream open];
 }
 
 - (void)shutdown {
     [self.stream close];
-    [self.stream removeFromRunLoop:self.runLoop forMode:self.runLoopMode];
+    [self.stream removeFromRunLoop:self.client.runLoop forMode:self.client.runLoopMode];
     [self.stream setDelegate:nil];
 }
 
@@ -31,7 +32,7 @@
 }
 
 - (BOOL)applySSLSecurityPolicy:(NSStream *)readStream withEvent:(NSStreamEvent)eventCode{
-    if(!self.securityPolicy){
+    if(!self.client.securityPolicy){
         return YES;
     }
 
@@ -45,7 +46,7 @@
         return NO;
     }
 
-    self.securityPolicyApplied = [self.securityPolicy evaluateServerTrust:serverTrust forDomain:self.securityDomain];
+    self.securityPolicyApplied = [self.client.securityPolicy evaluateServerTrust:serverTrust forDomain:self.client.host];
     return self.securityPolicyApplied;
 }
 

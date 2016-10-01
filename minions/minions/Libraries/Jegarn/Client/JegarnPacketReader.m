@@ -5,6 +5,8 @@
 
 #import "JegarnPacketReader.h"
 #import "JegarnLog.h"
+#import "JegarnClient.h"
+#import "JegarnListener.h"
 
 @implementation JegarnPacketReader {
 @private
@@ -19,7 +21,7 @@
 #endif
 
     if (eventCode &  NSStreamEventHasBytesAvailable) {
-        if(self.enableSsl){
+        if(self.client.enableSsl){
             if (![self applySSLSecurityPolicy:sender withEvent:eventCode]){
                 DDLogVerbose(@"[JegarnPacketReader] NSStreamEventHasBytesAvailable error %@", sender.streamError);
             }else{
@@ -30,8 +32,10 @@
         }
     }
 
-    if (eventCode &  NSStreamEventEndEncountered) {}
-    if (eventCode &  NSStreamEventErrorOccurred) {}
+    if (eventCode &  NSStreamEventErrorOccurred) {
+        [self.client.listener errorListener:JegarnErrorTypeNetworkError client:self.client];
+        [self.client reconnectDelayInterval];
+    }
 }
 
 - (void) parsePackets:(NSStream *) sender

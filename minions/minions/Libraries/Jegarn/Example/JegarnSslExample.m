@@ -29,6 +29,7 @@
     _client.password = @"test";
     _client.host = @"jegarn.com";
     _client.port = 7773;
+    _client.reconnectInterval = 7.0;
     _client.listener = [[JegarnListener alloc] init];
     _client.runLoop = [NSRunLoop currentRunLoop];
     _client.runLoopMode = NSDefaultRunLoopMode;
