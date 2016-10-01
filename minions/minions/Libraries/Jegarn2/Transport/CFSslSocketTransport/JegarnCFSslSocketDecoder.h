@@ -4,14 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JegarnCFSocketEncoder.h"
+#import "JegarnCFSocketDecoder.h"
 
-@class JegarnCFSslSecurityPolicy;
+@class JegarnSecurityPolicy;
 
 
-@interface JegarnCFSslSocketEncoder : JegarnCFSocketEncoder
+@interface JegarnCFSslSocketDecoder : JegarnCFSocketDecoder
 
-@property(strong, nonatomic) JegarnCFSslSecurityPolicy *securityPolicy;
+@property(strong, nonatomic) JegarnSecurityPolicy *securityPolicy;
 @property(strong, nonatomic) NSString *securityDomain;
 
 @end

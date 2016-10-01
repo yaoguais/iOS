@@ -3,16 +3,16 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
-#import "JegarnCFSslSocketEncoder.h"
-#import "JegarnCFSslSecurityPolicy.h"
+#import "JegarnCFSslSocketDecoder.h"
+#import "JegarnSecurityPolicy.h"
 #import "JegarnLog.h"
 
-@interface JegarnCFSslSocketEncoder()
+@interface JegarnCFSslSocketDecoder()
 @property (nonatomic) BOOL securityPolicyApplied;
 
 @end
 
-@implementation JegarnCFSslSocketEncoder
+@implementation JegarnCFSslSocketDecoder
 
 - (instancetype)init {
     self = [super init];
@@ -22,8 +22,7 @@
     return self;
 }
 
-- (BOOL)applySSLSecurityPolicy:(NSStream *)writeStream withEvent:(NSStreamEvent)eventCode;
-{
+- (BOOL)applySSLSecurityPolicy:(NSStream *)readStream withEvent:(NSStreamEvent)eventCode{
     if(!self.securityPolicy){
         return YES;
     }
@@ -32,8 +31,9 @@
         return YES;
     }
 
-    SecTrustRef serverTrust = (__bridge SecTrustRef) [writeStream propertyForKey: (__bridge NSString *)kCFStreamPropertySSLPeerTrust];
+    SecTrustRef serverTrust = (__bridge SecTrustRef) [readStream propertyForKey: (__bridge NSString *)kCFStreamPropertySSLPeerTrust];
     if(!serverTrust){
+        DDLogVerbose(@"[JegarnCFSslSocketDecoder] serverTrust failed");
         return NO;
     }
 
@@ -43,16 +43,20 @@
 
 - (void)stream:(NSStream*)sender handleEvent:(NSStreamEvent)eventCode {
 
-    if (eventCode & NSStreamEventHasSpaceAvailable) {
-        DDLogVerbose(@"[JegarnCFSocketEncoder] NSStreamEventHasSpaceAvailable");
-        if(![self applySSLSecurityPolicy:sender withEvent:eventCode]){
-            self.state = JegarnCFSocketEncoderStateError;
+    if (eventCode &  NSStreamEventHasBytesAvailable) {
+        DDLogVerbose(@"[JegarnCFSslSocketDecoder] NSStreamEventHasBytesAvailable");
+        if (![self applySSLSecurityPolicy:sender withEvent:eventCode]){
+            self.state = JegarnCFSocketDecoderStateError;
             self.error = [NSError errorWithDomain:@"Jegarn"
                                              code:errSSLXCertChainInvalid
                                          userInfo:@{NSLocalizedDescriptionKey: @"Unable to apply security policy, the SSL connection is insecure!"}];
+            DDLogVerbose(@"[JegarnCFSslSocketDecoder] NSStreamEventHasBytesAvailable error %@", self.error);
+        }else{
+            [super stream:sender handleEvent:eventCode];
         }
+    }else{
+        [super stream:sender handleEvent:eventCode];
     }
-    [super stream:sender handleEvent:eventCode];
 }
 
 @end

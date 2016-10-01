@@ -12,14 +12,14 @@ typedef NS_ENUM(NSUInteger, JegarnSSLPinningMode) {
     JegarnSSLPinningModeCertificate,
 };
 
-@interface JegarnCFSslSecurityPolicy : NSObject
+@interface JegarnSecurityPolicy : NSObject
 @property (readonly, nonatomic, assign) JegarnSSLPinningMode SSLPinningMode;
 @property (nonatomic, assign) BOOL validatesCertificateChain;
 @property (nonatomic, strong) NSArray *pinnedCertificates;
 @property (nonatomic, assign) BOOL allowInvalidCertificates;
 @property (nonatomic, assign) BOOL validatesDomainName;
+- (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain;
 + (instancetype)defaultPolicy;
 + (instancetype)policyWithPinningMode:(JegarnSSLPinningMode)pinningMode;
-- (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust
-                  forDomain:(NSString *)domain;
++ (NSArray *)clientCertsFromP12:(NSString *)path passphrase:(NSString *)passphrase;
 @end

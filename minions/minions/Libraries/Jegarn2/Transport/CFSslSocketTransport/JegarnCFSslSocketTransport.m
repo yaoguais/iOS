@@ -7,7 +7,7 @@
 #import "JegarnCFSslSocketEncoder.h"
 #import "JegarnCFSslSocketDecoder.h"
 #import "JegarnLog.h"
-#import "JegarnCFSslSecurityPolicy.h"
+#import "JegarnSecurityPolicy.h"
 
 @interface JegarnCFSslSocketTransport()
 @property (strong, nonatomic) JegarnCFSslSocketEncoder *encoder;

@@ -3,7 +3,8 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
-#import "JegarnCFSslSecurityPolicy.h"
+#import "JegarnSecurityPolicy.h"
+#import "JegarnLog.h"
 #import <AssertMacros.h>
 
 static BOOL SSLSecKeyIsEqualToKey(SecKeyRef key1, SecKeyRef key2) {
@@ -111,12 +112,12 @@ static NSArray * SSLPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
     return [NSArray arrayWithArray:trustChain];
 }
 
-@interface JegarnCFSslSecurityPolicy()
+@interface JegarnSecurityPolicy()
 @property (readwrite, nonatomic, assign) JegarnSSLPinningMode SSLPinningMode;
 @property (readwrite, nonatomic, strong) NSArray *pinnedPublicKeys;
 @end
 
-@implementation JegarnCFSslSecurityPolicy
+@implementation JegarnSecurityPolicy
 
 #pragma mark - SSL Security Policy
 
@@ -140,14 +141,14 @@ static NSArray * SSLPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 }
 
 + (instancetype)defaultPolicy {
-    JegarnCFSslSecurityPolicy *securityPolicy = [[self alloc] init];
+    JegarnSecurityPolicy *securityPolicy = [[self alloc] init];
     securityPolicy.SSLPinningMode = JegarnSSLPinningModeNone;
 
     return securityPolicy;
 }
 
 + (instancetype)policyWithPinningMode:(JegarnSSLPinningMode)pinningMode {
-    JegarnCFSslSecurityPolicy *securityPolicy = [[self alloc] init];
+    JegarnSecurityPolicy *securityPolicy = [[self alloc] init];
     securityPolicy.SSLPinningMode = pinningMode;
 
     [securityPolicy setPinnedCertificates:[self defaultPinnedCertificates]];
@@ -201,8 +202,25 @@ static NSArray * SSLPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
         return self.allowInvalidCertificates || SSLServerTrustIsValid(serverTrust);
     }
         // if client didn't allow invalid certs, it must pass CA infrastructure
-    else if (!SSLServerTrustIsValid(serverTrust) && !self.allowInvalidCertificates) {
-        return NO;
+    //else if (!SSLServerTrustIsValid(serverTrust) && !self.allowInvalidCertificates) {
+    //    return NO;
+    //}
+    else if (!self.allowInvalidCertificates) {
+        NSMutableArray *pinnedCertificates = [NSMutableArray array];
+        for (NSData *certificateData in self.pinnedCertificates) {
+            @try {
+                [pinnedCertificates addObject:(__bridge_transfer id) SecCertificateCreateWithData(NULL, (__bridge CFDataRef) certificateData)];
+            } @catch (NSException *exception) {
+                //fix issue #151, if the pinnedCertification is not a valid DER-encoded X.509 certificate, for example it is the PEM format, SecCertificateCreateWithData will return nil, and application will crash
+                if ([exception.name isEqual:NSInvalidArgumentException]) {
+                    return NO;
+                }
+            }
+        }
+        SecTrustSetAnchorCertificates(serverTrust, (__bridge CFArrayRef) pinnedCertificates);
+        if (!SSLServerTrustIsValid(serverTrust)) {
+            return NO;
+        }
     }
 
     NSArray *serverCertificates = SSLCertificateTrustChainForServerTrust(serverTrust);
@@ -267,5 +285,54 @@ static NSArray * SSLPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 
 + (NSSet *)keyPathsForValuesAffectingPinnedPublicKeys {
     return [NSSet setWithObject:@"pinnedCertificates"];
+}
+
++ (NSArray *)clientCertsFromP12:(NSString *)path passphrase:(NSString *)passphrase {
+    if (!path) {
+        DDLogWarn(@"[JegarnSecurityPolicy] no p12 path given");
+        return nil;
+    }
+
+    NSData *pkcs12data = [[NSData alloc] initWithContentsOfFile:path];
+    if (!pkcs12data) {
+        DDLogWarn(@"[JegarnSecurityPolicy] reading p12 failed");
+        return nil;
+    }
+
+    if (!passphrase) {
+        DDLogWarn(@"[JegarnSecurityPolicy] no passphrase given");
+        return nil;
+    }
+    CFArrayRef keyref = NULL;
+    OSStatus importStatus = SecPKCS12Import((__bridge CFDataRef)pkcs12data,
+            (__bridge CFDictionaryRef) @{(__bridge id) kSecImportExportPassphrase : passphrase},
+            &keyref);
+    if (importStatus != noErr) {
+        DDLogWarn(@"[JegarnSecurityPolicy] Error while importing pkcs12 [%d]", (int)importStatus);
+        return nil;
+    }
+
+    CFDictionaryRef identityDict = CFArrayGetValueAtIndex(keyref, 0);
+    if (!identityDict) {
+        DDLogWarn(@"[JegarnSecurityPolicy] could not CFArrayGetValueAtIndex");
+        return nil;
+    }
+
+    SecIdentityRef identityRef = (SecIdentityRef)CFDictionaryGetValue(identityDict,
+            kSecImportItemIdentity);
+    if (!identityRef) {
+        DDLogWarn(@"[JegarnSecurityPolicy] could not CFDictionaryGetValue");
+        return nil;
+    };
+
+    SecCertificateRef cert = NULL;
+    OSStatus status = SecIdentityCopyCertificate(identityRef, &cert);
+    if (status != noErr) {
+        DDLogWarn(@"[JegarnSecurityPolicy] SecIdentityCopyCertificate failed [%d]", (int)status);
+        return nil;
+    }
+
+    NSArray *clientCerts = @[(__bridge id) identityRef, (__bridge id) cert];
+    return clientCerts;
 }
 @end

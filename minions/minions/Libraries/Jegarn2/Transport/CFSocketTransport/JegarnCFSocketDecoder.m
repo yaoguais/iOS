@@ -69,6 +69,7 @@
             n = [self.stream read:buffer maxLength:sizeof(buffer)];
             if (n == -1) {
                 self.state = JegarnCFSocketDecoderStateError;
+                DDLogVerbose(@"[JegarnCFSocketDecoder] NSStreamEventHasBytesAvailable error %@", self.stream.streamError);
                 [self.delegate decoder:self didFailWithError:nil];
             } else {
                 NSData *data = [NSData dataWithBytes:buffer length:n];
@@ -91,9 +92,9 @@
     }
 
     if (eventCode &  NSStreamEventErrorOccurred) {
-        DDLogVerbose(@"[JegarnCFSocketDecoder] NSStreamEventErrorOccurred");
         self.state = JegarnCFSocketDecoderStateError;
         self.error = self.stream.streamError;
+        DDLogVerbose(@"[JegarnCFSocketDecoder] NSStreamEventErrorOccurred %@", self.error);
         [self.delegate decoder:self didFailWithError:self.error];
     }
 }

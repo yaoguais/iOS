@@ -10,15 +10,13 @@
 #import <UIKit/UIKit.h>
 
 @class JegarnCFSocketTransport;
-@class YGNSStreamTest;
 @class JegarnCFSslSocketTransport;
+@class JegarnExample;
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) YGNSStreamTest * streamTest;
-@property (strong, nonatomic) JegarnCFSocketTransport * transport;
-@property (strong, nonatomic) JegarnCFSslSocketTransport * sslTransport;
+@property (strong, nonatomic) JegarnExample *jegarnExample;
 @property (strong, nonatomic) UIWindow *window;
 
 - (void) presentMainTabBarViewController;

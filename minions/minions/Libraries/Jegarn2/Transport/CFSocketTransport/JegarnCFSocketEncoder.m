@@ -81,9 +81,9 @@
     }
 
     if (eventCode &  NSStreamEventErrorOccurred) {
-        DDLogVerbose(@"[JegarnCFSocketEncoder] NSStreamEventErrorOccurred");
         self.state = JegarnCFSocketEncoderStateError;
         self.error = self.stream.streamError;
+        DDLogVerbose(@"[JegarnCFSocketEncoder] NSStreamEventErrorOccurred %@", self.error);
         [self.delegate encoder:self didFailWithError:self.error];
     }
 }

@@ -6,11 +6,11 @@
 #import <Foundation/Foundation.h>
 #import "JegarnCFSocketTransport.h"
 
-@class JegarnCFSslSecurityPolicy;
+@class JegarnSecurityPolicy;
 
 @interface JegarnCFSslSocketTransport : JegarnCFSocketTransport
 
-@property (strong, nonatomic) JegarnCFSslSecurityPolicy *securityPolicy;
+@property (strong, nonatomic) JegarnSecurityPolicy *securityPolicy;
 @property (nonatomic) BOOL tls;
 @property (strong, nonatomic) NSArray *certificates;
 
