@@ -9,4 +9,7 @@
 
 @interface JegarnTextChatPacket : JegarnChatPacket
 @property (nonatomic, readwrite, strong) JegarnTextChatPacketContent *content;
+
++ (instancetype)initWithFrom:(NSString *)from to:(NSString *)to text:(NSString *)text;
+
 @end

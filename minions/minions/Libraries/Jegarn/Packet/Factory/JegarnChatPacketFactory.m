@@ -28,14 +28,7 @@ static id _instance;
     NSString *subType = content[@"type"];
     if ([[JegarnTextChatPacket packetSubType] isEqualToString:subType]) {
         NSString *text = content[@"text"];
-        JegarnTextChatPacketContent *textContent = [[JegarnTextChatPacketContent alloc] init];
-        textContent.text = text;
-        JegarnTextChatPacket *packet = [[JegarnTextChatPacket alloc] init];
-        packet.from = from;
-        packet.to = to;
-        packet.type = type;
-        packet.content = textContent;
-        return packet;
+        return [JegarnTextChatPacket initWithFrom:from to:to text:text];
     }
 
     return nil;

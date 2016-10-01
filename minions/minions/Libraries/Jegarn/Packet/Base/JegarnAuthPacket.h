@@ -9,5 +9,5 @@
 @class JegarnAuthPacketContent;
 
 @interface JegarnAuthPacket : JegarnPacket
-@property (nonatomic, strong) JegarnAuthPacketContent *content;
+@property (nonatomic, strong, readwrite) JegarnAuthPacketContent *content;
 @end

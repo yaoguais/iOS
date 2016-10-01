@@ -7,7 +7,7 @@
 
 
 @implementation JegarnTextGroupChatPacket
-@dynamic content;
+@synthesize content;
 
 - (NSMutableDictionary *)convertToDictionary {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -21,6 +21,20 @@
     };
 
     return dict;
+}
+
++ (instancetype) initWithFrom:(NSString *)from to:(NSString *)to groupId:(NSInteger)groupId text:(NSString *)text
+{
+    JegarnTextGroupPacketContent *textContent = [[JegarnTextGroupPacketContent alloc] init];
+    textContent.groupId = groupId;
+    textContent.text = text;
+    JegarnTextGroupChatPacket *packet = [[JegarnTextGroupChatPacket alloc] init];
+    packet.from = from;
+    packet.to = to;
+    packet.type = [JegarnGroupChatPacket packetType];
+    packet.content = textContent;
+
+    return packet;
 }
 
 

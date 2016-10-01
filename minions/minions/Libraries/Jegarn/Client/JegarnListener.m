@@ -12,7 +12,7 @@
 @implementation JegarnListener
 
 - (void)packetListener:(JegarnPacket *)packet client:(JegarnClient *)client {
-    DDLogVerbose(@"[JegarnListener] packetListener");
+    DDLogVerbose(@"[JegarnListener] packetListener %@", [packet class]);
 }
 
 - (BOOL)sendListener:(JegarnPacket *)packet client:(JegarnClient *)client {

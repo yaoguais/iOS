@@ -3,8 +3,9 @@
 // Copyright (c) 2016 minions.jegarn.com. All rights reserved.
 //
 
-#import "JegarnTextChatPacketContent.h"
+#import <Foundation/Foundation.h>
+#import "JegarnListener.h"
 
 
-@implementation JegarnTextChatPacketContent
+@interface JegarnListenerExample : JegarnListener
 @end

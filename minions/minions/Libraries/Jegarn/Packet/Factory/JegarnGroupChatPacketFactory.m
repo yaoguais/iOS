@@ -29,15 +29,9 @@ static id _instance;
 
     NSString *subType = content[@"type"];
     if ([[JegarnTextGroupChatPacket packetSubType] isEqualToString:subType]) {
+        NSInteger groupId = [(NSNumber *) content[@"group_id"] integerValue];
         NSString *text = content[@"text"];
-        JegarnTextGroupPacketContent *textContent = [[JegarnTextGroupPacketContent alloc] init];
-        textContent.text = text;
-        JegarnTextGroupChatPacket *packet = [[JegarnTextGroupChatPacket alloc] init];
-        packet.from = from;
-        packet.to = to;
-        packet.type = type;
-        packet.content = textContent;
-        return packet;
+        return [JegarnTextGroupChatPacket initWithFrom:from to:to groupId:groupId text:text];
     }
 
     return nil;

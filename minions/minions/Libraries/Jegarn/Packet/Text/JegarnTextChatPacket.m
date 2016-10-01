@@ -7,7 +7,20 @@
 
 
 @implementation JegarnTextChatPacket
-@dynamic content;
+@synthesize content;
+
++ (instancetype)initWithFrom:(NSString *)from to:(NSString *)to text:(NSString *)text
+{
+    JegarnTextChatPacketContent *textContent = [[JegarnTextChatPacketContent alloc] init];
+    textContent.text = text;
+    JegarnTextChatPacket *packet = [[JegarnTextChatPacket alloc] init];
+    packet.from = from;
+    packet.to = to;
+    packet.type = [JegarnChatPacket packetType];
+    packet.content = textContent;
+
+    return packet;
+}
 
 - (NSMutableDictionary *)convertToDictionary {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -21,6 +34,7 @@
 
     return dict;
 }
+
 
 + (NSString *)packetSubType {
     return @"text";

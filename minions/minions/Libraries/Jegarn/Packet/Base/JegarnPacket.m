@@ -21,12 +21,12 @@
 
 - (BOOL) isFromSystemUser
 {
-    return [@"system" isEqualToString:self.from];
+    return [@"system" isEqualToString:_from];
 }
 
 - (void) setToSystemUser
 {
-    self.to = @"system";
+    _to = @"system";
 }
 
 - (NSMutableDictionary *)convertToDictionary {

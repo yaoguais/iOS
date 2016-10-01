@@ -4,11 +4,11 @@
 //
 
 #import "JegarnTextChatRoomPacket.h"
-#import "JegarnTextGroupPacketContent.h"
+#import "JegarnChatRoomPacket.h"
 
 
 @implementation JegarnTextChatRoomPacket
-@dynamic content;
+@synthesize content;
 
 - (NSMutableDictionary *)convertToDictionary {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -22,6 +22,19 @@
     };
 
     return dict;
+}
+
++ (instancetype) initWithFrom:(NSString *)from to:(NSString *)to groupId:(NSInteger)groupId text:(NSString *)text
+{
+    JegarnTextGroupPacketContent *textContent = [[JegarnTextGroupPacketContent alloc] init];
+    textContent.groupId = groupId;
+    textContent.text = text;
+    JegarnTextChatRoomPacket *packet = [[JegarnTextChatRoomPacket alloc] init];
+    packet.from = from;
+    packet.to = to;
+    packet.type = [JegarnChatRoomPacket packetType];
+    packet.content = textContent;
+    return packet;
 }
 
 + (NSString *)packetSubType {

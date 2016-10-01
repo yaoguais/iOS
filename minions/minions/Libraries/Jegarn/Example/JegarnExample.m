@@ -7,6 +7,7 @@
 #import "JegarnClient.h"
 #import "JegarnListener.h"
 #import "JegarnPacketWriter.h"
+#import "JegarnListenerExample.h"
 
 
 @implementation JegarnExample
@@ -19,7 +20,7 @@
     _client.host = @"jegarn.com";
     _client.port = 7773;
     _client.reconnectInterval = 30.0;
-    _client.listener = [[JegarnListener alloc] init];
+    _client.listener = [[JegarnListenerExample alloc] init];
     _client.runLoop = [NSRunLoop currentRunLoop];
     _client.runLoopMode = NSDefaultRunLoopMode;
     [_client connect];

@@ -28,17 +28,9 @@ static id _instance;
 
     NSString *subType = content[@"type"];
     if ([[JegarnTextChatRoomPacket packetSubType] isEqualToString:subType]) {
-        NSString *text = content[@"text"];
         NSInteger groupId = [(NSNumber *) content[@"group_id"] integerValue];
-        JegarnTextGroupPacketContent *textContent = [[JegarnTextGroupPacketContent alloc] init];
-        textContent.groupId = groupId;
-        textContent.text = text;
-        JegarnTextChatRoomPacket *packet = [[JegarnTextChatRoomPacket alloc] init];
-        packet.from = from;
-        packet.to = to;
-        packet.type = type;
-        packet.content = textContent;
-        return packet;
+        NSString *text = content[@"text"];
+        return [JegarnTextChatRoomPacket initWithFrom:from to:to groupId:groupId text:text];
     }
 
     return nil;

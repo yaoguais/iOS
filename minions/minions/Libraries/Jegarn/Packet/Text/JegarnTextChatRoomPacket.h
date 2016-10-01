@@ -9,4 +9,5 @@
 
 @interface JegarnTextChatRoomPacket : JegarnGroupChatPacket
 @property (nonatomic, readwrite, strong) JegarnTextGroupPacketContent *content;
++ (instancetype) initWithFrom:(NSString *)from to:(NSString *)to groupId:(NSInteger)groupId text:(NSString *)text;
 @end

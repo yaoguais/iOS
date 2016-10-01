@@ -16,8 +16,8 @@
     if (self) {
         _from = @"0";
         [self setToSystemUser];
-        self.type = [JegarnAuthPacket packetType];
-        self.content = [[JegarnAuthPacketContent alloc] init];
+        _type = [JegarnAuthPacket packetType];
+        _content = [[JegarnAuthPacketContent alloc] init];
     }
 
     return self;
