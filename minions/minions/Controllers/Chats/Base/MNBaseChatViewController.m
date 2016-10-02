@@ -11,7 +11,7 @@
 #import "MNUserModel.h"
 #import "MNWidgetUtil.h"
 #import "YYKeyboardManager.h"
-#import "MNLoginUserManager.h"
+#import "MNUserManager.h"
 #import "MNLoginUserModel.h"
 
 
@@ -26,7 +26,7 @@
     UIColor *commonColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:1];
     UIColor *commonHighlightColor = [UIColor colorWithRed:155 / 255.0 green:155 / 255.0 blue:155 / 255.0 alpha:0.44];
 
-    _loginUser = [MNLoginUserManager sharedInstance].loginUser;
+    _loginUser = [MNUserManager sharedInstance].loginUser;
     _viewModel = [[MNBaseChatViewModel alloc] init];
 
     _contentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, YGWindowWidth, YGWindowHeight - 40) style:UITableViewStylePlain];
@@ -94,6 +94,20 @@
     } else {
         [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
+    _inputTextField.text = @"";
+    [_inputTextField becomeFirstResponder];
+    if ([_viewModel count] > 0) {
+        [_contentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[_viewModel count] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+}
+
+- (void)appendUser:(MNUserModel *)user textMessage:(NSString *)text
+{
+    MNChatMessageModel *chatMessageModel = [[MNChatMessageModel alloc] init];
+    chatMessageModel.user = user;
+    chatMessageModel.content = text;
+    NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
+    [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     _inputTextField.text = @"";
     [_inputTextField becomeFirstResponder];
     if ([_viewModel count] > 0) {

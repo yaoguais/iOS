@@ -26,4 +26,6 @@
 @property (nonatomic, strong) UITextField *inputTextField;
 @property (nonatomic, strong) UIButton *sendButton;
 
+- (void)appendUser:(MNUserModel *)user textMessage:(NSString *)text;
+
 @end

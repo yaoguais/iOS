@@ -141,7 +141,7 @@
 		AF745E93FE09FFFE43B5AC6C /* tab_chatroom_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7456FC3F5048CF25B3129E /* tab_chatroom_selected.png */; };
 		AF745EE8500832DAC01AF336 /* tab_chatroom.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7459483353D4E2E1F4FA0F /* tab_chatroom.png */; };
 		AF745F0DCB0D92BBF45DAEF3 /* JegarnPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74553F48D1CBF1C0C17501 /* JegarnPacket.m */; };
-		AF745F29A68CD766D103DBD5 /* MNLoginUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7454E92BF4FA9621C8D957 /* MNLoginUserManager.m */; };
+		AF745F29A68CD766D103DBD5 /* MNUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7454E92BF4FA9621C8D957 /* MNUserManager.m */; };
 		AF745F50C75B1880E8D5FCC6 /* tab_chatroom_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745770D727978C65266BC5 /* tab_chatroom_selected@2x.png */; };
 		AF745F715052FC0A2F386D9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74561EE35A3C58B88B6550 /* AppDelegate.m */; };
 		C91BF46FF95E75CF9E3784A1 /* libPods-minions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7473C7CE8244663079D948 /* libPods-minions.a */; };
@@ -222,7 +222,7 @@
 		AF745485FE851E31779062E7 /* JegarnConvertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnConvertUtil.m; path = Libraries/Jegarn/Util/JegarnConvertUtil.m; sourceTree = "<group>"; };
 		AF7454D4D74E6D1110B1972A /* MNGroupChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNGroupChatViewController.h; sourceTree = "<group>"; };
 		AF7454E0696E3DC8A2B3F64C /* avatar_b0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar_b0.jpg; sourceTree = "<group>"; };
-		AF7454E92BF4FA9621C8D957 /* MNLoginUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNLoginUserManager.m; path = Minions/UserManager/MNLoginUserManager.m; sourceTree = "<group>"; };
+		AF7454E92BF4FA9621C8D957 /* MNUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNUserManager.m; path = Minions/UserManager/MNUserManager.m; sourceTree = "<group>"; };
 		AF7454F4B1ADA93CE4323EA4 /* tab_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_conversation.png; sourceTree = "<group>"; };
 		AF745516169C0C6BDF069B94 /* MNConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNConversationViewController.m; sourceTree = "<group>"; };
 		AF74552D09F9008F0CCA236D /* tab_groupchat_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_groupchat_selected.png; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		AF745AA4FA2EDE32070A12FF /* chat_from_bg.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_from_bg.9.png; sourceTree = "<group>"; };
 		AF745AC24D9B3CAB39218CE6 /* MNChatsChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNChatsChatViewController.h; path = Chat/MNChatsChatViewController.h; sourceTree = "<group>"; };
 		AF745ACA695E42D65093099C /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
-		AF745ACE169B2095C3AB6045 /* MNLoginUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNLoginUserManager.h; path = Minions/UserManager/MNLoginUserManager.h; sourceTree = "<group>"; };
+		AF745ACE169B2095C3AB6045 /* MNUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNUserManager.h; path = Minions/UserManager/MNUserManager.h; sourceTree = "<group>"; };
 		AF745AD15F05910EA14EC389 /* tab_groupchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_groupchat.png; sourceTree = "<group>"; };
 		AF745AD663E0C4C0DC8F4346 /* JegarnGroupChatPacketFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnGroupChatPacketFactory.m; path = Libraries/Jegarn/Packet/Factory/JegarnGroupChatPacketFactory.m; sourceTree = "<group>"; };
 		AF745AD7144C4DC627C39C57 /* JegarnPacketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JegarnPacketManager.m; path = Libraries/Jegarn/Client/JegarnPacketManager.m; sourceTree = "<group>"; };
@@ -557,8 +557,8 @@
 				AF745C3801C0DC8A0313B24A /* Resources */,
 				AF7459914EA442E0924551DA /* MNErrorCode.m */,
 				AF7453F9075093C1A2FC0A21 /* MNErrorCode.h */,
-				AF7454E92BF4FA9621C8D957 /* MNLoginUserManager.m */,
-				AF745ACE169B2095C3AB6045 /* MNLoginUserManager.h */,
+				AF7454E92BF4FA9621C8D957 /* MNUserManager.m */,
+				AF745ACE169B2095C3AB6045 /* MNUserManager.h */,
 				AF7459AD489E65661385CBF5 /* MNHttpRequestUrl.h */,
 				AF745273F9BE7B2086DDE2B0 /* YGHttpTest.m */,
 				AF74578A9FB739FE5118263B /* YGHttpTest.h */,
@@ -1168,7 +1168,7 @@
 				AF745469A2D23577B224A76D /* MNLoginUserModel.m in Sources */,
 				AF7456CC2F3C8912FC0029AB /* MNLoginViewModel.m in Sources */,
 				AF7450F0131073377CC66DA4 /* MNErrorCode.m in Sources */,
-				AF745F29A68CD766D103DBD5 /* MNLoginUserManager.m in Sources */,
+				AF745F29A68CD766D103DBD5 /* MNUserManager.m in Sources */,
 				AF7450ED92876ECAC4D3BD5A /* MNResourceUtil.m in Sources */,
 				AF7455894E2E8855EE015D96 /* MNContactViewModel.m in Sources */,
 				AF7455E656007FECA4ADFFBC /* MNChatRoomViewModel.m in Sources */,

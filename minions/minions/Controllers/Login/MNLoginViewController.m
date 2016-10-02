@@ -9,7 +9,7 @@
 #import "MNWidgetUtil.h"
 #import "MNLoginViewModel.h"
 #import "MNErrorCode.h"
-#import "MNLoginUserManager.h"
+#import "MNUserManager.h"
 #import "AppDelegate.h"
 #import "MNLoginUserModel.h"
 
@@ -90,9 +90,9 @@
         return;
     }
 
-    MNLoginUserModel *fakeUser = [MNLoginUserManager sharedInstance].fakeUser;
+    MNLoginUserModel *fakeUser = [MNUserManager sharedInstance].fakeUser;
     if ([account isEqualToString:fakeUser.account]) {
-        [MNLoginUserManager sharedInstance].loginUser = fakeUser;
+        [MNUserManager sharedInstance].loginUser = fakeUser;
         AppDelegate * delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         [delegate startChatClientAccount:fakeUser.account password:fakeUser.token];
         [delegate presentMainTabBarViewController];
@@ -111,7 +111,7 @@
         if (![MNErrorCode isSuccess:viewModel.code]) {
             [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
         } else {
-            [MNLoginUserManager sharedInstance].loginUser = viewModel.user;
+            [MNUserManager sharedInstance].loginUser = viewModel.user;
             AppDelegate * delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
             [delegate startChatClientAccount:viewModel.user.account password:viewModel.user.token];
             [delegate presentMainTabBarViewController];

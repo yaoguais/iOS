@@ -8,7 +8,7 @@
 #import "YGEnvironment.h"
 #import "AFNetworking.h"
 #import "MNLoginUserModel.h"
-#import "MNLoginUserManager.h"
+#import "MNUserManager.h"
 #import "YGCommonMicro.h"
 
 @implementation MNHttpsSessionManager
@@ -44,7 +44,7 @@
             httpRequest.queryParams[@"size"] = env.screenSize;
             httpRequest.queryParams[@"lang"] = env.languageCode;
             httpRequest.queryParams[@"country"] = env.countryCode;
-            MNLoginUserModel * loginUserModel = [MNLoginUserManager sharedInstance].loginUser;
+            MNLoginUserModel * loginUserModel = [MNUserManager sharedInstance].loginUser;
             if (YGIsNotNull(loginUserModel)) {
                 httpRequest.queryParams[@"uid"] = loginUserModel.uid;
                 httpRequest.queryParams[@"token"] = loginUserModel.token;

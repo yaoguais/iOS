@@ -5,11 +5,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MNBaseChatViewController.h"
+#import "JegarnPacketListener.h"
 
 @class MNGroupModel;
 
 
-@interface MNChatsGroupChatViewController : MNBaseChatViewController
+@interface MNChatsGroupChatViewController : MNBaseChatViewController <JegarnGroupCHatPacketListenerDelegate>
 
 @property (nonatomic, strong) MNGroupModel *groupModel;
 

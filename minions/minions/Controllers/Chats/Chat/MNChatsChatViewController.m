@@ -34,7 +34,7 @@
         NSString *toUid = packet.to;
         if ([fromUid isEqualToString:_chatWithUser.uid] && [toUid isEqualToString:_loginUser.uid]) {
             NSString *content = ((JegarnTextChatPacket *) packet).content.text;
-            [self appendUser:_chatWithUser message:content];
+            [self appendUser:_chatWithUser textMessage:content];
         }
     }
     return YES;
@@ -57,21 +57,8 @@
         return;
     }
 
-    [self appendUser:_loginUser message:content];
+    [self appendUser:_loginUser textMessage:content];
 }
 
-- (void) appendUser:(MNUserModel *)user message:(NSString *)content
-{
-    MNChatMessageModel *chatMessageModel = [[MNChatMessageModel alloc] init];
-    chatMessageModel.user = user;
-    chatMessageModel.content = content;
-    NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
-    [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    _inputTextField.text = @"";
-    [_inputTextField becomeFirstResponder];
-    if ([_viewModel count] > 0) {
-        [_contentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[_viewModel count] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    }
-}
 
 @end

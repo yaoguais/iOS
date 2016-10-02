@@ -13,6 +13,7 @@
 #import "YGHttpResponse.h"
 #import "MNErrorCode.h"
 #import "YGCommonMicro.h"
+#import "MNUserManager.h"
 
 
 @implementation MNContactViewModel
@@ -74,6 +75,7 @@
                                         userModel.account = [userDic objectForKey:@"account"];
                                         userModel.avatar = [userDic objectForKey:@"avatar"];
                                         [_users addObject:userModel];
+                                        [[MNUserManager sharedInstance] addUser:userModel];
                                     }
                                 }
                             }
