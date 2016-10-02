@@ -79,8 +79,8 @@
         _chatClient.account = account;
         _chatClient.password = password;
         _chatClient.host = @"jegarn.com";
-        _chatClient.port = 7773;
-        _chatClient.reconnectInterval = 30.0;
+        _chatClient.port = 9501;
+        _chatClient.reconnectInterval = 60.0;
         _chatClient.listener = [[MNChatListener alloc] init];
         _chatClient.runLoop = [NSRunLoop currentRunLoop];
         _chatClient.runLoopMode = NSDefaultRunLoopMode;

@@ -10,5 +10,6 @@
 
 + (NSData *)intToBinaryString:(NSInteger)value;
 + (NSInteger) binaryStringToInt:(NSData *)data;
++ (NSString *) idToString:(id)input;
 
 @end

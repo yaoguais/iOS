@@ -134,8 +134,8 @@
         return NO;
     }
     NSString *sessionId = packetDict[JegarnSessionKey];
-    NSString *from = packetDict[@"from"];
-    NSString *to = packetDict[@"to"];
+    NSString *from = [JegarnConvertUtil idToString:packetDict[@"from"]];
+    NSString *to = [JegarnConvertUtil idToString:packetDict[@"to"]];
     NSString *type = packetDict[@"type"];
     id content = packetDict[@"content"];
     if([JegarnStringUtil isEmptyString:from] || [JegarnStringUtil isEmptyString:to] || [JegarnStringUtil isEmptyString:type]) {

@@ -28,4 +28,12 @@
     return value;
 }
 
++ (NSString *)idToString:(id)input {
+    if ([input isKindOfClass:[NSNumber class]]) {
+        return [NSNumberFormatter localizedStringFromNumber:input numberStyle:NSNumberFormatterNoStyle];
+    } else {
+        return (NSString *) input;
+    }
+}
+
 @end
