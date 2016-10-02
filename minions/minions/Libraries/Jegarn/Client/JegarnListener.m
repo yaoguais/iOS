@@ -7,12 +7,36 @@
 #import "JegarnPacket.h"
 #import "JegarnClient.h"
 #import "JegarnLog.h"
+#import "JegarnChatPacket.h"
+#import "JegarnPacketManager.h"
+#import "JegarnGroupChatPacket.h"
+#import "JegarnChatRoomPacket.h"
+#import "JegarnNotificationPacket.h"
+#import "JegarnPacketListener.h"
 
 
 @implementation JegarnListener
 
 - (void)packetListener:(JegarnPacket *)packet client:(JegarnClient *)client {
     DDLogVerbose(@"[JegarnListener] packetListener %@", [packet class]);
+    NSMutableArray *delegates = nil;
+    if ([packet isKindOfClass:[JegarnChatPacket class]]) {
+        delegates = [JegarnChatPacketManager sharedInstance].delegates;
+    } else if ([packet isKindOfClass:[JegarnGroupChatPacket class]]) {
+        delegates = [JegarnGroupChatPacketManager sharedInstance].delegates;
+    } else if ([packet isKindOfClass:[JegarnChatRoomPacket class]]) {
+        delegates = [JegarnChatRoomPacketManager sharedInstance].delegates;
+    } else if ([packet isKindOfClass:[JegarnNotificationPacket class]]) {
+        delegates = [JegarnNotificationPacketManager sharedInstance].delegates;
+    }
+    if (delegates) {
+        for (NSUInteger i = 0; i < delegates.count; ++i) {
+            DDLogVerbose(@"[JegarnListener] packetListener processPacket %@", delegates[i]);
+            if (![delegates[i] processPacket:packet]) {
+                return;
+            }
+        }
+    }
 }
 
 - (BOOL)sendListener:(JegarnPacket *)packet client:(JegarnClient *)client {

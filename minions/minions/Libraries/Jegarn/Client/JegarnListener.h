@@ -9,8 +9,15 @@
 @class JegarnPacket;
 @class JegarnClient;
 
+@protocol JegarnListenerDelegate
+- (void) packetListener:(JegarnPacket *)packet client:(JegarnClient *) client;
+- (BOOL) sendListener:(JegarnPacket *)packet client:(JegarnClient *) client;
+- (void) errorListener:(JegarnErrorType)errorType client:(JegarnClient *) client;
+- (void) connectListener:(JegarnClient *) client;
+- (void) disconnectListener:(JegarnClient *) client;
+@end
 
-@interface JegarnListener : NSObject
+@interface JegarnListener : NSObject <JegarnListenerDelegate>
 
 - (void) packetListener:(JegarnPacket *)packet client:(JegarnClient *) client;
 - (BOOL) sendListener:(JegarnPacket *)packet client:(JegarnClient *) client;

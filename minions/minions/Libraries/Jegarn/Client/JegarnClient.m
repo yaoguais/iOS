@@ -100,6 +100,9 @@
 }
 
 - (BOOL)connect {
+    if (self.running) {
+        return NO;
+    }
     if (![self checkConfig]) {
         return NO;
     }

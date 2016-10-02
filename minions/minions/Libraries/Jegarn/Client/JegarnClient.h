@@ -10,6 +10,7 @@
 @class JegarnPacketReader;
 @class JegarnPacketWriter;
 @class JegarnSecurityPolicy;
+@protocol JegarnListenerDelegate;
 
 typedef enum {
     JegarnErrorTypeNetworkError,
@@ -40,7 +41,7 @@ typedef NS_ENUM(NSInteger, JegarnAuthPacketStatus) {
 @property (nonatomic) BOOL enableSsl;
 @property (strong, nonatomic) NSArray *certificates;
 @property(strong, nonatomic) JegarnSecurityPolicy *securityPolicy;
-@property (nonatomic, strong) JegarnListener * listener;
+@property (nonatomic, strong) id <JegarnListenerDelegate> listener;
 @property (nonatomic, strong) JegarnPacketReader *packetReader;
 @property (nonatomic, strong) JegarnPacketWriter *packetWriter;
 @property (strong, nonatomic) NSRunLoop *runLoop;

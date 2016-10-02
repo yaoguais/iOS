@@ -143,6 +143,8 @@ static NSArray * SSLPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 + (instancetype)defaultPolicy {
     JegarnSecurityPolicy *securityPolicy = [[self alloc] init];
     securityPolicy.SSLPinningMode = JegarnSSLPinningModeNone;
+    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesDomainName = NO;
 
     return securityPolicy;
 }

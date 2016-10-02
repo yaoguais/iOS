@@ -14,7 +14,10 @@
 #import "JegarnExample.h"
 #import "MNHttpsSessionManager.h"
 #import "YGHttpManager.h"
+#import "JegarnClient.h"
 #import "JegarnSslExample.h"
+#import "JegarnSecurityPolicy.h"
+#import "MNChatListener.h"
 
 
 @interface AppDelegate ()
@@ -28,8 +31,7 @@
     _window.backgroundColor = [UIColor whiteColor];
     [self presentLoginViewController];
     [self initHttpManager];
-    _jegarnExample = [[JegarnSslExample alloc] init];
-    [_jegarnExample connectToServer];
+    [self initChatClient];
 
     return YES;
 }
@@ -74,5 +76,25 @@
     _window.rootViewController = loginViewController;
 }
 
+- (void)initChatClient {
+    _chatClient = [[JegarnClient alloc] init];
+    _chatClient.account = @"";
+    _chatClient.password = @"";
+    _chatClient.host = @"jegarn.com";
+    _chatClient.port = 7773;
+    _chatClient.reconnectInterval = 30.0;
+    _chatClient.listener = [[MNChatListener alloc] init];
+    _chatClient.runLoop = [NSRunLoop currentRunLoop];
+    _chatClient.runLoopMode = NSDefaultRunLoopMode;
+    _chatClient.enableSsl = true;
+    _chatClient.securityPolicy = [JegarnSecurityPolicy defaultPolicy];
+    _chatClient.certificates = nil;
+}
+
+- (void)startChatClientAccount:(NSString *)account password:(NSString *)password{
+    _chatClient.account = account;
+    _chatClient.password = password;
+    [_chatClient connect];
+}
 
 @end

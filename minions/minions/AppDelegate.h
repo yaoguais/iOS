@@ -9,17 +9,17 @@
 
 #import <UIKit/UIKit.h>
 
-@class JegarnCFSocketTransport;
-@class JegarnCFSslSocketTransport;
 @class JegarnExample;
+@class JegarnClient;
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) JegarnExample *jegarnExample;
+@property (strong, nonatomic) JegarnClient *chatClient;
 @property (strong, nonatomic) UIWindow *window;
 
 - (void) presentMainTabBarViewController;
 - (void) presentLoginViewController;
+- (void)startChatClientAccount:(NSString *)account password:(NSString *)password;
 
 @end

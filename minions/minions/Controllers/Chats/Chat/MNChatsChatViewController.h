@@ -5,9 +5,10 @@
 
 #import <Foundation/Foundation.h>
 #import "MNBaseChatViewController.h"
+#import "JegarnPacketListener.h"
 
 
-@interface MNChatsChatViewController : MNBaseChatViewController
+@interface MNChatsChatViewController : MNBaseChatViewController <JegarnChatPacketListenerDelegate>
 
 @property (nonatomic, strong) MNUserModel *chatWithUser;
 

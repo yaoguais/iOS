@@ -93,7 +93,9 @@
     MNLoginUserModel *fakeUser = [MNLoginUserManager sharedInstance].fakeUser;
     if ([account isEqualToString:fakeUser.account]) {
         [MNLoginUserManager sharedInstance].loginUser = fakeUser;
-        [(AppDelegate *) [[UIApplication sharedApplication] delegate] presentMainTabBarViewController];
+        AppDelegate * delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        [delegate startChatClientAccount:fakeUser.account password:fakeUser.token];
+        [delegate presentMainTabBarViewController];
         return;
     }
 
@@ -110,7 +112,9 @@
             [MNWidgetUtil alertWithController:self title:@"Alert" mssage:[MNErrorCode getMessage:viewModel.code]];
         } else {
             [MNLoginUserManager sharedInstance].loginUser = viewModel.user;
-            [(AppDelegate *) [[UIApplication sharedApplication] delegate] presentMainTabBarViewController];
+            AppDelegate * delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+            [delegate startChatClientAccount:viewModel.user.account password:viewModel.user.token];
+            [delegate presentMainTabBarViewController];
         }
     }];
 }
