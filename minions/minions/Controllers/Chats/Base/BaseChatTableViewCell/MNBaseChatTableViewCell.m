@@ -22,6 +22,7 @@ static NSMutableDictionary *chatTableViewCellHeights;
         _avatar = [[UIImageView alloc] init];
         [self addSubview:_avatar];
         _username = [[UILabel alloc] init];
+        _username.font = [UIFont systemFontOfSize:10.0];
         [self addSubview:_username];
         _content = [[UILabel alloc] init];
         _content.numberOfLines = 0;

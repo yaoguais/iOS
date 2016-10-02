@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _viewModel = [[MNGroupChatViewModel alloc] init];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tabBarController.tabBar.hidden = NO;
     self.tabBarController.title = @"GroupChat";
     [self.navigationController setNavigationBarHidden:NO animated:NO];

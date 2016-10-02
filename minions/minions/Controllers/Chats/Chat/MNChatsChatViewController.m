@@ -5,8 +5,6 @@
 
 #import "MNChatsChatViewController.h"
 #import "YGCommonMicro.h"
-#import "MNBaseChatViewModel.h"
-#import "MNChatMessageModel.h"
 #import "MNUserModel.h"
 #import "MNWidgetUtil.h"
 #import "MNLoginUserModel.h"

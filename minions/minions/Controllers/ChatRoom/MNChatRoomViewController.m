@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _viewModel = [[MNChatRoomViewModel alloc] init];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tabBarController.tabBar.hidden = NO;
     self.tabBarController.title = @"ChatRoom";
     [self.navigationController setNavigationBarHidden:NO animated:NO];

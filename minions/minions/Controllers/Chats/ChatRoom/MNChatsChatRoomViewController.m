@@ -34,7 +34,7 @@
         NSString *fromUid = packet.from;
         NSString *toUid = packet.to;
         NSInteger groupId = ((JegarnTextChatRoomPacket *) packet).content.groupId;
-        if ([toUid isEqualToString:_loginUser.uid] && groupId == [_groupModel.groupId intValue]) {
+        if (groupId == [_groupModel.groupId intValue] && ([toUid isEqualToString:_loginUser.uid] || [packet isSendToAll])) {
             NSString *content = ((JegarnTextChatRoomPacket *) packet).content.text;
             @weakify(self);
             [[MNUserManager sharedInstance] fetchUser:fromUid callback:^(MNUserInfoViewModel *viewModel) {

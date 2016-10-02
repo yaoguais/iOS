@@ -83,9 +83,8 @@
         [self.buffer appendData:lengthData];
         [self.buffer appendData:packetData];
     }
-    [self send:nil];
 
-    return YES;
+    return [self send:nil];
 }
 
 - (BOOL)send:(NSData *)data {

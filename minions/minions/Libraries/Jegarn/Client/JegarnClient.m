@@ -166,7 +166,7 @@
 
 - (BOOL)sendPacket:(JegarnPacket *)packet {
     if (self.packetWriter) {
-        [self.packetWriter sendPacket:packet];
+        return [self.packetWriter sendPacket:packet];
     }
     return NO;
 }

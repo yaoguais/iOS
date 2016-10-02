@@ -6,7 +6,6 @@
 #import "MNChatsGroupChatViewController.h"
 #import "MNGroupModel.h"
 #import "JegarnPacketManager.h"
-#import "JegarnGroupChatPacket.h"
 #import "JegarnTextGroupChatPacket.h"
 #import "YGCommonMicro.h"
 #import "MNWidgetUtil.h"
@@ -34,7 +33,8 @@
     if ([packet isKindOfClass:[JegarnTextGroupChatPacket class]]) {
         NSString *fromUid = packet.from;
         NSString *toUid = packet.to;
-        if ([toUid isEqualToString:_loginUser.uid]) {
+        NSInteger groupId = ((JegarnTextGroupChatPacket *) packet).content.groupId;
+        if (groupId == [_groupModel.groupId intValue] && ([toUid isEqualToString:_loginUser.uid] || [packet isSendToAll])) {
             NSString *content = ((JegarnTextGroupChatPacket *) packet).content.text;
             @weakify(self);
             [[MNUserManager sharedInstance] fetchUser:fromUid callback:^(MNUserInfoViewModel *viewModel) {

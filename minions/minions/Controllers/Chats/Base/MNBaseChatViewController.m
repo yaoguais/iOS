@@ -38,6 +38,8 @@
     _inputTextField = [[UITextField alloc] initWithFrame:CGRectMake(5, YGWindowHeight - 39, YGWindowWidth - 95, 30)];
     _inputTextField.layer.borderColor = [UIColor grayColor].CGColor;
     _inputTextField.layer.borderWidth = 1.0;
+    _inputTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _inputTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _inputTextField.delegate = self;
     [_inputTextField becomeFirstResponder];
     [self.view addSubview:_inputTextField];
@@ -85,20 +87,7 @@
         return;
     }
 
-    MNChatMessageModel *chatMessageModel = [[MNChatMessageModel alloc] init];
-    chatMessageModel.user = _loginUser;
-    chatMessageModel.content = content;
-    NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
-    if ([_viewModel count] < 10) {
-        [_contentTableView reloadData];
-    } else {
-        [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }
-    _inputTextField.text = @"";
-    [_inputTextField becomeFirstResponder];
-    if ([_viewModel count] > 0) {
-        [_contentTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[_viewModel count] - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    }
+    [self appendUser:_loginUser textMessage:content];
 }
 
 - (void)appendUser:(MNUserModel *)user textMessage:(NSString *)text
@@ -107,7 +96,11 @@
     chatMessageModel.user = user;
     chatMessageModel.content = text;
     NSIndexPath *indexPath = [_viewModel appendChatMessageModel:chatMessageModel];
-    [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    if ([_viewModel count] < 10) {
+        [_contentTableView reloadData];
+    } else {
+        [_contentTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }
     _inputTextField.text = @"";
     [_inputTextField becomeFirstResponder];
     if ([_viewModel count] > 0) {
