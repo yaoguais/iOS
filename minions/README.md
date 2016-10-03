@@ -84,6 +84,11 @@ And these are some base usages.
         return YES;
     }
 
+#### send new message
+
+    JegarnTextChatPacket * packet = [JegarnTextChatPacket initWithFrom:@"my_uid" to:@"friend_uid" text:@"hello"];
+    [client sendPacket:packet];
+
 
 
 
