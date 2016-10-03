@@ -13,6 +13,7 @@
 @interface JegarnPacketWriter()
 @property (strong, nonatomic) NSMutableData *buffer;
 @property (nonatomic) BOOL enableWrite;
+@property (nonatomic) BOOL isSendAuthPacket;
 @end
 @implementation JegarnPacketWriter {
 @private
@@ -31,11 +32,13 @@
 
 - (void)startup {
     self.enableWrite = NO;
+    self.isSendAuthPacket = NO;
     [super startup];
 }
 
 - (void)shutdown {
     self.enableWrite = NO;
+    self.isSendAuthPacket = NO;
     [super shutdown];
 }
 
@@ -46,15 +49,15 @@
 #endif
 
     if (eventCode & NSStreamEventHasSpaceAvailable) {
-        if (self.client.enableSsl) {
-            if (![self applySSLSecurityPolicy:sender withEvent:eventCode]) {
-                DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventHasSpaceAvailable error %@", sender.streamError);
-                self.enableWrite = NO;
-            } else {
-                self.enableWrite = YES;
-            }
+        if (self.client.enableSsl && ![self applySSLSecurityPolicy:sender withEvent:eventCode]) {
+            DDLogVerbose(@"[JegarnPacketWriter] NSStreamEventHasSpaceAvailable error %@", sender.streamError);
+            self.enableWrite = NO;
         } else {
             self.enableWrite = YES;
+            if (!self.isSendAuthPacket) {
+                self.isSendAuthPacket = YES;
+                [self.client auth];
+            }
         }
     }
     if (eventCode & NSStreamEventErrorOccurred) {

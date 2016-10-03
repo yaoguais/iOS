@@ -80,6 +80,7 @@
 		AF7456FD04DEC34AF60E30F8 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = AF745DC2D36E7CE7993060B9 /* server.cer */; };
 		AF74570DB01858E030A1B579 /* JegarnChatRoomPacketFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AF74536C92E0F33B2FEAEA27 /* JegarnChatRoomPacketFactory.m */; };
 		AF74570EF4348A88A98A6922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF74583698B84B03328FBB9A /* LaunchScreen.storyboard */; };
+		AF745725BBAC209EEC5D7340 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AF745BA8F96F0CEA21BF262C /* README.md */; };
 		AF74572B69C19E9AD19BE1B2 /* MNBaseChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745B4413527B25B87E5A1E /* MNBaseChatTableViewCell.m */; };
 		AF745752B2C0C2F4CDCFF6C0 /* JegarnExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AF745987D2C7C475BB06FB07 /* JegarnExample.m */; };
 		AF745759C0133C4102C9AB99 /* avatar_g3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF745A49339094A98728AE1A /* avatar_g3.jpg */; };
@@ -338,6 +339,7 @@
 		AF745B76F78B9445C8027E87 /* MNChatsGroupChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNChatsGroupChatViewController.m; path = GroupChat/MNChatsGroupChatViewController.m; sourceTree = "<group>"; };
 		AF745B7D6A5BD1F217818229 /* MNWidgetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNWidgetUtil.h; sourceTree = "<group>"; };
 		AF745BA0D5D60FD5BC618AC2 /* YGHttpFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGHttpFile.h; path = Libraries/Networks/Http/YGHttpFile.h; sourceTree = "<group>"; };
+		AF745BA8F96F0CEA21BF262C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF745BAA7CC2728ABEF2C037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF745BAFC9B22982255DD7E0 /* MNBaseChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBaseChatTableViewCell.h; sourceTree = "<group>"; };
 		AF745BC54842B0F45C1CD8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				AF745B6D9AC68365E138FEBD /* PodFile */,
 				D621908945BD24F142ACEFB3 /* Pods */,
 				CB17FCF8A5379AFB05CFBBE5 /* Frameworks */,
+				AF745BA8F96F0CEA21BF262C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1221,6 +1224,7 @@
 				AF745C929268EC2DA1A62C63 /* MNChatListener.m in Sources */,
 				AF745E48FF5BB5555A72EF48 /* JegarnPacketManager.m in Sources */,
 				AF7450E06C9FEB7C09A13066 /* JegarnPacketListener.m in Sources */,
+				AF745725BBAC209EEC5D7340 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
